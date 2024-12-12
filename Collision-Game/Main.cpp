@@ -1,14 +1,8 @@
-#include <SFML/Graphics.hpp>
+#include "Core.h"
 
 int main() {
-	sf::RenderWindow window(sf::VideoMode(800, 600), "SFML works!");
-	sf::Event event;
-	while (window.isOpen()) {
-		while (window.pollEvent(event)) {
-			if (event.type == sf::Event::Closed) {
-				window.close();
-			}
-		}
-	}
+	// Create the core game
+	Core* game = new Core();
+	game->Run();
     return 0;
 }
