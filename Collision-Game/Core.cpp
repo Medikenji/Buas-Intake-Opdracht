@@ -16,9 +16,9 @@ void Core::Run()
 	bool isFocussed = true;
 	sf::Event event;
 
-	// Set the max frames per second for easy of physics use
+	// Set the max frames per second a set deltatime for easy of physics use
 	const int maxFps = 60;
-	float deltaTime = 1.0f / maxFps;
+	const float deltaTime = 1.0f / maxFps;
 	window.setFramerateLimit(maxFps);
 
 	// Run the game loop
@@ -28,10 +28,11 @@ void Core::Run()
 			if (event.type == sf::Event::Closed) {
 				window.close();
 			}
-			//if (event.type == sf::Event::LostFocus)
-			//	isFocussed = false;
-			//if (event.type == sf::Event::GainedFocus)
-			//	isFocussed = true;
+			// Render the game in slow motion when focus is lost
+			if (event.type == sf::Event::LostFocus)
+				isFocussed = deltaTime / 4;
+			if (event.type == sf::Event::GainedFocus)
+				isFocussed = 1.0f / maxFps;
 		}
 		if (isFocussed)
 		{
