@@ -9,7 +9,7 @@ Entity::Entity()
 	_parent = nullptr;
 	position = sf::Vector2f(0, 0);
 	velocity = sf::Vector2f(0, 0);
-	scale = sf::Vector3f(1, 1, 1);
+	scale = sf::Vector2f(1, 1);
 	rotation = sf::Vector3f(0, 0, 0);
 }
 

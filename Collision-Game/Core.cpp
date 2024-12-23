@@ -15,7 +15,7 @@ Core::~Core()
 void Core::Run()
 {
 	// Create the window
-    sf::RenderWindow window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Collide!");
+    sf::RenderWindow window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Collide!", sf::Style::Titlebar | sf::Style::Close);
 	bool isFocussed = true;
 	sf::Event event;
 

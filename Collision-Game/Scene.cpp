@@ -3,6 +3,10 @@
 Scene::Scene()
 {
 	seconds = 0;
+	Player* player1 = new Player();
+	this->addChild(player1);
+	Player* player2 = new Player();
+	this->addChild(player2);
 }
 
 Scene::~Scene()
@@ -11,14 +15,18 @@ Scene::~Scene()
 
 void Scene::Run(float deltaTime)
 {
-	position.x += 100 * deltaTime;
-	position.y += 100 * deltaTime;
+	int s = this->getChildren().size();
+	for (int i = 0; i < s; i++)
+	{
+		this->getChildren()[i]->Run(deltaTime);
+	}
 }
 
 void Scene::Draw(sf::RenderWindow& window)
 {
-	circle.setRadius(50);
-	circle.setFillColor(sf::Color(100, 250, 50));
-	circle.setPosition(this->position.x, this->position.y);
-	window.draw(circle);
+	int s = this->getChildren().size();
+	for (int i = 0; i < s; i++)
+	{
+		this->getChildren()[i]->Draw(window);
+	}
 }

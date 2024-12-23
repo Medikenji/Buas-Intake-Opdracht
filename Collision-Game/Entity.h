@@ -13,7 +13,7 @@ public:
 
 	virtual void Run(float deltaTime) = 0;
 
-	virtual void Draw(sf::RenderWindow& window) = 0;
+	virtual void Draw(sf::RenderWindow &window) = 0;
 
 	// @brief gets the entity ID.
 	// @return int: the entity ID.
@@ -38,7 +38,7 @@ public:
 	// Entity properties
 	sf::Vector2f position;
 	sf::Vector2f velocity;
-	sf::Vector3f scale;
+	sf::Vector2f scale;
 	sf::Vector3f rotation;
 
 private:

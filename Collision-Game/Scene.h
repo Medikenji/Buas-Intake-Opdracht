@@ -2,6 +2,7 @@
 #define SCENE_H
 
 #include "Entity.h"
+#include "Player.h"
 #include <iostream>
 
 class Scene : Entity
