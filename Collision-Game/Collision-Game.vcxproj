@@ -134,7 +134,6 @@
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="Director.cpp" />
     <ClCompile Include="Entity.cpp" />
-    <ClCompile Include="Inputs.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Scenemanager.cpp" />
@@ -143,7 +142,6 @@
     <ClInclude Include="Core.h" />
     <ClInclude Include="Director.h" />
     <ClInclude Include="Entity.h" />
-    <ClInclude Include="Inputs.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
   </ItemGroup>

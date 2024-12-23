@@ -13,11 +13,13 @@ public:
 	Core();
 	~Core();
 	void Run();
-	static const int SCREEN_WIDTH = 800;
-	static const int SCREEN_HEIGHT = 600;
 
 private:
 	SceneManager* sceneManager;
+	static int _maxFps;
+	static float _deltaTime;
+	const int SCREEN_WIDTH = 800;
+	const int SCREEN_HEIGHT = 600;
 };
 
 #endif

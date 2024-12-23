@@ -2,7 +2,7 @@
 
 int main() {
 	// Create the core game
-	Core* game = new Core();
-	game->Run();
+	Core game;
+	game.Run();
     return 0;
 }

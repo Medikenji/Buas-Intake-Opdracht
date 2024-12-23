@@ -3,6 +3,7 @@
 
 #include <SFML/System.hpp>
 #include <vector>
+#include <SFML/Graphics.hpp>
 
 class Entity
 {
@@ -11,6 +12,8 @@ public:
 	~Entity();
 
 	virtual void Run(float deltaTime) = 0;
+
+	virtual void Draw(sf::RenderWindow& window) = 0;
 
 	// @brief gets the entity ID.
 	// @return int: the entity ID.
@@ -23,10 +26,6 @@ public:
 	// @brief removes an entity from own children.
 	// @param Entity* child: the entity to remove.
 	void removeChild(Entity* child);
-
-	// @brief removes an entity from own children by ID.
-	// @param int EID: the ID of the entity you want to remove.
-	void removeChild(int EID);
 
 	// @brief gets the parent entity.
 	// @return Entity*: the parent entity.

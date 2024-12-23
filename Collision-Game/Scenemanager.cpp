@@ -11,9 +11,10 @@ SceneManager::~SceneManager()
 {
 }
 
-void SceneManager::Run(float deltaTime)
+void SceneManager::Run(float deltaTime, sf::RenderWindow &window)
 {
 	sceneList[currentScene]->Run(deltaTime);
+	sceneList[currentScene]->Draw(window);
 }
 
 void SceneManager::AddScene(Scene* scene)

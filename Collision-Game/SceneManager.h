@@ -15,7 +15,7 @@ public:
 	/// @brief runs the current scene.
 	/// @param deltaTime:the time between frames to pass through.
 	/// @return void
-	void Run(float deltaTime);
+	void Run(float deltaTime, sf::RenderWindow &window);
 
 private:
 	int currentScene;
