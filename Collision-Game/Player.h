@@ -2,6 +2,7 @@
 #define PLAYER_H
 
 #include "Entity.h"
+#include "GlobalVariables.h"
 
 class Player : public Entity
 {
@@ -12,10 +13,12 @@ public:
 	void Draw(sf::RenderWindow& window);
 
 private:
-	float speed;
+	// @brief handles the input for the player.
+	void handleInput();
+
 	static int splayerNum;
+	float speed;
 	int playerNum;
-	void handleInput(float deltaTime);
 	sf::CircleShape circle;
 };
 

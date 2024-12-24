@@ -5,6 +5,8 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
 
+#include "GlobalVariables.h"
+
 class Entity
 {
 public:
@@ -33,13 +35,27 @@ public:
 
 	// @brief gets the children entities.
 	// @return std::vector<Entity*>: the children entities.
-	std::vector<Entity*> getChildren() { return _children; }
+    std::vector<Entity*>& children() { return _children; }
+
+    // @brief inverses the full velocity of the entity.
+    // @param float strength: the strength of the inverse.
+    void inverseVelocity(float strength = 1.0f);
+
+    // @brief inverses the X velocity of the entity with a given strength.
+    // @param float strength: the strength of the inverse.
+    void inverseXVelocity(float strength = 1.0f);
+
+    // @brief inverses the Y velocity of the entity with a given strength.
+    // @param float strength: the strength of the inverse.
+    void inverseYVelocity(float strength = 1.0f);
 
 	// Entity properties
 	sf::Vector2f position;
 	sf::Vector2f velocity;
 	sf::Vector2f scale;
 	sf::Vector3f rotation;
+	bool isCollidable;
+	bool inBounds;
 
 private:
 	static int currentEID;

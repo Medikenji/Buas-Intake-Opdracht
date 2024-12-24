@@ -3,8 +3,9 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "SceneManager.h"
 
+#include "SceneManager.h"
+#include "GlobalVariables.h"
 
 /// @Runs the full game loop to keep main clear. Also creates the window.
 class Core
@@ -16,10 +17,7 @@ public:
 
 private:
 	SceneManager* sceneManager;
-	static int _maxFps;
-	static float _deltaTime;
-	const int SCREEN_WIDTH = 800;
-	const int SCREEN_HEIGHT = 600;
+	float _deltaTime;
 };
 
 #endif

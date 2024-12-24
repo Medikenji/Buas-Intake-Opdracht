@@ -4,18 +4,20 @@ int Player::splayerNum = 0;
 
 Player::Player()
 {
-	this->playerNum = Player::splayerNum;
-	Player::splayerNum++;
+	this->playerNum = Player::splayerNum++;
 	this->speed = 15;
 	this->scale.x = 5;
 	this->circle.setRadius(this->scale.x);
 	this->circle.setFillColor(sf::Color::Black);
 	this->circle.setOutlineThickness(this->scale.y);
 	this->circle.setOrigin(this->scale.x, this->scale.x);
+	this->inBounds = true;
+
+	// Set the player color and startpos based on player number
 	if (playerNum == 0)
 	{
-		this->position = sf::Vector2f(800, 600);
-		this->circle.setOutlineColor(sf::Color::Red);
+		this->position = sf::Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT);
+		this->circle.setOutlineColor(sf::Color::Magenta);
 	}
 	else
 	{
@@ -30,8 +32,10 @@ Player::~Player()
 
 void Player::Run(float deltaTime)
 {
-	this->handleInput(deltaTime);
+	this->handleInput();
 	this->position += this->velocity * deltaTime;
+
+	// Slow down the player
 	this->velocity *= std::pow(0.3f, deltaTime);
 }
 
@@ -41,7 +45,7 @@ void Player::Draw(sf::RenderWindow& window)
 	window.draw(this->circle);
 }
 
-void Player::handleInput(float deltaTime) {
+void Player::handleInput() {
 	if (playerNum == 0)
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))

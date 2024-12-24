@@ -3,8 +3,7 @@
 SceneManager::SceneManager()
 {
 	currentScene = 0;
-	AddScene(new Scene());
-	AddScene(new Scene());
+	AddScene(new GameScene());
 }
 
 SceneManager::~SceneManager()
@@ -17,7 +16,7 @@ void SceneManager::Run(float deltaTime, sf::RenderWindow &window)
 	sceneList[currentScene]->Draw(window);
 }
 
-void SceneManager::AddScene(Scene* scene)
+void SceneManager::AddScene(BaseScene* scene)
 {
 	sceneList.push_back(scene);
 }

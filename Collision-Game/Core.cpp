@@ -1,8 +1,5 @@
 #include "Core.h"
 
-int Core::_maxFps = 60;
-float Core::_deltaTime = 1.0f / _maxFps;
-
 Core::Core()
 {
 	sceneManager = new SceneManager();
@@ -20,7 +17,8 @@ void Core::Run()
 	sf::Event event;
 
 	// Set the max frames per second a set deltatime for easy of physics use
-	window.setFramerateLimit(_maxFps);
+	window.setFramerateLimit(MAX_FPS);
+	_deltaTime = 1.0f / MAX_FPS;
 
 	// Run the game loop
 	while (window.isOpen())
@@ -39,11 +37,11 @@ void Core::Run()
 			window.clear(sf::Color::Black);
 			if (isFocussed)
 			{
-				_deltaTime = 1.0f / _maxFps;
+				_deltaTime = 1.0f / MAX_FPS;
 			}
 			else
 			{
-				_deltaTime = (1.0f / _maxFps) * 0.1f;
+				_deltaTime = (1.0f / MAX_FPS) * 0.1f;
 			}
             sceneManager->Run(_deltaTime, window);
 			window.display();

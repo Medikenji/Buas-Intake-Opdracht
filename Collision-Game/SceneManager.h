@@ -1,7 +1,7 @@
 #ifndef SCENEMANAGER_H
 #define SCENEMANAGER_H
 
-#include "Scene.h"
+#include "GameScene.h"
 #include <vector>
 #include <SFML/Window.hpp>
 
@@ -19,8 +19,8 @@ public:
 
 private:
 	int currentScene;
-	std::vector<Scene*> sceneList;
-	void AddScene(Scene*);
+	std::vector<BaseScene*> sceneList;
+	void AddScene(BaseScene*);
 };
 
 #endif
