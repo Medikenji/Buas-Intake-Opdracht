@@ -8,12 +8,16 @@
 class GameScene : public Entity
 {
 public:
+	// --- Functions --- //
+
 	GameScene();
 	~GameScene();
+
 	virtual void Run(float deltaTime);
 	virtual void Draw(sf::RenderWindow& window);
 
 private:
+	// --- Variables --- //
 	Director* _gameDirector;
 };
 

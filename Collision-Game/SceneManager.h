@@ -11,6 +11,8 @@
 class SceneManager : public Entity
 {
 public:
+	// --- Functions --- //
+
 	SceneManager();
 	~SceneManager();
 
@@ -18,7 +20,7 @@ public:
 	virtual void Draw(sf::RenderWindow& window);
 
 private:
-
+	// --- Variables --- //
 	int currentScene;
 };
 

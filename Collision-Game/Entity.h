@@ -11,6 +11,8 @@
 class Entity
 {
 public:
+	// --- Functions --- //
+
 	Entity();
 	~Entity();
 
@@ -50,6 +52,9 @@ public:
     // @param float strength: the strength of the inverse.
     void inverseYVelocity(float strength = 1.0f);
 
+
+	// --- Variables --- //
+
 	// Entity properties
 	sf::Vector2f position;
 	sf::Vector2f velocity;
@@ -59,6 +64,7 @@ public:
 	bool inBounds;
 
 private:
+	// --- Variables --- //
 	static int currentEID;
 	int EID;
 	Entity* _parent;

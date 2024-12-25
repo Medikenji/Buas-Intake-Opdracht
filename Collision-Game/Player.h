@@ -8,15 +8,22 @@
 class Player : public Entity
 {
 public:
+	// --- Functions --- //
+
 	Player();
 	~Player();
+
 	virtual void Run(float deltaTime);
 	virtual void Draw(sf::RenderWindow& window);
 
 private:
+	// --- Functions --- //
+	
 	// @brief handles the input for the player.
 	void handleInput();
 
+
+	// --- Variables --- //
 	static int splayerNum;
 	float speed;
 	int playerNum;
