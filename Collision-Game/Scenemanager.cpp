@@ -2,21 +2,20 @@
 
 SceneManager::SceneManager()
 {
-	currentScene = 0;
-	AddScene(new GameScene());
+	this->currentScene = 0;
+	this->addChild(new GameScene());
 }
 
 SceneManager::~SceneManager()
 {
 }
 
-void SceneManager::Run(float deltaTime, sf::RenderWindow &window)
+void SceneManager::Run(float deltaTime)
 {
-	sceneList[currentScene]->Run(deltaTime);
-	sceneList[currentScene]->Draw(window);
+	this->children()[currentScene]->Run(deltaTime);
 }
 
-void SceneManager::AddScene(BaseScene* scene)
+void SceneManager::Draw(sf::RenderWindow& window)
 {
-	sceneList.push_back(scene);
+	this->children()[currentScene]->Draw(window);
 }

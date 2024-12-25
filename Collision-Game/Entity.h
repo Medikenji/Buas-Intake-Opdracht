@@ -7,6 +7,7 @@
 
 #include "GlobalVariables.h"
 
+/// @brief a base class for all entities.
 class Entity
 {
 public:

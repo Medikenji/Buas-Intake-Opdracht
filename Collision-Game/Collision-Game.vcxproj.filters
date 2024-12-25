@@ -47,9 +47,6 @@
     <ClInclude Include="Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BaseScene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Director.h">
       <Filter>Header Files</Filter>
     </ClInclude>

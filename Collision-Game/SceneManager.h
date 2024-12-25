@@ -1,26 +1,25 @@
 #ifndef SCENEMANAGER_H
 #define SCENEMANAGER_H
 
-#include "GameScene.h"
 #include <vector>
 #include <SFML/Window.hpp>
 
-/// @brief handles the running of scenes.
-class SceneManager
+#include "Entity.h"
+#include "GameScene.h"
+
+/// @brief handles the switching of scenes.
+class SceneManager : public Entity
 {
 public:
 	SceneManager();
 	~SceneManager();
 
-	/// @brief runs the current scene.
-	/// @param deltaTime:the time between frames to pass through.
-	/// @return void
-	void Run(float deltaTime, sf::RenderWindow &window);
+	virtual void Run(float deltaTime);
+	virtual void Draw(sf::RenderWindow& window);
 
 private:
+
 	int currentScene;
-	std::vector<BaseScene*> sceneList;
-	void AddScene(BaseScene*);
 };
 
 #endif

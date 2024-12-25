@@ -4,13 +4,14 @@
 #include "Entity.h"
 #include "GlobalVariables.h"
 
+/// @brief handles the player entity.
 class Player : public Entity
 {
 public:
 	Player();
 	~Player();
-	void Run(float deltaTime);
-	void Draw(sf::RenderWindow& window);
+	virtual void Run(float deltaTime);
+	virtual void Draw(sf::RenderWindow& window);
 
 private:
 	// @brief handles the input for the player.

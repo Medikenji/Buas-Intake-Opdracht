@@ -43,7 +43,8 @@ void Core::Run()
 			{
 				_deltaTime = (1.0f / MAX_FPS) * 0.1f;
 			}
-            sceneManager->Run(_deltaTime, window);
+            sceneManager->Run(_deltaTime);
+			sceneManager->Draw(window);
 			window.display();
 	}
 }

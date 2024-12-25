@@ -16,12 +16,12 @@ Player::Player()
 	// Set the player color and startpos based on player number
 	if (playerNum == 0)
 	{
-		this->position = sf::Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT);
+		this->position = sf::Vector2f(SCREEN_WIDTH - this->scale.x, SCREEN_HEIGHT - this->scale.x);
 		this->circle.setOutlineColor(sf::Color::Magenta);
 	}
 	else
 	{
-		this->position = sf::Vector2f(0, 0);
+		this->position = sf::Vector2f(0 + this->scale.x, 0 + this->scale.x);
 		this->circle.setOutlineColor(sf::Color::Cyan);
 	}
 }
@@ -41,7 +41,7 @@ void Player::Run(float deltaTime)
 
 void Player::Draw(sf::RenderWindow& window)
 {
-	circle.setPosition(this->position.x, this->position.y);
+	this->circle.setPosition(this->position.x, this->position.y);
 	window.draw(this->circle);
 }
 
@@ -50,38 +50,38 @@ void Player::handleInput() {
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 		{
-			velocity.y -= this->speed;
+			this->velocity.y -= this->speed;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 		{
-			velocity.y += this->speed;
+			this->velocity.y += this->speed;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 		{
-			velocity.x -= this->speed;
+			this->velocity.x -= this->speed;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 		{
-			velocity.x += this->speed;
+			this->velocity.x += this->speed;
 		}
 	}
 	else
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 		{
-			velocity.y -= this->speed;
+			this->velocity.y -= this->speed;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 		{
-			velocity.y += this->speed;
+			this->velocity.y += this->speed;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		{
-			velocity.x -= this->speed;
+			this->velocity.x -= this->speed;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 		{
-			velocity.x += this->speed;
+			this->velocity.x += this->speed;
 		}
 	}
 }
