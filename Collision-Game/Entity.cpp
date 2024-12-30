@@ -12,7 +12,6 @@ Entity::Entity()
 	this->velocity = sf::Vector2f(0, 0);
 	this->scale = sf::Vector2f(1, 1);
 	this->rotation = sf::Vector3f(0, 0, 0);
-	this->isCollidable = false;
 	this->inBounds = false;
 }
 

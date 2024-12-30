@@ -1,17 +1,20 @@
-#ifndef DIRECTOR_H
-#define DIRECTOR_H
+#ifndef GAMEMANAGER_H
+#define GAMEMANAGER_H
 
 #include "Entity.h"
 #include "Player.h"
 
+// Forward declaration to avoid circular dependency
+class Player;
+
 /// @brief handles the game logic.
-class Director : Entity
+class GameManager : Entity
 {
 public:
 	// --- Functions --- //
 
-	Director();
-	~Director();
+	GameManager();
+	~GameManager();
 
 	virtual void Run(float deltaTime);
 	virtual void Draw(sf::RenderWindow& window);
@@ -24,7 +27,7 @@ private:
 
 	// @brief handles the collision between players.
 	// @param std::vector<Entity*> players: the player entities to check.
-	void handlePlayerToPLayerCollision(std::vector<Entity*> players, float deltaTime);
+	void handlePlayerToPLayerCollision(std::vector<Entity*> players);
 
 	// @brief handles the boundaries of the entities.
 	// @param std::vector<Entity*> entities: the entities to check.

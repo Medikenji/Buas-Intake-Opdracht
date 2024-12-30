@@ -16,8 +16,12 @@ public:
 	Entity();
 	~Entity();
 
+	// @brief runs the entity.
+	// @param float deltaTime: the time between frames.
 	virtual void Run(float deltaTime) = 0;
 
+	// @brief draws the entity.
+	// @param sf::RenderWindow& window: the window to draw to.
 	virtual void Draw(sf::RenderWindow &window) = 0;
 
 	// @brief gets the entity ID.
@@ -68,7 +72,7 @@ public:
 	sf::Vector2f velocity;
 	sf::Vector2f scale;
 	sf::Vector3f rotation;
-	bool isCollidable;
+	float health;
 	bool inBounds;
 
 private:

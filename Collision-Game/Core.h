@@ -7,6 +7,9 @@
 #include "SceneManager.h"
 #include "GlobalVariables.h"
 
+// Forward declaration to avoid circular dependency
+class SceneManager;
+
 /// @Runs the full game loop to keep main clear. Also creates the window.
 class Core
 {

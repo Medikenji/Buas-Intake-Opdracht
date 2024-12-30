@@ -2,7 +2,12 @@
 #define GAME_SCENE_H
 
 #include "Entity.h"
-#include "director.h"
+#include "GameManager.h"
+#include "SceneManager.h"
+
+// Forward declaration to avoid circular dependency
+class SceneManager;
+class GameManager;
 
 /// @brief handles the gameplay scene.
 class GameScene : public Entity
@@ -18,7 +23,8 @@ public:
 
 private:
 	// --- Variables --- //
-	Director* _gameDirector;
+
+	GameManager* _gameManager;
 };
 
 #endif

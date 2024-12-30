@@ -2,7 +2,7 @@
 
 GameScene::GameScene()
 {
-	_gameDirector = new Director();
+	_gameManager = new GameManager();
 }
 
 GameScene::~GameScene()
@@ -11,10 +11,10 @@ GameScene::~GameScene()
 
 void GameScene::Run(float deltaTime)
 {
-	_gameDirector->Run(deltaTime);
+	_gameManager->Run(deltaTime);
 }
 
 void GameScene::Draw(sf::RenderWindow& window)
 {
-	_gameDirector->Draw(window);
+	_gameManager->Draw(window);
 }

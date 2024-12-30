@@ -1,27 +1,27 @@
-#include "Director.h"
+#include "GameManager.h"
 #include <iostream>
 
-Director::Director()
+GameManager::GameManager()
 {
 	initialiseLevel();
 }
 
-Director::~Director()
+GameManager::~GameManager()
 {
 }
 
-void Director::Run(float deltaTime)
+void GameManager::Run(float deltaTime)
 {
 	this->_gameDeltaTime = deltaTime;
 	handleBoundaries(_players, 1);
-	handlePlayerToPLayerCollision(_players, deltaTime);
+	handlePlayerToPLayerCollision(_players);
 	for (int i = 0; i < this->children().size(); i++)
 	{
 		this->children()[i]->Run(this->_gameDeltaTime);
 	}
 }
 
-void Director::Draw(sf::RenderWindow& window)
+void GameManager::Draw(sf::RenderWindow& window)
 {
 	for (int i = 0; i < this->children().size(); i++)
 	{
@@ -29,7 +29,7 @@ void Director::Draw(sf::RenderWindow& window)
 	}
 }
 
-void Director::initialiseLevel()
+void GameManager::initialiseLevel()
 {
 	this->_players.push_back(new Player());
 	this->addChild(_players[0]);
@@ -37,7 +37,7 @@ void Director::initialiseLevel()
 	this->addChild(_players[1]);
 }
 
-void Director::handlePlayerToPLayerCollision(std::vector<Entity*> players, float deltaTime)
+void GameManager::handlePlayerToPLayerCollision(std::vector<Entity*> players)
 {
 	// Made with help from: https://www.jeffreythompson.org/collision-detection/circle-circle.php
 
@@ -65,7 +65,7 @@ void Director::handlePlayerToPLayerCollision(std::vector<Entity*> players, float
 
 }
 
-void Director::handleBoundaries(std::vector<Entity*> entities, uint8_t type)
+void GameManager::handleBoundaries(std::vector<Entity*> entities, uint8_t type)
 {
 	switch (type)
 	{

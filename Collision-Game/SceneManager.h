@@ -1,11 +1,13 @@
-#ifndef SCENEMANAGER_H
-#define SCENEMANAGER_H
-
-#include <vector>
-#include <SFML/Window.hpp>
+#ifndef SCENE_MANAGER_H
+#define SCENE_MANAGER_H
 
 #include "Entity.h"
+#include "StartScene.h"
 #include "GameScene.h"
+
+// Forward declaration to avoid circular dependency
+class StartScene;
+class GameScene;
 
 /// @brief handles the switching of scenes.
 class SceneManager : public Entity
@@ -15,13 +17,20 @@ public:
 
 	SceneManager();
 	~SceneManager();
-
 	virtual void Run(float deltaTime);
 	virtual void Draw(sf::RenderWindow& window);
+	// @brief a setter that switches the scene.
+	void SwitchScene(int scene) { this->_currentScene = scene; };
 
 private:
 	// --- Variables --- //
-	int currentScene;
+
+	// @brief the current scene.
+	int _currentScene;
+	// @brief the start and pause scene.
+	StartScene* _startScene;
+	// @brief the actual game.
+	GameScene* _gameScene;
 };
 
 #endif
