@@ -15,7 +15,6 @@ void Director::Run(float deltaTime)
 	this->_gameDeltaTime = deltaTime;
 	handleBoundaries(_players, 1);
 	handlePlayerToPLayerCollision(_players, deltaTime);
-	std::cout << this->_gameDeltaTime << std::endl;
 	for (int i = 0; i < this->children().size(); i++)
 	{
 		this->children()[i]->Run(this->_gameDeltaTime);
@@ -50,22 +49,18 @@ void Director::handlePlayerToPLayerCollision(std::vector<Entity*> players, float
 	float x = a->position.x - b->position.x;
 	float y = a->position.y - b->position.y;
 	float distance = sqrt(x * x + y * y);
-	
+
 	// Handle slow motion
-	if (distance <= (a->scale.x + b->scale.x)*4)
-	{
-		this->_gameDeltaTime *= distance*0.01;
-	}
-	if (this->_gameDeltaTime > deltaTime)
-	{
-		this->_gameDeltaTime = deltaTime;
-	}
+    _gameDeltaTime /= 1 + ((a->getTotalSpeedInt() + b->getTotalSpeedInt()) / (10 * distance));
 
 	// If the players are colliding
-	if (distance <= a->scale.x + b->scale.x)
+	if (distance <= a->scale.x * 1.1 + b->scale.x * 1.1)
 	{
 		a->inverseVelocity(2);
+		a->inverseXVelocity(-2);
 		b->inverseVelocity(2);
+		b->inverseYVelocity(-2);
+
 	}
 
 }

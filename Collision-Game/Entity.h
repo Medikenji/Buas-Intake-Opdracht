@@ -36,6 +36,14 @@ public:
 	// @return Entity*: the parent entity.
 	Entity* getParent() { return _parent; }
 
+	// @brief gets the total speed of the entity.
+	// @return float: the total speed of the entity.
+	float getTotalSpeedFloat() { return sqrt(velocity.x * velocity.x + velocity.y * velocity.y); }
+
+	// @brief gets the total speed of the entity as an integer.
+	// @return int: the total speed of the entity as an integer.
+	int getTotalSpeedInt() { return (int)getTotalSpeedFloat(); }
+
 	// @brief gets the children entities.
 	// @return std::vector<Entity*>: the children entities.
     std::vector<Entity*>& children() { return _children; }
