@@ -2,7 +2,8 @@
 
 Core::Core()
 {
-	sceneManager = new SceneManager();
+	this->sceneManager = new SceneManager();
+	this->_deltaTime = 0.0f;
 }
 
 Core::~Core()
@@ -18,7 +19,7 @@ void Core::Run()
 
 	// Set the max frames per second a set deltatime for easy of physics use
 	window.setFramerateLimit(MAX_FPS);
-	_deltaTime = 1.0f / MAX_FPS;
+	this->_deltaTime = 1.0f / MAX_FPS;
 
 	// Run the game loop
 	while (window.isOpen())
@@ -37,13 +38,13 @@ void Core::Run()
 			window.clear(sf::Color::Black);
 			if (isFocussed)
 			{
-				_deltaTime = 1.0f / MAX_FPS;
+				this->_deltaTime = 1.0f / MAX_FPS;
 			}
 			else
 			{
-				_deltaTime = (1.0f / MAX_FPS) * 0.1f;
+				this->_deltaTime = (1.0f / MAX_FPS) * 0.1f;
 			}
-            sceneManager->Run(_deltaTime);
+            sceneManager->Run(this->_deltaTime);
 			sceneManager->Draw(window);
 			window.display();
 	}

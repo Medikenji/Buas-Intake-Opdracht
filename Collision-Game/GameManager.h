@@ -8,7 +8,7 @@
 class Player;
 
 /// @brief handles the game logic.
-class GameManager : Entity
+class GameManager : public Entity
 {
 public:
 	// --- Functions --- //

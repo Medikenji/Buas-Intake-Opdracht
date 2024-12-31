@@ -17,6 +17,7 @@ StartScene::~StartScene()
 
 void StartScene::Run(float deltaTime)
 {
+	_sceneManager->SwitchScene(1);
 	for (int i = 0; i < this->children().size(); i++)
 	{
 		this->children()[i]->Run(deltaTime);

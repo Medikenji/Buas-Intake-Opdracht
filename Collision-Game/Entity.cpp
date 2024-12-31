@@ -6,17 +6,44 @@ int Entity::currentEID = 0;
 Entity::Entity()
 {
 	// Initialize the entity
-	this->EID = currentEID++;
+	this->_EID = currentEID++;
 	this->_parent = nullptr;
 	this->position = sf::Vector2f(0, 0);
 	this->velocity = sf::Vector2f(0, 0);
 	this->scale = sf::Vector2f(1, 1);
 	this->rotation = sf::Vector3f(0, 0, 0);
 	this->inBounds = false;
+	this->_markedForDeletion = false;
 }
 
 Entity::~Entity()
 {
+	this->_parent = nullptr;
+	delete this;
+}
+
+void Entity::runChildren(float deltaTime) {
+	for (int i = 0; i < this->children().size();)
+	{
+		if (this->children()[i]->_markedForDeletion)
+		{
+			this->removeChild(this->children()[i]);
+			this->children()[i]->~Entity();
+			i = 0;
+		}
+		else
+		{
+			this->children()[i]->Run(deltaTime);
+			i++;
+		}
+	}
+}
+
+void Entity::drawChildren(sf::RenderWindow& window) {
+	for (int i = 0; i < this->children().size(); i++)
+	{
+		this->children()[i]->Draw(window);
+	}
 }
 
 void Entity::addChild(Entity* child)

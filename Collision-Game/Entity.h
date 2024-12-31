@@ -20,13 +20,21 @@ public:
 	// @param float deltaTime: the time between frames.
 	virtual void Run(float deltaTime) = 0;
 
+	// @brief runs the children of the entity.
+	// @param float deltaTime: the time between frames.
+	void runChildren(float deltaTime);
+
 	// @brief draws the entity.
 	// @param sf::RenderWindow& window: the window to draw to.
 	virtual void Draw(sf::RenderWindow &window) = 0;
 
+	// @brief draws the children of the entity.
+	// @param sf::RenderWindow& window: the window to draw to.
+	void drawChildren(sf::RenderWindow &window);
+
 	// @brief gets the entity ID.
 	// @return int: the entity ID.
-	int getEID() { return EID; }
+	int getEID() { return _EID; }
 
 	// @brief adds an entity to own children.
 	// @param Entity* child: the entity to add.
@@ -64,6 +72,8 @@ public:
     // @param float strength: the strength of the inverse.
     void inverseYVelocity(float strength = 1.0f);
 
+	// @brief gets the marked for deletion status.
+	void goDie() { _markedForDeletion = true; }
 
 	// --- Variables --- //
 
@@ -78,9 +88,10 @@ public:
 private:
 	// --- Variables --- //
 	static int currentEID;
-	int EID;
+	int _EID;
 	Entity* _parent;
 	std::vector<Entity*> _children;
+	bool _markedForDeletion;
 };
 
 #endif

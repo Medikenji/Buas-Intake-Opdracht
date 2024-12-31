@@ -15,18 +15,12 @@ void GameManager::Run(float deltaTime)
 	this->_gameDeltaTime = deltaTime;
 	handleBoundaries(_players, 1);
 	handlePlayerToPLayerCollision(_players);
-	for (int i = 0; i < this->children().size(); i++)
-	{
-		this->children()[i]->Run(this->_gameDeltaTime);
-	}
+	this->runChildren(_gameDeltaTime);
 }
 
 void GameManager::Draw(sf::RenderWindow& window)
 {
-	for (int i = 0; i < this->children().size(); i++)
-	{
-		this->children()[i]->Draw(window);
-	}
+	this->drawChildren(window);
 }
 
 void GameManager::initialiseLevel()
@@ -51,10 +45,10 @@ void GameManager::handlePlayerToPLayerCollision(std::vector<Entity*> players)
 	float distance = sqrt(x * x + y * y);
 
 	// Handle slow motion
-    _gameDeltaTime /= 1 + ((a->getTotalSpeedInt() + b->getTotalSpeedInt()) / (10 * distance));
+    _gameDeltaTime /= 1 + ((a->getTotalSpeedInt() + b->getTotalSpeedInt()) / (5 * distance));
 
 	// If the players are colliding
-	if (distance <= a->scale.x * 1.1 + b->scale.x * 1.1)
+	if (distance <= a->scale.x * 1.25 + b->scale.x * 1.25)
 	{
 		a->inverseVelocity(2);
 		a->inverseXVelocity(-2);
