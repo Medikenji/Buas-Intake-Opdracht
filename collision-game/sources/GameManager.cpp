@@ -48,6 +48,7 @@ void GameManager::handlePlayerToPLayerCollision(std::vector<Entity *> players) {
 
 void GameManager::handleBoundaries(std::vector<Entity *> entities, uint8_t type) {
   switch (type) {
+
     // If the entities are players
   case 1:
     for (int i = 0; i < entities.size(); i++) {
@@ -72,5 +73,6 @@ void GameManager::handleBoundaries(std::vector<Entity *> entities, uint8_t type)
       }
     }
     break;
+    // End of player case
   }
 }

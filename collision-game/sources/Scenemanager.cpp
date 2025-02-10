@@ -7,6 +7,11 @@ SceneManager::SceneManager() {
 
   // Set the current scene to the start scene
   this->_currentScene = 0;
+
+  // Set the current scene to the game scene for testing to skip the start scene
+#if TEST_ENVIROMENT == 1
+  _currentScene = 1;
+#endif
 }
 
 SceneManager::~SceneManager() {

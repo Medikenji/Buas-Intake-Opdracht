@@ -4,8 +4,8 @@ int Player::splayerNum = 0;
 
 Player::Player() {
   this->playerNum = Player::splayerNum++;
-  this->speed = 10;
-  this->scale.x = 5;
+  this->speed = 15;
+  this->scale.x = 10;
   this->inBounds = true;
 
   // Set the player color and startpos based on player number
