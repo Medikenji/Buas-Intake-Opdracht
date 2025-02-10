@@ -1,3 +1,6 @@
+# Build folder
+collision-game/build/
+
 # Prerequisites
 *.d
 
