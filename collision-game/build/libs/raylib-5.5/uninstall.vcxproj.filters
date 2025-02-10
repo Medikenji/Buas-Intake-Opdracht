@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\C++\Buas-Intake-Opdracht\collision-game\build\CMakeFiles\486f7816ef2dfdb1f920c0cc74c280d7\uninstall.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\C++\Buas-Intake-Opdracht\collision-game\libs\raylib-5.5\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\C++\Buas-Intake-Opdracht\collision-game\build\libs\raylib-5.5\CMakeFiles\uninstall" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{1DCA1CD9-A5CB-37B4-BB23-48CC0A9541A8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

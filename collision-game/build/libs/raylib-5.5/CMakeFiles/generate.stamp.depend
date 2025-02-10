@@ -1,0 +1,15 @@
+# CMake generation dependency list for this directory.
+C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/libs/raylib-5.5/CMakeLists.txt
+C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/libs/raylib-5.5/CMakeOptions.txt
+C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/libs/raylib-5.5/cmake/AddIfFlagCompiles.cmake
+C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/libs/raylib-5.5/cmake/CompilerFlags.cmake
+C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/libs/raylib-5.5/cmake/EnumOption.cmake
+C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/libs/raylib-5.5/cmake/ParseConfigHeader.cmake
+C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/libs/raylib-5.5/cmake/Uninstall.cmake
+C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake
+C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CMakeDependentOption.cmake
+C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CheckCCompilerFlag.cmake
+C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake
+C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/Internal/CheckCompilerFlag.cmake
+C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/Internal/CheckFlagCommonConfig.cmake
+C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake

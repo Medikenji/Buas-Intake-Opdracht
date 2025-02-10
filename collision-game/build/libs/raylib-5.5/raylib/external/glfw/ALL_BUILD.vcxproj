@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x86</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|win32">
+      <Configuration>Debug</Configuration>
+      <Platform>win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|win32">
+      <Configuration>Release</Configuration>
+      <Platform>win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{99B77A32-2D9A-309C-969E-D901EB97C273}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\C++\Buas-Intake-Opdracht\collision-game\headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\C++\Buas-Intake-Opdracht\collision-game\headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\C++\Buas-Intake-Opdracht\collision-game\headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\C++\Buas-Intake-Opdracht\collision-game\headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\C++\Buas-Intake-Opdracht\collision-game\libs\raylib-5.5\src\external\glfw\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">Building Custom Rule C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/libs/raylib-5.5/src/external/glfw/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">setlocal
+"C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\bin\cmake.exe" "-SC:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game" "-BC:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build" --check-stamp-file "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/libs/raylib-5.5/raylib/external/glfw/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\C++\Buas-Intake-Opdracht\collision-game\libs\raylib-5.5\src\external\glfw\CMake\glfw3Config.cmake.in;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\CMakeDependentOption.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\CMakePackageConfigHelpers.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\CheckCSourceCompiles.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\CheckLibraryExists.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\FindThreads.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\GNUInstallDirs.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\WriteBasicConfigVersionFile.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\C++\Buas-Intake-Opdracht\collision-game\build\libs\raylib-5.5\raylib\external\glfw\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|win32'">Building Custom Rule C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/libs/raylib-5.5/src/external/glfw/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|win32'">setlocal
+"C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\bin\cmake.exe" "-SC:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game" "-BC:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build" --check-stamp-file "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/libs/raylib-5.5/raylib/external/glfw/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\C++\Buas-Intake-Opdracht\collision-game\libs\raylib-5.5\src\external\glfw\CMake\glfw3Config.cmake.in;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\CMakeDependentOption.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\CMakePackageConfigHelpers.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\CheckCSourceCompiles.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\CheckLibraryExists.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\FindThreads.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\GNUInstallDirs.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\WriteBasicConfigVersionFile.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\C++\Buas-Intake-Opdracht\collision-game\build\libs\raylib-5.5\raylib\external\glfw\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">Building Custom Rule C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/libs/raylib-5.5/src/external/glfw/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">setlocal
+"C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\bin\cmake.exe" "-SC:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game" "-BC:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build" --check-stamp-file "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/libs/raylib-5.5/raylib/external/glfw/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\C++\Buas-Intake-Opdracht\collision-game\libs\raylib-5.5\src\external\glfw\CMake\glfw3Config.cmake.in;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\CMakeDependentOption.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\CMakePackageConfigHelpers.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\CheckCSourceCompiles.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\CheckLibraryExists.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\FindThreads.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\GNUInstallDirs.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\WriteBasicConfigVersionFile.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\C++\Buas-Intake-Opdracht\collision-game\build\libs\raylib-5.5\raylib\external\glfw\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">Building Custom Rule C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/libs/raylib-5.5/src/external/glfw/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">setlocal
+"C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\bin\cmake.exe" "-SC:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game" "-BC:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build" --check-stamp-file "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/libs/raylib-5.5/raylib/external/glfw/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\C++\Buas-Intake-Opdracht\collision-game\libs\raylib-5.5\src\external\glfw\CMake\glfw3Config.cmake.in;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\CMakeDependentOption.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\CMakePackageConfigHelpers.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\CheckCSourceCompiles.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\CheckLibraryExists.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\FindThreads.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\GNUInstallDirs.cmake;C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\share\cmake-3.30\Modules\WriteBasicConfigVersionFile.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\C++\Buas-Intake-Opdracht\collision-game\build\libs\raylib-5.5\raylib\external\glfw\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\C++\Buas-Intake-Opdracht\collision-game\build\ZERO_CHECK.vcxproj">
+      <Project>{0DF4FA02-9863-3ADF-A987-51B9D185BE9E}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\C++\Buas-Intake-Opdracht\collision-game\build\libs\raylib-5.5\raylib\external\glfw\src\glfw.vcxproj">
+      <Project>{FC6FB8D2-053C-3EC9-8077-1742858E9FEB}</Project>
+      <Name>glfw</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

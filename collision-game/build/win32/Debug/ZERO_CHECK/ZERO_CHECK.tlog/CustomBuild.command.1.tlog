@@ -1,0 +1,10 @@
+^C:\USERS\NOLAN\ONEDRIVE - ROC ALFA-COLLEGE\SOTWAREDEVELOPMENT\C++\BUAS-INTAKE-OPDRACHT\COLLISION-GAME\BUILD\CMAKEFILES\74508D79CE20A4857F0454B0D7DC0E27\GENERATE.STAMP.RULE
+setlocal
+"C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\Tools\CMake\bin\cmake.exe" "-SC:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game" "-BC:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/Project.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

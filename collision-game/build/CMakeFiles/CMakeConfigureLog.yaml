@@ -1,0 +1,520 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      The system is: Windows - 10.0.26100 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.12.12+1cce77968 for .NET Framework
+      Build started 10-2-2025 10:17:18.
+      
+      Project "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\3.30.0-rc3\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX86\\x86\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /analyze- /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX86\\x86\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X86 /SAFESEH Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\3.30.0-rc3\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\Hostx86\\x86\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\3.30.0-rc3\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:01.38
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/3.30.0-rc3/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.12.12+1cce77968 for .NET Framework
+      Build started 10-2-2025 10:17:20.
+      
+      Project "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\3.30.0-rc3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdCXX.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX86\\x86\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /analyze- /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX86\\x86\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X86 /SAFESEH Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\3.30.0-rc3\\CompilerIdCXX\\CompilerIdCXX.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\Hostx86\\x86\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
+      Done Building Project "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\3.30.0-rc3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:01.43
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/3.30.0-rc3/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:5 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-maauou"
+      binary: "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-maauou"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:X86"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-maauou'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_e8939.vcxproj /p:Configuration=Debug /p:Platform=win32 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.12.12+1cce77968 for .NET Framework
+        Build started 10-2-2025 10:17:21.
+        
+        Project "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-maauou\\cmTC_e8939.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_e8939.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-maauou\\Debug\\".
+          Creating directory "cmTC_e8939.dir\\Debug\\cmTC_e8939.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_e8939.dir\\Debug\\cmTC_e8939.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_e8939.dir\\Debug\\cmTC_e8939.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX86\\x86\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e8939.dir\\Debug\\\\" /Fd"cmTC_e8939.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /analyze- /errorReport:queue "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\Tools\\CMake\\share\\cmake-3.30\\Modules\\CMakeCCompilerABI.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.42.34436 for x86
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e8939.dir\\Debug\\\\" /Fd"cmTC_e8939.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /analyze- /errorReport:queue "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\Tools\\CMake\\share\\cmake-3.30\\Modules\\CMakeCCompilerABI.c"
+          CMakeCCompilerABI.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX86\\x86\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-maauou\\Debug\\cmTC_e8939.exe" /INCREMENTAL /ILK:"cmTC_e8939.dir\\Debug\\cmTC_e8939.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-maauou/Debug/cmTC_e8939.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-maauou/Debug/cmTC_e8939.lib" /MACHINE:X86  /machine:X86 cmTC_e8939.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_e8939.vcxproj -> C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-maauou\\Debug\\cmTC_e8939.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_e8939.dir\\Debug\\cmTC_e8939.tlog\\unsuccessfulbuild".
+          Touching "cmTC_e8939.dir\\Debug\\cmTC_e8939.tlog\\cmTC_e8939.lastbuildstate".
+        Done Building Project "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-maauou\\cmTC_e8939.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:01.41
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'C': C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.42.34433/bin/HostX86/x86/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      Running the C compiler's linker: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.42.34433/bin/HostX86/x86/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.42.34436.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:5 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-jcp6jp"
+      binary: "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-jcp6jp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:X86"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-jcp6jp'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_8294d.vcxproj /p:Configuration=Debug /p:Platform=win32 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.12.12+1cce77968 for .NET Framework
+        Build started 10-2-2025 10:17:23.
+        
+        Project "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jcp6jp\\cmTC_8294d.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_8294d.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jcp6jp\\Debug\\".
+          Creating directory "cmTC_8294d.dir\\Debug\\cmTC_8294d.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_8294d.dir\\Debug\\cmTC_8294d.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_8294d.dir\\Debug\\cmTC_8294d.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX86\\x86\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"cmTC_8294d.dir\\Debug\\\\" /Fd"cmTC_8294d.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /analyze- /errorReport:queue "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\Tools\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.42.34436 for x86
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /std:c++17 /Fo"cmTC_8294d.dir\\Debug\\\\" /Fd"cmTC_8294d.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /analyze- /errorReport:queue "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\Tools\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp"
+          CMakeCXXCompilerABI.cpp
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX86\\x86\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jcp6jp\\Debug\\cmTC_8294d.exe" /INCREMENTAL /ILK:"cmTC_8294d.dir\\Debug\\cmTC_8294d.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-jcp6jp/Debug/cmTC_8294d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-jcp6jp/Debug/cmTC_8294d.lib" /MACHINE:X86  /machine:X86 cmTC_8294d.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_8294d.vcxproj -> C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jcp6jp\\Debug\\cmTC_8294d.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_8294d.dir\\Debug\\cmTC_8294d.tlog\\unsuccessfulbuild".
+          Touching "cmTC_8294d.dir\\Debug\\cmTC_8294d.tlog\\cmTC_8294d.lastbuildstate".
+        Done Building Project "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jcp6jp\\cmTC_8294d.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:01.40
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'CXX': C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.42.34433/bin/HostX86/x86/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      Running the CXX compiler's linker: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.42.34433/bin/HostX86/x86/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.42.34436.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "libs/raylib-5.5/cmake/AddIfFlagCompiles.cmake:3 (CHECK_C_COMPILER_FLAG)"
+      - "libs/raylib-5.5/cmake/CompilerFlags.cmake:5 (add_if_flag_compiles)"
+      - "libs/raylib-5.5/CMakeLists.txt:34 (include)"
+    checks:
+      - "Performing Test COMPILER_HAS_THOSE_TOGGLES"
+    directories:
+      source: "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-76k2h0"
+      binary: "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-76k2h0"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:X86"
+      CMAKE_MODULE_PATH: "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/libs/raylib-5.5/cmake"
+    buildResult:
+      variable: "COMPILER_HAS_THOSE_TOGGLES"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-76k2h0'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_716d7.vcxproj /p:Configuration=Debug /p:Platform=win32 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.12.12+1cce77968 for .NET Framework
+        Build started 10-2-2025 10:17:25.
+        
+        Project "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-76k2h0\\cmTC_716d7.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_716d7.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-76k2h0\\Debug\\".
+          Creating directory "cmTC_716d7.dir\\Debug\\cmTC_716d7.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_716d7.dir\\Debug\\cmTC_716d7.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_716d7.dir\\Debug\\cmTC_716d7.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX86\\x86\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D COMPILER_HAS_THOSE_TOGGLES /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_716d7.dir\\Debug\\\\" /Fd"cmTC_716d7.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /analyze- /errorReport:queue  -Werror=pointer-arith "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-76k2h0\\src.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.42.34436 for x86
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D COMPILER_HAS_THOSE_TOGGLES /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_716d7.dir\\Debug\\\\" /Fd"cmTC_716d7.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /analyze- /errorReport:queue  -Werror=pointer-arith "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-76k2h0\\src.c"
+        cl : command line  error D8021: invalid numeric argument '/Werror=pointer-arith' [C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-76k2h0\\cmTC_716d7.vcxproj]
+        Done Building Project "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-76k2h0\\cmTC_716d7.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-76k2h0\\cmTC_716d7.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          cl : command line  error D8021: invalid numeric argument '/Werror=pointer-arith' [C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-76k2h0\\cmTC_716d7.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:01.11
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "libs/raylib-5.5/src/external/glfw/CMakeLists.txt:60 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-l3kl7i"
+      binary: "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-l3kl7i"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:X86"
+      CMAKE_MODULE_PATH: "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/libs/raylib-5.5/cmake;C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/libs/raylib-5.5/src/external/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-l3kl7i'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_54405.vcxproj /p:Configuration=Debug /p:Platform=win32 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.12.12+1cce77968 for .NET Framework
+        Build started 10-2-2025 10:17:27.
+        
+        Project "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l3kl7i\\cmTC_54405.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_54405.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l3kl7i\\Debug\\".
+          Creating directory "cmTC_54405.dir\\Debug\\cmTC_54405.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_54405.dir\\Debug\\cmTC_54405.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_54405.dir\\Debug\\cmTC_54405.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX86\\x86\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_54405.dir\\Debug\\\\" /Fd"cmTC_54405.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /analyze- /errorReport:queue "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l3kl7i\\src.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.42.34436 for x86
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_54405.dir\\Debug\\\\" /Fd"cmTC_54405.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /analyze- /errorReport:queue "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l3kl7i\\src.c"
+          src.c
+        C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l3kl7i\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l3kl7i\\cmTC_54405.vcxproj]
+        Done Building Project "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l3kl7i\\cmTC_54405.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l3kl7i\\cmTC_54405.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l3kl7i\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l3kl7i\\cmTC_54405.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:01.26
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "libs/raylib-5.5/src/external/glfw/CMakeLists.txt:60 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthreads"
+    directories:
+      source: "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-yje1i4"
+      binary: "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-yje1i4"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:X86"
+      CMAKE_MODULE_PATH: "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/libs/raylib-5.5/cmake;C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/libs/raylib-5.5/src/external/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-yje1i4'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_efb88.vcxproj /p:Configuration=Debug /p:Platform=win32 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.12.12+1cce77968 for .NET Framework
+        Build started 10-2-2025 10:17:29.
+        
+        Project "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yje1i4\\cmTC_efb88.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_efb88.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yje1i4\\Debug\\".
+          Creating directory "cmTC_efb88.dir\\Debug\\cmTC_efb88.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_efb88.dir\\Debug\\cmTC_efb88.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_efb88.dir\\Debug\\cmTC_efb88.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX86\\x86\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_efb88.dir\\Debug\\\\" /Fd"cmTC_efb88.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /analyze- /errorReport:queue "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yje1i4\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.42.34436 for x86
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_efb88.dir\\Debug\\\\" /Fd"cmTC_efb88.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /analyze- /errorReport:queue "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yje1i4\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX86\\x86\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yje1i4\\Debug\\cmTC_efb88.exe" /INCREMENTAL /ILK:"cmTC_efb88.dir\\Debug\\cmTC_efb88.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-yje1i4/Debug/cmTC_efb88.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-yje1i4/Debug/cmTC_efb88.lib" /MACHINE:X86  /machine:X86 cmTC_efb88.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yje1i4\\cmTC_efb88.vcxproj]
+        Done Building Project "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yje1i4\\cmTC_efb88.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yje1i4\\cmTC_efb88.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-yje1i4\\cmTC_efb88.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:01.26
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/Tools/CMake/share/cmake-3.30/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "libs/raylib-5.5/src/external/glfw/CMakeLists.txt:60 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthread"
+    directories:
+      source: "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-2jmcmp"
+      binary: "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-2jmcmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:X86"
+      CMAKE_MODULE_PATH: "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/libs/raylib-5.5/cmake;C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/libs/raylib-5.5/src/external/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-2jmcmp'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_65b3d.vcxproj /p:Configuration=Debug /p:Platform=win32 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.12.12+1cce77968 for .NET Framework
+        Build started 10-2-2025 10:17:30.
+        
+        Project "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2jmcmp\\cmTC_65b3d.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_65b3d.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2jmcmp\\Debug\\".
+          Creating directory "cmTC_65b3d.dir\\Debug\\cmTC_65b3d.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_65b3d.dir\\Debug\\cmTC_65b3d.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_65b3d.dir\\Debug\\cmTC_65b3d.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX86\\x86\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_65b3d.dir\\Debug\\\\" /Fd"cmTC_65b3d.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /analyze- /errorReport:queue "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2jmcmp\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.42.34436 for x86
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_65b3d.dir\\Debug\\\\" /Fd"cmTC_65b3d.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /analyze- /errorReport:queue "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2jmcmp\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX86\\x86\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2jmcmp\\Debug\\cmTC_65b3d.exe" /INCREMENTAL /ILK:"cmTC_65b3d.dir\\Debug\\cmTC_65b3d.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-2jmcmp/Debug/cmTC_65b3d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build/CMakeFiles/CMakeScratch/TryCompile-2jmcmp/Debug/cmTC_65b3d.lib" /MACHINE:X86  /machine:X86 cmTC_65b3d.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2jmcmp\\cmTC_65b3d.vcxproj]
+        Done Building Project "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2jmcmp\\cmTC_65b3d.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2jmcmp\\cmTC_65b3d.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\C++\\Buas-Intake-Opdracht\\collision-game\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2jmcmp\\cmTC_65b3d.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:01.25
+        
+      exitCode: 1
+...

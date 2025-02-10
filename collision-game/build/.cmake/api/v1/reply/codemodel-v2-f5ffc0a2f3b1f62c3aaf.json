@@ -1,0 +1,1056 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						5
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						4,
+						5
+					]
+				},
+				{
+					"build" : "libs/raylib-5.5",
+					"childIndexes" : 
+					[
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libs.raylib-5.5-Debug-6f5d42c2286270f589b2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "libs/raylib-5.5",
+					"targetIndexes" : 
+					[
+						1,
+						8
+					]
+				},
+				{
+					"build" : "libs/raylib-5.5/raylib",
+					"childIndexes" : 
+					[
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libs.raylib-5.5.raylib-Debug-1db60262c07ead4222fe.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "libs/raylib-5.5/src",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "libs/raylib-5.5/raylib/external/glfw",
+					"childIndexes" : 
+					[
+						4
+					],
+					"jsonFile" : "directory-libs.raylib-5.5.raylib.external.glfw-Debug-0cea62002cfccffba015.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 2,
+					"source" : "libs/raylib-5.5/src/external/glfw",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "libs/raylib-5.5/raylib/external/glfw/src",
+					"jsonFile" : "directory-libs.raylib-5.5.raylib.external.glfw.src-Debug-3f9a5325f13fc8a4fb88.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 2,
+					"source" : "libs/raylib-5.5/src/external/glfw/src",
+					"targetIndexes" : 
+					[
+						6,
+						9
+					]
+				},
+				{
+					"build" : "libs/raygui-4.0/CMake",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libs.raygui-4.0.CMake-Debug-f762088659188ce7e1bc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.11"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "libs/raygui-4.0/CMake",
+					"targetIndexes" : 
+					[
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						3
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Project",
+					"targetIndexes" : 
+					[
+						0,
+						4,
+						5
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						1,
+						2
+					],
+					"name" : "raylib",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						7,
+						8
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3,
+						4
+					],
+					"name" : "GLFW",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						2,
+						6,
+						9
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "raygui",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Debug-1ef357c7f06217e042bd.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@f55e202be9e0e66e2460",
+					"jsonFile" : "target-ALL_BUILD-Debug-fdd01f117504ef4cb56e.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ALL_BUILD::@24fb27ac30ec0f3005fa",
+					"jsonFile" : "target-ALL_BUILD-Debug-b28d34d577716878a3c7.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "ALL_BUILD::@63ae178baf044a2093e2",
+					"jsonFile" : "target-ALL_BUILD-Debug-f373f9c94af668fda3c7.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Project::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Project-Debug-c07259107380f2c9eb41.json",
+					"name" : "Project",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Debug-a3bfa8d9b2d807b663e9.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "glfw::@330908f6dd293a653379",
+					"jsonFile" : "target-glfw-Debug-580b028106c7e84c7a34.json",
+					"name" : "glfw",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "raylib::@a6906e04aad214a51709",
+					"jsonFile" : "target-raylib-Debug-fbceea7e998a4d7ddd36.json",
+					"name" : "raylib",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "uninstall::@f55e202be9e0e66e2460",
+					"jsonFile" : "target-uninstall-Debug-08d1d4f854b8d3dffc41.json",
+					"name" : "uninstall",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "update_mappings::@330908f6dd293a653379",
+					"jsonFile" : "target-update_mappings-Debug-c3ce5ecd27ee6df87dda.json",
+					"name" : "update_mappings",
+					"projectIndex" : 2
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						5
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						4,
+						5
+					]
+				},
+				{
+					"build" : "libs/raylib-5.5",
+					"childIndexes" : 
+					[
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libs.raylib-5.5-Release-6f5d42c2286270f589b2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "libs/raylib-5.5",
+					"targetIndexes" : 
+					[
+						1,
+						8
+					]
+				},
+				{
+					"build" : "libs/raylib-5.5/raylib",
+					"childIndexes" : 
+					[
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libs.raylib-5.5.raylib-Release-ccb75d493f099a3a37a2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "libs/raylib-5.5/src",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "libs/raylib-5.5/raylib/external/glfw",
+					"childIndexes" : 
+					[
+						4
+					],
+					"jsonFile" : "directory-libs.raylib-5.5.raylib.external.glfw-Release-0cea62002cfccffba015.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 2,
+					"source" : "libs/raylib-5.5/src/external/glfw",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "libs/raylib-5.5/raylib/external/glfw/src",
+					"jsonFile" : "directory-libs.raylib-5.5.raylib.external.glfw.src-Release-3f9a5325f13fc8a4fb88.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 2,
+					"source" : "libs/raylib-5.5/src/external/glfw/src",
+					"targetIndexes" : 
+					[
+						6,
+						9
+					]
+				},
+				{
+					"build" : "libs/raygui-4.0/CMake",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libs.raygui-4.0.CMake-Release-f762088659188ce7e1bc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.11"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "libs/raygui-4.0/CMake",
+					"targetIndexes" : 
+					[
+						3
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						3
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Project",
+					"targetIndexes" : 
+					[
+						0,
+						4,
+						5
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						1,
+						2
+					],
+					"name" : "raylib",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						7,
+						8
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3,
+						4
+					],
+					"name" : "GLFW",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						2,
+						6,
+						9
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "raygui",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Release-1ef357c7f06217e042bd.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@f55e202be9e0e66e2460",
+					"jsonFile" : "target-ALL_BUILD-Release-fdd01f117504ef4cb56e.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ALL_BUILD::@24fb27ac30ec0f3005fa",
+					"jsonFile" : "target-ALL_BUILD-Release-b28d34d577716878a3c7.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "ALL_BUILD::@63ae178baf044a2093e2",
+					"jsonFile" : "target-ALL_BUILD-Release-f373f9c94af668fda3c7.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Project::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Project-Release-4b3fa4fbe8ba53e0f6b8.json",
+					"name" : "Project",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Release-a3bfa8d9b2d807b663e9.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "glfw::@330908f6dd293a653379",
+					"jsonFile" : "target-glfw-Release-c7e90fbefccf24051c69.json",
+					"name" : "glfw",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "raylib::@a6906e04aad214a51709",
+					"jsonFile" : "target-raylib-Release-11972fb672fee3b5ca6b.json",
+					"name" : "raylib",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "uninstall::@f55e202be9e0e66e2460",
+					"jsonFile" : "target-uninstall-Release-08d1d4f854b8d3dffc41.json",
+					"name" : "uninstall",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "update_mappings::@330908f6dd293a653379",
+					"jsonFile" : "target-update_mappings-Release-c3ce5ecd27ee6df87dda.json",
+					"name" : "update_mappings",
+					"projectIndex" : 2
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						5
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-MinSizeRel-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						4,
+						5
+					]
+				},
+				{
+					"build" : "libs/raylib-5.5",
+					"childIndexes" : 
+					[
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libs.raylib-5.5-MinSizeRel-6f5d42c2286270f589b2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "libs/raylib-5.5",
+					"targetIndexes" : 
+					[
+						1,
+						8
+					]
+				},
+				{
+					"build" : "libs/raylib-5.5/raylib",
+					"childIndexes" : 
+					[
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libs.raylib-5.5.raylib-MinSizeRel-a2199dcfe1a69360cc6e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "libs/raylib-5.5/src",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "libs/raylib-5.5/raylib/external/glfw",
+					"childIndexes" : 
+					[
+						4
+					],
+					"jsonFile" : "directory-libs.raylib-5.5.raylib.external.glfw-MinSizeRel-0cea62002cfccffba015.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 2,
+					"source" : "libs/raylib-5.5/src/external/glfw",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "libs/raylib-5.5/raylib/external/glfw/src",
+					"jsonFile" : "directory-libs.raylib-5.5.raylib.external.glfw.src-MinSizeRel-3f9a5325f13fc8a4fb88.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 2,
+					"source" : "libs/raylib-5.5/src/external/glfw/src",
+					"targetIndexes" : 
+					[
+						6,
+						9
+					]
+				},
+				{
+					"build" : "libs/raygui-4.0/CMake",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libs.raygui-4.0.CMake-MinSizeRel-f762088659188ce7e1bc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.11"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "libs/raygui-4.0/CMake",
+					"targetIndexes" : 
+					[
+						3
+					]
+				}
+			],
+			"name" : "MinSizeRel",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						3
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Project",
+					"targetIndexes" : 
+					[
+						0,
+						4,
+						5
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						1,
+						2
+					],
+					"name" : "raylib",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						7,
+						8
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3,
+						4
+					],
+					"name" : "GLFW",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						2,
+						6,
+						9
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "raygui",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-1ef357c7f06217e042bd.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@f55e202be9e0e66e2460",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-fdd01f117504ef4cb56e.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ALL_BUILD::@24fb27ac30ec0f3005fa",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-b28d34d577716878a3c7.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "ALL_BUILD::@63ae178baf044a2093e2",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-f373f9c94af668fda3c7.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Project::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Project-MinSizeRel-27a76df8f7e1f6b369a9.json",
+					"name" : "Project",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-MinSizeRel-a3bfa8d9b2d807b663e9.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "glfw::@330908f6dd293a653379",
+					"jsonFile" : "target-glfw-MinSizeRel-15b3f204939e9c1cd1d5.json",
+					"name" : "glfw",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "raylib::@a6906e04aad214a51709",
+					"jsonFile" : "target-raylib-MinSizeRel-8a9b5303acb62d9c5aa1.json",
+					"name" : "raylib",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "uninstall::@f55e202be9e0e66e2460",
+					"jsonFile" : "target-uninstall-MinSizeRel-08d1d4f854b8d3dffc41.json",
+					"name" : "uninstall",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "update_mappings::@330908f6dd293a653379",
+					"jsonFile" : "target-update_mappings-MinSizeRel-c3ce5ecd27ee6df87dda.json",
+					"name" : "update_mappings",
+					"projectIndex" : 2
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						5
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-RelWithDebInfo-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						4,
+						5
+					]
+				},
+				{
+					"build" : "libs/raylib-5.5",
+					"childIndexes" : 
+					[
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libs.raylib-5.5-RelWithDebInfo-6f5d42c2286270f589b2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "libs/raylib-5.5",
+					"targetIndexes" : 
+					[
+						1,
+						8
+					]
+				},
+				{
+					"build" : "libs/raylib-5.5/raylib",
+					"childIndexes" : 
+					[
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libs.raylib-5.5.raylib-RelWithDebInfo-42dcd662d847789549b7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "libs/raylib-5.5/src",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "libs/raylib-5.5/raylib/external/glfw",
+					"childIndexes" : 
+					[
+						4
+					],
+					"jsonFile" : "directory-libs.raylib-5.5.raylib.external.glfw-RelWithDebInfo-0cea62002cfccffba015.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 2,
+					"source" : "libs/raylib-5.5/src/external/glfw",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "libs/raylib-5.5/raylib/external/glfw/src",
+					"jsonFile" : "directory-libs.raylib-5.5.raylib.external.glfw.src-RelWithDebInfo-3f9a5325f13fc8a4fb88.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 2,
+					"source" : "libs/raylib-5.5/src/external/glfw/src",
+					"targetIndexes" : 
+					[
+						6,
+						9
+					]
+				},
+				{
+					"build" : "libs/raygui-4.0/CMake",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libs.raygui-4.0.CMake-RelWithDebInfo-f762088659188ce7e1bc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.11"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "libs/raygui-4.0/CMake",
+					"targetIndexes" : 
+					[
+						3
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						3
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Project",
+					"targetIndexes" : 
+					[
+						0,
+						4,
+						5
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						1,
+						2
+					],
+					"name" : "raylib",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						7,
+						8
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3,
+						4
+					],
+					"name" : "GLFW",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						2,
+						6,
+						9
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "raygui",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-1ef357c7f06217e042bd.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@f55e202be9e0e66e2460",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-fdd01f117504ef4cb56e.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ALL_BUILD::@24fb27ac30ec0f3005fa",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-b28d34d577716878a3c7.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "ALL_BUILD::@63ae178baf044a2093e2",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-f373f9c94af668fda3c7.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Project::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Project-RelWithDebInfo-81c669302b0bfdaca06e.json",
+					"name" : "Project",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-RelWithDebInfo-a3bfa8d9b2d807b663e9.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "glfw::@330908f6dd293a653379",
+					"jsonFile" : "target-glfw-RelWithDebInfo-3039714372d29f1b8d47.json",
+					"name" : "glfw",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "raylib::@a6906e04aad214a51709",
+					"jsonFile" : "target-raylib-RelWithDebInfo-1fe049f6249c3a8a9278.json",
+					"name" : "raylib",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "uninstall::@f55e202be9e0e66e2460",
+					"jsonFile" : "target-uninstall-RelWithDebInfo-08d1d4f854b8d3dffc41.json",
+					"name" : "uninstall",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "update_mappings::@330908f6dd293a653379",
+					"jsonFile" : "target-update_mappings-RelWithDebInfo-c3ce5ecd27ee6df87dda.json",
+					"name" : "update_mappings",
+					"projectIndex" : 2
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game/build",
+		"source" : "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/C++/Buas-Intake-Opdracht/collision-game"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

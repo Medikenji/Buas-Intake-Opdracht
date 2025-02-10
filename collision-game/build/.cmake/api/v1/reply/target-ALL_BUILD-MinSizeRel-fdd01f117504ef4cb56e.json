@@ -1,0 +1,43 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"libs/raylib-5.5/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "raylib::@a6906e04aad214a51709"
+		},
+		{
+			"id" : "glfw::@330908f6dd293a653379"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "CMakePredefinedTargets"
+	},
+	"id" : "ALL_BUILD::@f55e202be9e0e66e2460",
+	"isGeneratorProvided" : true,
+	"name" : "ALL_BUILD",
+	"paths" : 
+	{
+		"build" : "libs/raylib-5.5",
+		"source" : "libs/raylib-5.5"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}
