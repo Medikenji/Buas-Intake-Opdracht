@@ -1,5 +1,10 @@
 # Build folder
-collision-game/build/
+/collision-game/build/
+
+# IDE folders
+/collision-game/.vs
+/collision-game/.vsc
+/collision-game/CMakeSettings.json
 
 # Prerequisites
 *.d
