@@ -6,7 +6,6 @@
 
 // Forward declaration to avoid circular dependency
 class SceneManager;
-class Button;
 
 /// @brief handles the start and pause scene.
 class StartScene : public Entity {
@@ -23,7 +22,6 @@ private:
 
   static bool _gameStarted;
   SceneManager *_sceneManager;
-  Button *_startButton;
 };
 
 #endif

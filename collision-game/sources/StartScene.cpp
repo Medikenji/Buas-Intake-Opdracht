@@ -11,18 +11,20 @@ StartScene::~StartScene() {
 }
 
 void StartScene::Run(float deltaTime) {
-  if (GuiButton({SCREEN_WIDTH / 2 - 75, SCREEN_HEIGHT / 2 - 90, 150, 50}, "Start Game")) {
-    _sceneManager->SwitchScene(1);
-  }
+  // Draw the title
+  DrawText("Collide!", SCREEN_WIDTH / 2 - MeasureText("Collide!", 50) / 2, SCREEN_HEIGHT / 2 - 150, 50, WHITE);
 
-  if (GuiButton({SCREEN_WIDTH / 2 - 75, SCREEN_HEIGHT / 2 - 25, 150, 50}, "Help")) {
+  // Dynamic start button
+  if (GuiButton({SCREEN_WIDTH / 2 - 75, SCREEN_HEIGHT / 2 - 90, 150, 50}, _gameStarted ? "Resume Game" : "Start Game")) {
+    _gameStarted = true;
     _sceneManager->SwitchScene(2);
   }
-  if (GuiButton({SCREEN_WIDTH / 2 - 75, SCREEN_HEIGHT / 2 + 40, 150, 50}, "Quit Game")) {
-    CloseWindow();
-  }
 
-  for (int i = 0; i < this->children().size(); i++) {
-    this->children()[i]->Run(deltaTime);
+  // Draw the other buttons
+  if (GuiButton({SCREEN_WIDTH / 2 - 75, SCREEN_HEIGHT / 2 - 25, 150, 50}, "Help")) {
+    _sceneManager->SwitchScene(1);
+  }
+  if (GuiButton({SCREEN_WIDTH / 2 - 75, SCREEN_HEIGHT / 2 + 40, 150, 50}, "Quit Game") || IsKeyPressedRepeat(KEY_ESCAPE)) {
+    CloseWindow();
   }
 }

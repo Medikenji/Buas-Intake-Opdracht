@@ -3,6 +3,7 @@
 SceneManager::SceneManager() {
   // Add the scenes to the scene manager
   addChild(this->_startScene = new StartScene(*this));
+  addChild(this->_infoScene = new InfoScene(*this));
   addChild(this->_gameScene = new GameScene());
 
   // Set the current scene to the start scene
@@ -18,5 +19,10 @@ SceneManager::~SceneManager() {
 }
 
 void SceneManager::Run(float deltaTime) {
+  if (IsKeyDown(KEY_ESCAPE)) {
+    _currentScene = 0;
+  }
+
+  // Run the current scene
   this->children()[_currentScene]->Run(deltaTime);
 }

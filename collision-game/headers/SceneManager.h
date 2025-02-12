@@ -3,11 +3,13 @@
 
 #include "Entity.h"
 #include "GameScene.h"
+#include "InfoScene.h"
 #include "StartScene.h"
 
 // Forward declaration to avoid circular dependency
 class StartScene;
 class GameScene;
+class InfoScene;
 
 /// @brief handles the switching of scenes.
 class SceneManager : public Entity {
@@ -30,6 +32,8 @@ private:
   StartScene *_startScene;
   // @brief the actual game.
   GameScene *_gameScene;
+  // @brief the info scene.
+  InfoScene *_infoScene;
 };
 
 #endif

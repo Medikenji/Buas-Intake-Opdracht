@@ -13,6 +13,9 @@ void Core::Run() {
   InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Collide!");
   SetTargetFPS(MAX_FPS);
 
+  // Disable escape to close
+  SetExitKey(NULL);
+
 #if PERFORMANCE_TEST == 1
   SetTargetFPS(1000);
 #endif

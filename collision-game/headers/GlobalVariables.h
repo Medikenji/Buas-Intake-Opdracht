@@ -9,7 +9,7 @@
 #define MAX_FPS 60
 
 // Slightly changes behaviour of the program.
-#define TEST_ENVIROMENT 1
+#define TEST_ENVIROMENT 0
 
 // Changes the FPS to 1000 for performance testing.
 #define PERFORMANCE_TEST 0
