@@ -1,4 +1,4 @@
-#include "scenemanager.h"
+#include "SceneManager.h"
 
 SceneManager::SceneManager() {
   // Add the scenes to the scene manager

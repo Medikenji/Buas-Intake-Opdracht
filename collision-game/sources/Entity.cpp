@@ -1,4 +1,4 @@
-#include "entity.h"
+#include "Entity.h"
 
 int Entity::currentEID = 0;
 

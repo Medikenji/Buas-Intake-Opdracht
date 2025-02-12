@@ -14,7 +14,7 @@ void Core::Run() {
   SetTargetFPS(MAX_FPS);
 
   // Disable escape to close
-  SetExitKey(NULL);
+  SetExitKey(0);
 
 #if PERFORMANCE_TEST == 1
   SetTargetFPS(1000);

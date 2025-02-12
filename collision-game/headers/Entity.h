@@ -7,6 +7,7 @@
 
 #include <cmath>
 #include <iostream>
+#include <stdint.h>
 #include <vector>
 
 /// @brief a base class for all entities.
