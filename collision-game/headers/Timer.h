@@ -11,15 +11,32 @@ public:
   Timer();
   ~Timer();
 
+  /// @brief starts the timer.
   void Start();
+
+  /// @brief stops the timer.
+  void Stop();
+
+  /// @brief resets the timer (calls Start and Stop respectively).
   void Reset();
+
+  /// @brief pauses the timer, different from stopping because it saves the current time.
   void Pause();
+
+  /// @brief unpauses the timer, different from starting because it continues the current time.
   void Unpause();
+
+  /// @brief toggles the pause state of the timer.
   void TogglePause();
+
+  /// @brief gets the time in seconds returns 0 if the timer is stopped.
+  /// @return double: the time in seconds.
   double Seconds();
 
 private:
   // --- Variables --- //
+
+  // State handelers.
   bool _started;
   bool _paused;
   double _startTicks;

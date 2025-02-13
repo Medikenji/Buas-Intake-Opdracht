@@ -7,7 +7,7 @@
 // Forward declaration to avoid circular dependency
 class SceneManager;
 
-/// @Runs the full game loop to keep main clear. Also creates the window.
+/// @brief runs the full game loop to keep main clear. Also creates the window.
 class Core {
 public:
   // --- Functions --- //

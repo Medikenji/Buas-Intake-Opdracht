@@ -20,19 +20,19 @@ public:
   ~SceneManager();
   virtual void Run(float deltaTime);
 
-  // @brief a setter that switches the scene.
+  /// @brief a setter that switches the scene.
   void SwitchScene(int scene) { this->_currentScene = scene; };
 
 private:
   // --- Variables --- //
 
-  // @brief the current scene.
+  /// @brief the current scene.
   int _currentScene;
-  // @brief the start and pause scene.
+  /// @brief the start and pause scene.
   StartScene *_startScene;
-  // @brief the actual game.
+  /// @brief the actual game.
   GameScene *_gameScene;
-  // @brief the info scene.
+  /// @brief the info scene.
   InfoScene *_infoScene;
 };
 

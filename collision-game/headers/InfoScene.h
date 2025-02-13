@@ -7,7 +7,7 @@
 // Forward declaration to avoid circular dependency
 class SceneManager;
 
-/// @brief handles the info scene.
+/// @brief handles the info scene (keybinds and explanation of the game).
 class InfoScene : public Entity {
 
 public:

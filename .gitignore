@@ -3,7 +3,7 @@
 
 # IDE folders
 /collision-game/.vs
-/collision-game/.vsc
+/collision-game/.vscode
 /collision-game/CMakeSettings.json
 
 # Prerequisites

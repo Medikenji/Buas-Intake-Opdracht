@@ -20,19 +20,15 @@ void Core::Run() {
   SetTargetFPS(1000);
 #endif
 
-  bool isFocussed = true;
-
   // Run the game loop
   while (!WindowShouldClose()) {
-    // Check if the window is focused
+    // Check if the window is focused and slow the delta time if not.
     if (IsWindowFocused()) {
-      isFocussed = true;
       this->_deltaTime = 1.0f / MAX_FPS;
 #if PERFORMANCE_TEST == 1
       this->_deltaTime = GetFrameTime();
 #endif
     } else {
-      isFocussed = false;
       this->_deltaTime = (1.0f / MAX_FPS) * 0.1f;
 #if PERFORMANCE_TEST == 1
       this->_deltaTime = GetFrameTime() * 0.1f;

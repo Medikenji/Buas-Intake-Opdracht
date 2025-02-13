@@ -17,7 +17,7 @@ public:
 private:
   // --- Functions --- //
 
-  // @brief handles the input for the player.
+  /// @brief handles the input for the player, to keep the Run function clean.
   void handleInput();
 
   // --- Variables --- //

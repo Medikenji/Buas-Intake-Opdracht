@@ -20,24 +20,24 @@ public:
 private:
   // --- Functions --- //
 
-  // @brief initialises the level (A wrapper around the constructor).
+  /// @brief initialises the level (A wrapper around the constructor).
   void initialiseLevel();
 
-  // @brief handles the collision between players.
-  // @param std::vector<Entity*> players: the player entities to check.
+  /// @brief handles the collision between players.
+  /// @param std::vector<Entity*> players: the player entities to check.
   void handlePlayerToPLayerCollision(std::vector<Entity *> players);
 
-  // @brief handles the boundaries of the entities.
-  // @param std::vector<Entity*> entities: the entities to check.
-  // @param uint8_t type: the type of boundary to check.
+  /// @brief handles the boundaries of the entities.
+  /// @param std::vector<Entity*> entities: the entities to check.
+  /// @param uint8_t type: the type of boundary to check.
   void handleBoundaries(std::vector<Entity *> entities, uint8_t type);
 
   // --- Variables --- //
 
-  // @brief the players in the game.
+  /// @brief the players in the game.
   std::vector<Entity *> _players;
 
-  // @brief a seperate deltaTime for the game physics.
+  /// @brief a seperate deltaTime for the game physics.
   float _gameDeltaTime;
 };
 

@@ -16,14 +16,20 @@ void Timer::Start() {
   _startTicks = GetTime();
 }
 
-void Timer::Reset() {
+void Timer::Stop() {
   _started = false;
   _paused = false;
   _startTicks = 0;
   _pausedTicks = 0;
 }
 
+void Timer::Reset() {
+  Stop();
+  Start();
+}
+
 void Timer::Pause() {
+  // Only pause if the timer is running and isn't already paused.
   if (_started && !_paused) {
     _paused = true;
     _pausedTicks = GetTime() - _startTicks;
@@ -32,6 +38,7 @@ void Timer::Pause() {
 }
 
 void Timer::Unpause() {
+  // Only unpause if the timer is running and is paused.
   if (_started && _paused) {
     _paused = false;
     _startTicks = GetTime() - _pausedTicks;
