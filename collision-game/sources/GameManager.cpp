@@ -2,10 +2,22 @@
 #include <iostream>
 
 GameManager::GameManager() {
+  m_PlayerTimer = new Timer();
+  m_EnemyTimer = new Timer();
+  m_ObjectTimer = new Timer();
   initialiseLevel();
 }
 
 GameManager::~GameManager() {
+  delete m_PlayerTimer;
+  delete m_EnemyTimer;
+  delete m_ObjectTimer;
+  for (int i = 0; i < m_Enemies.size(); i++) {
+    delete m_Enemies[i];
+  }
+  for (int i = 0; i < m_CollisionObjects.size(); i++) {
+    delete m_CollisionObjects[i];
+  }
 }
 
 void GameManager::Run(float deltaTime) {
@@ -39,6 +51,16 @@ void GameManager::handlePlayerToPLayerCollision(std::vector<Entity *> players) {
 
   // If the players are colliding
   if (distance <= std::pow(a->scale.x * 1.25 + b->scale.x * 1.25, 2)) {
+    // Prevent the players from infinitely colliding
+    if (this->m_PlayerTimer->Seconds() != 0) {
+      if (this->m_PlayerTimer->Seconds() > 0.5) {
+        this->m_PlayerTimer->Stop();
+      }
+      return;
+    }
+    this->m_PlayerTimer->Start();
+
+    // Bounce the players off each other
     a->inverseVelocity(1.5);
     a->inverseXVelocity(-1.5);
     b->inverseVelocity(1.5);
