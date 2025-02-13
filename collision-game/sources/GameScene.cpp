@@ -1,7 +1,7 @@
 #include "GameScene.h"
 
 GameScene::GameScene() {
-  this->addChild(_gameManager = new GameManager());
+  this->addChild(m_GameManager = new GameManager());
 }
 
 GameScene::~GameScene() {

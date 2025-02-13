@@ -1,26 +1,26 @@
 #include "Timer.h"
 
 Timer::Timer() {
-  _started = false;
-  _paused = false;
-  _startTicks = 0;
-  _pausedTicks = 0;
+  m_started = false;
+  m_paused = false;
+  m_startTicks = 0;
+  m_pausedTicks = 0;
 }
 
 Timer::~Timer() {
 }
 
 void Timer::Start() {
-  _started = true;
-  _paused = false;
-  _startTicks = GetTime();
+  m_started = true;
+  m_paused = false;
+  m_startTicks = GetTime();
 }
 
 void Timer::Stop() {
-  _started = false;
-  _paused = false;
-  _startTicks = 0;
-  _pausedTicks = 0;
+  m_started = false;
+  m_paused = false;
+  m_startTicks = 0;
+  m_pausedTicks = 0;
 }
 
 void Timer::Reset() {
@@ -30,24 +30,24 @@ void Timer::Reset() {
 
 void Timer::Pause() {
   // Only pause if the timer is running and isn't already paused.
-  if (_started && !_paused) {
-    _paused = true;
-    _pausedTicks = GetTime() - _startTicks;
-    _startTicks = 0;
+  if (m_started && !m_paused) {
+    m_paused = true;
+    m_pausedTicks = GetTime() - m_startTicks;
+    m_startTicks = 0;
   }
 }
 
 void Timer::Unpause() {
   // Only unpause if the timer is running and is paused.
-  if (_started && _paused) {
-    _paused = false;
-    _startTicks = GetTime() - _pausedTicks;
-    _pausedTicks = 0;
+  if (m_started && m_paused) {
+    m_paused = false;
+    m_startTicks = GetTime() - m_pausedTicks;
+    m_pausedTicks = 0;
   }
 }
 
 void Timer::TogglePause() {
-  if (_paused) {
+  if (m_paused) {
     Unpause();
   } else {
     Pause();
@@ -55,11 +55,11 @@ void Timer::TogglePause() {
 }
 
 double Timer::Seconds() {
-  if (_started) {
-    if (_paused) {
-      return _pausedTicks;
+  if (m_started) {
+    if (m_paused) {
+      return m_pausedTicks;
     } else {
-      return GetTime() - _startTicks;
+      return GetTime() - m_startTicks;
     }
   }
   return 0;

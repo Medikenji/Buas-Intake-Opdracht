@@ -37,10 +37,10 @@ private:
   // --- Variables --- //
 
   // State handelers.
-  bool _started;
-  bool _paused;
-  double _startTicks;
-  double _pausedTicks;
+  bool m_started;
+  bool m_paused;
+  double m_startTicks;
+  double m_pausedTicks;
 };
 
 #endif

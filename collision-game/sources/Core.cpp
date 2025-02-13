@@ -1,8 +1,8 @@
 #include "Core.h"
 
 Core::Core() {
-  this->sceneManager = new SceneManager();
-  this->_deltaTime = 0.0f;
+  this->m_SceneManager = new SceneManager();
+  this->m_deltaTime = 0.0f;
 }
 
 Core::~Core() {
@@ -24,23 +24,20 @@ void Core::Run() {
   while (!WindowShouldClose()) {
     // Check if the window is focused and slow the delta time if not.
     if (IsWindowFocused()) {
-      this->_deltaTime = 1.0f / MAX_FPS;
+      this->m_deltaTime = 1.0f / MAX_FPS;
 #if PERFORMANCE_TEST == 1
-      this->_deltaTime = GetFrameTime();
+      this->m_deltaTime = GetFrameTime();
 #endif
     } else {
-      this->_deltaTime = (1.0f / MAX_FPS) * 0.1f;
+      this->m_deltaTime = (1.0f / MAX_FPS) * 0.1f;
 #if PERFORMANCE_TEST == 1
-      this->_deltaTime = GetFrameTime() * 0.1f;
+      this->m_deltaTime = GetFrameTime() * 0.1f;
 #endif
     }
 
-    // Update and draw the scene
-    sceneManager->Run(this->_deltaTime);
-
     BeginDrawing();
     ClearBackground(BLACK);
-    sceneManager->Run(_deltaTime);
+    this->m_SceneManager->Run(m_deltaTime);
 #if TEST_ENVIROMENT == 1 || PERFORMANCE_TEST == 1
     DrawFPS(0, 0);
 #endif

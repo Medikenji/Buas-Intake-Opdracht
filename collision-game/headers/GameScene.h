@@ -24,7 +24,7 @@ public:
 private:
   // --- Variables --- //
 
-  GameManager *_gameManager;
+  GameManager *m_GameManager;
 };
 
 #endif

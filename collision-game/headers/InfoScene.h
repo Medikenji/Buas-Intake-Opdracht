@@ -17,7 +17,7 @@ public:
   void Run(float deltaTime) override;
 
 private:
-  SceneManager *_sceneManager;
+  SceneManager *m_SceneManager;
 };
 
 #endif

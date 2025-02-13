@@ -1,7 +1,7 @@
 #include "InfoScene.h"
 
 InfoScene::InfoScene(SceneManager &scenemanager) {
-  this->_sceneManager = &scenemanager;
+  this->m_SceneManager = &scenemanager;
 }
 
 InfoScene::~InfoScene() {

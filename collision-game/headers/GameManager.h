@@ -3,9 +3,11 @@
 
 #include "Entity.h"
 #include "Player.h"
+#include "Timer.h"
 
 // Forward declaration to avoid circular dependency
 class Player;
+class Timer;
 
 /// @brief handles the game logic.
 class GameManager : public Entity {
@@ -34,11 +36,22 @@ private:
 
   // --- Variables --- //
 
+  // Creating seperate lists and timers for all the entities in the game.
+
   /// @brief the players in the game.
-  std::vector<Entity *> _players;
+  std::vector<Entity *> m_Players;
+  Timer *m_PlayerTimer;
+
+  /// @brief the enemies in the game.
+  std::vector<Entity *> m_Enemies;
+  Timer *m_EnemyTimer;
+
+  /// @brief the stoic collision objects in the game.
+  std::vector<Entity *> m_CollisionObjects;
+  Timer *m_ObjectTimer;
 
   /// @brief a seperate deltaTime for the game physics.
-  float _gameDeltaTime;
+  float m_gameDeltaTime;
 };
 
 #endif

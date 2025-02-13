@@ -21,19 +21,19 @@ public:
   virtual void Run(float deltaTime);
 
   /// @brief a setter that switches the scene.
-  void SwitchScene(int scene) { this->_currentScene = scene; };
+  void SwitchScene(int scene) { this->m_currentScene = scene; };
 
 private:
   // --- Variables --- //
 
   /// @brief the current scene.
-  int _currentScene;
+  int m_currentScene;
   /// @brief the start and pause scene.
-  StartScene *_startScene;
+  StartScene *m_StartScene;
   /// @brief the actual game.
-  GameScene *_gameScene;
+  GameScene *m_GameScene;
   /// @brief the info scene.
-  InfoScene *_infoScene;
+  InfoScene *m_InfoScene;
 };
 
 #endif

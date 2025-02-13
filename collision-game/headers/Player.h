@@ -24,11 +24,12 @@ private:
   void handleSize();
 
   // --- Variables --- //
-  static int s_playerNum;
-  float _speed;
-  int _scale;
-  int _playerNum;
-  Color _playerColor;
+  static int m_s_playerNum;
+  float m_health;
+  float m_speed;
+  int m_scale;
+  int m_playerNum;
+  Color m_playerColor;
 };
 
 #endif

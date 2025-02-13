@@ -9,17 +9,17 @@ GameManager::~GameManager() {
 }
 
 void GameManager::Run(float deltaTime) {
-  this->_gameDeltaTime = deltaTime;
-  handleBoundaries(_players, 1);
-  handlePlayerToPLayerCollision(_players);
-  this->runChildren(_gameDeltaTime);
+  this->m_gameDeltaTime = deltaTime;
+  handleBoundaries(m_Players, 1);
+  handlePlayerToPLayerCollision(m_Players);
+  this->runChildren(m_gameDeltaTime);
 }
 
 void GameManager::initialiseLevel() {
-  this->_players.push_back(new Player());
-  this->addChild(_players[0]);
-  this->_players.push_back(new Player());
-  this->addChild(_players[1]);
+  this->m_Players.push_back(new Player());
+  this->addChild(m_Players[0]);
+  this->m_Players.push_back(new Player());
+  this->addChild(m_Players[1]);
 }
 
 void GameManager::handlePlayerToPLayerCollision(std::vector<Entity *> players) {
@@ -35,7 +35,7 @@ void GameManager::handlePlayerToPLayerCollision(std::vector<Entity *> players) {
   float distance = x * x + y * y;
 
   // Handle slow motion
-  _gameDeltaTime /= 1 + ((a->getTotalSpeedInt() + b->getTotalSpeedInt()) / (5 * distance));
+  m_gameDeltaTime /= 1 + ((a->getTotalSpeedInt() + b->getTotalSpeedInt()) / (5 * distance));
 
   // If the players are colliding
   if (distance <= std::pow(a->scale.x * 1.25 + b->scale.x * 1.25, 2)) {

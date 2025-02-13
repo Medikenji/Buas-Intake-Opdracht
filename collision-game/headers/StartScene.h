@@ -20,8 +20,8 @@ public:
 private:
   // --- Variables --- //
 
-  static bool _gameStarted;
-  SceneManager *_sceneManager;
+  bool m_gameStarted;
+  SceneManager *m_SceneManager;
 };
 
 #endif

@@ -20,8 +20,8 @@ public:
 private:
   // --- Variables --- //
 
-  SceneManager *sceneManager;
-  float _deltaTime;
+  SceneManager *m_SceneManager;
+  float m_deltaTime;
 };
 
 #endif
