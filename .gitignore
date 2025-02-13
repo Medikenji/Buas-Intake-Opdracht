@@ -2,9 +2,9 @@
 /collision-game/build/
 
 # IDE folders
-/collision-game/.vs
-/collision-game/.vscode
-/collision-game/CMakeSettings.json
+/collision-game/.vs/
+/collision-game/.vscode/
+/collision-game/CMakeSettings.json/
 
 # Prerequisites
 *.d
