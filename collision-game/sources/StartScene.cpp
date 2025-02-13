@@ -26,4 +26,8 @@ void StartScene::Run(float deltaTime) {
   if (GuiButton({SCREEN_WIDTH / 2 - 75, SCREEN_HEIGHT / 2 + 40, 150, 50}, "Quit Game") || IsKeyPressedRepeat(KEY_ESCAPE)) {
     CloseWindow();
   }
+
+  if (GuiButton({0, SCREEN_HEIGHT - 50, 100, 50}, "Toggle Fullscreen")) {
+    ToggleFullscreen();
+  }
 }
