@@ -6,6 +6,7 @@ Core::Core() {
 }
 
 Core::~Core() {
+  delete this->m_SceneManager;
 }
 
 void Core::Run() {

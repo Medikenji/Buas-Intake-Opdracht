@@ -5,6 +5,7 @@ GameScene::GameScene() {
 }
 
 GameScene::~GameScene() {
+  delete m_GameManager;
 }
 
 void GameScene::Run(float deltaTime) {

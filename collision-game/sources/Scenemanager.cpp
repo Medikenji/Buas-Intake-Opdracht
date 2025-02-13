@@ -16,6 +16,10 @@ SceneManager::SceneManager() {
 }
 
 SceneManager::~SceneManager() {
+  // Delete the scenes
+  delete this->m_StartScene;
+  delete this->m_InfoScene;
+  delete this->m_GameScene;
 }
 
 void SceneManager::Run(float deltaTime) {
