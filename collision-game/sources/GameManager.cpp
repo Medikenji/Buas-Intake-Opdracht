@@ -47,7 +47,7 @@ void GameManager::handlePlayerToPLayerCollision(std::vector<Entity *> players) {
   float distance = x * x + y * y;
 
   // Handle slow motion
-  m_gameDeltaTime /= 1 + ((a->getTotalSpeedInt() + b->getTotalSpeedInt()) / (5 * distance));
+  m_gameDeltaTime /= 1 + ((a->getTotalSpeedInt() + b->getTotalSpeedInt()) / (distance));
 
   // If the players are colliding
   if (distance <= std::pow(a->scale.x * 1.25 + b->scale.x * 1.25, 2)) {
@@ -60,11 +60,20 @@ void GameManager::handlePlayerToPLayerCollision(std::vector<Entity *> players) {
     }
     this->m_PlayerTimer->Start();
 
+    if (a->getTotalSpeedInt() < 50) {
+      a->velocity.x -= b->velocity.x / 2;
+      a->velocity.y -= b->velocity.y / 2;
+    }
+    if (b->getTotalSpeedFloat() < 50) {
+      b->velocity.x -= a->velocity.x / 2;
+      b->velocity.y -= a->velocity.y / 2;
+    }
+
     // Bounce the players off each other
-    a->inverseVelocity(1.5);
-    a->inverseXVelocity(-1.5);
-    b->inverseVelocity(1.5);
-    b->inverseYVelocity(-1.5);
+    a->inverseVelocity(3);
+    a->inverseXVelocity(-3);
+    b->inverseVelocity(3);
+    b->inverseYVelocity(-3);
   }
 }
 

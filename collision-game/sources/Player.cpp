@@ -4,7 +4,7 @@ int Player::m_s_playerNum = 0;
 
 Player::Player() {
   this->m_playerNum = Player::m_s_playerNum++;
-  this->m_speed = 15;
+  this->m_speed = 1000;
   this->m_scale = 5;
   this->inBounds = true;
 
@@ -22,15 +22,15 @@ Player::~Player() {
 }
 
 void Player::Run(float deltaTime) {
-  this->handleInput();
+  this->handleInput(deltaTime);
 
   // Move the player
   this->position.x += this->velocity.x * deltaTime;
   this->position.y += this->velocity.y * deltaTime;
 
   // Slow down the player
-  this->velocity.x *= std::pow(0.3f, deltaTime);
-  this->velocity.y *= std::pow(0.3f, deltaTime);
+  this->velocity.x *= std::pow(0.1f, deltaTime);
+  this->velocity.y *= std::pow(0.1f, deltaTime);
 
   this->handleSize();
 
@@ -38,39 +38,39 @@ void Player::Run(float deltaTime) {
   DrawCircleLines((int)this->position.x, (int)this->position.y, this->scale.x, m_playerColor);
 }
 
-void Player::handleInput() {
+void Player::handleInput(float deltaTime) {
   if (m_playerNum == 0) {
     if (IsKeyDown(KEY_UP)) {
-      this->velocity.y -= this->m_speed;
+      this->velocity.y -= this->m_speed * deltaTime;
     }
     if (IsKeyDown(KEY_DOWN)) {
-      this->velocity.y += this->m_speed;
+      this->velocity.y += this->m_speed * deltaTime;
     }
     if (IsKeyDown(KEY_LEFT)) {
-      this->velocity.x -= this->m_speed;
+      this->velocity.x -= this->m_speed * deltaTime;
     }
     if (IsKeyDown(KEY_RIGHT)) {
-      this->velocity.x += this->m_speed;
+      this->velocity.x += this->m_speed * deltaTime;
     }
   } else {
     if (IsKeyDown(KEY_W)) {
-      this->velocity.y -= this->m_speed;
+      this->velocity.y -= this->m_speed * deltaTime;
     }
     if (IsKeyDown(KEY_S)) {
-      this->velocity.y += this->m_speed;
+      this->velocity.y += this->m_speed * deltaTime;
     }
     if (IsKeyDown(KEY_A)) {
-      this->velocity.x -= this->m_speed;
+      this->velocity.x -= this->m_speed * deltaTime;
     }
     if (IsKeyDown(KEY_D)) {
-      this->velocity.x += this->m_speed;
+      this->velocity.x += this->m_speed * deltaTime;
     }
   }
 }
 
 void Player::handleSize() {
-  this->scale.x = this->getTotalSpeedInt() * 0.02 + this->m_scale;
-  if (this->scale.x > 100) {
-    this->scale.x = 100;
+  this->scale.x = this->getTotalSpeedInt() * 0.05 + this->m_scale;
+  if (this->scale.x > m_scale * 4) {
+    this->scale.x = m_scale * 4;
   }
 }
