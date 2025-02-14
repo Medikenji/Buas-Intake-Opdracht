@@ -1,6 +1,7 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
+#include "Cursor.h"
 #include "GlobalVariables.h"
 #include "raygui.h"
 #include "raylib.h"
@@ -9,6 +10,9 @@
 #include <iostream>
 #include <stdint.h>
 #include <vector>
+
+// Forward declaration to avoid circular dependency
+class Cursor;
 
 /// @brief a base class for all entities
 class Entity {

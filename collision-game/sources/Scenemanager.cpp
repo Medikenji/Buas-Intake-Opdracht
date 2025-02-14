@@ -24,6 +24,7 @@ SceneManager::~SceneManager() {
 
 void SceneManager::Run(float deltaTime) {
   if (IsKeyDown(KEY_ESCAPE)) {
+    Cursor::SetCursorState(DEFAULT_CURSOR);
     m_currentScene = 0;
   }
 

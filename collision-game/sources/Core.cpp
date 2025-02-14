@@ -12,14 +12,18 @@ Core::~Core() {
 void Core::Run() {
   // Initialize the window
   InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Collide!");
+
+  // Limit the framerate
   SetTargetFPS(MAX_FPS);
+#if PERFORMANCE_TEST == 1
+  SetTargetFPS(1000);
+#endif
 
   // Disable escape to close
   SetExitKey(0);
 
-#if PERFORMANCE_TEST == 1
-  SetTargetFPS(1000);
-#endif
+  // Disable the cursor
+  HideCursor();
 
   // Run the game loop
   while (!WindowShouldClose()) {
@@ -39,6 +43,7 @@ void Core::Run() {
     BeginDrawing();
     ClearBackground(BLACK);
     this->m_SceneManager->Run(m_deltaTime);
+    this->m_Cursor.drawCursor();
 #if TEST_ENVIROMENT == 1 || PERFORMANCE_TEST == 1
     DrawFPS(0, 0);
 #endif

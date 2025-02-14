@@ -16,6 +16,7 @@ void StartScene::Run(float deltaTime) {
   // Dynamic start button
   if (GuiButton({SCREEN_WIDTH / 2 - 75, SCREEN_HEIGHT / 2 - 90, 150, 50}, m_gameStarted ? "Resume Game" : "Start Game")) {
     m_gameStarted = true;
+    Cursor::SetCursorState(HIDDEN_CURSOR);
     m_SceneManager->SwitchScene(2);
   }
 
