@@ -2,7 +2,7 @@
 #define PLAYER_H
 
 #include "Entity.h"
-#include "GlobalVariables.h"
+#include "Timer.h"
 
 /// @brief handles the player entity.
 class Player : public Entity {
@@ -11,8 +11,9 @@ public:
 
   Player();
   ~Player();
-
   virtual void Run(float deltaTime);
+
+  void tempDisableInput();
 
 private:
   // --- Functions --- //
@@ -25,6 +26,8 @@ private:
 
   // --- Variables --- //
   static int m_s_playerNum;
+  Timer *m_InputTimer;
+  bool m_allowInput;
   float m_health;
   float m_speed;
   int m_scale;

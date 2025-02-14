@@ -26,7 +26,7 @@ void Core::Run() {
   HideCursor();
 
   // Run the game loop
-  while (!WindowShouldClose()) {
+  while (!WindowShouldClose() && !SceneManager::s_exitProgram) {
     // Check if the window is focused and slow the delta time if not.
     if (IsWindowFocused()) {
       this->m_deltaTime = 1.0f / MAX_FPS;

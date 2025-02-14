@@ -23,6 +23,8 @@ public:
   /// @brief a setter that switches the scene.
   void SwitchScene(int scene) { this->m_currentScene = scene; };
 
+  static bool s_exitProgram;
+
 private:
   // --- Variables --- //
 

@@ -4,7 +4,7 @@
 // A set of global const variables that can be used throughout the program.
 
 #define SCREEN_WIDTH  1280
-#define SCREEN_HEIGHT 720
+#define SCREEN_HEIGHT 1280
 
 #define MAX_FPS 60
 

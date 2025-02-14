@@ -35,23 +35,23 @@ void GameManager::initialiseLevel() {
 }
 
 void GameManager::handlePlayerToPLayerCollision(std::vector<Entity *> players) {
-  // Made with help from: https://www.jeffreythompson.org/collision-detection/circle-circle.php and my friend Douwe.
+  // made with help from: https://www.jeffreythompson.org/collision-detection/circle-circle.php and my friend Douwe
 
-  // Cast the entities to players for easier readability.
+  // cast the entities to their class to allow Player functions
   Player *a = dynamic_cast<Player *>(players[0]);
   Player *b = dynamic_cast<Player *>(players[1]);
 
-  // Calculate the distance between the players.
+  // calculate the distance between the players
   float x = a->position.x - b->position.x;
   float y = a->position.y - b->position.y;
   float distance = x * x + y * y;
 
-  // Handle slow motion
-  m_gameDeltaTime /= 1 + ((a->getTotalSpeedInt() + b->getTotalSpeedInt()) / (distance));
+  // handle slow motion
+  m_gameDeltaTime /= 1 + ((a->getTotalSpeedInt() + b->getTotalSpeedInt()) / (0.25 * distance));
 
-  // If the players are colliding
-  if (distance <= std::pow(a->scale.x * 1.25 + b->scale.x * 1.25, 2)) {
-    // Prevent the players from infinitely colliding
+  // if the players are colliding
+  if (distance <= std::pow(a->scale.x + b->scale.x, 2)) {
+    // prevent the players from infinitely colliding
     if (this->m_PlayerTimer->Seconds() != 0) {
       if (this->m_PlayerTimer->Seconds() > 0.5) {
         this->m_PlayerTimer->Stop();
@@ -59,6 +59,10 @@ void GameManager::handlePlayerToPLayerCollision(std::vector<Entity *> players) {
       return;
     }
     this->m_PlayerTimer->Start();
+
+    // temporarily disable input when colliding
+    a->tempDisableInput();
+    b->tempDisableInput();
 
     if (a->getTotalSpeedInt() < 50) {
       a->velocity.x -= b->velocity.x / 2;
@@ -69,7 +73,7 @@ void GameManager::handlePlayerToPLayerCollision(std::vector<Entity *> players) {
       b->velocity.y -= a->velocity.y / 2;
     }
 
-    // Bounce the players off each other
+    // bounce the players off each other
     a->inverseVelocity(3);
     a->inverseXVelocity(-3);
     b->inverseVelocity(3);
@@ -80,7 +84,7 @@ void GameManager::handlePlayerToPLayerCollision(std::vector<Entity *> players) {
 void GameManager::handleBoundaries(std::vector<Entity *> entities, uint8_t type) {
   switch (type) {
 
-    // If the entities are players
+    // if the entities are players
   case 1:
     for (int i = 0; i < entities.size(); i++) {
       Entity *entity = entities[i];
@@ -104,6 +108,6 @@ void GameManager::handleBoundaries(std::vector<Entity *> entities, uint8_t type)
       }
     }
     break;
-    // End of player case
+    // end of player case
   }
 }

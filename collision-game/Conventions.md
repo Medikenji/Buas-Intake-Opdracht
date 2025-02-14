@@ -79,7 +79,12 @@ MY_VARIABLE
 
 #### Pointers
 
-> ***Nothing***
+> PascalCase
+
+int* Variable
+
+MyClass* MyVariable
+
 
 #### Public
 
@@ -87,11 +92,7 @@ MY_VARIABLE
 
 #### Protected
 
-> PascalCase
-
-int* Variable
-
-MyClass* MyVariable1
+> ***Nothing***
 
 #### Private
 

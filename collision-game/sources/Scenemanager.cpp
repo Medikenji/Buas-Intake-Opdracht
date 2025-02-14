@@ -1,5 +1,7 @@
 #include "SceneManager.h"
 
+bool SceneManager::s_exitProgram = false;
+
 SceneManager::SceneManager() {
   // Add the scenes to the scene manager
   addChild(this->m_StartScene = new StartScene(*this));
