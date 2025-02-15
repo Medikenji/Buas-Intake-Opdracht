@@ -4,19 +4,23 @@
 #include "Entity.h"
 #include "SceneManager.h"
 
-// Forward declaration to avoid circular dependency
+// forward declaration to avoid circular dependency
 class SceneManager;
 
-/// @brief handles the info scene (keybinds and explanation of the game).
+/// @brief handles the info scene (keybinds and explanation of the game)
 class InfoScene : public Entity {
 
 public:
+  // --- Functions --- //
+
   InfoScene(SceneManager &scenemanager);
   ~InfoScene();
 
   void Run(float deltaTime) override;
 
 private:
+  // --- Variables --- //
+
   SceneManager *m_SceneManager;
 };
 

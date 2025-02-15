@@ -77,14 +77,21 @@ MY_VARIABLE
 
 ### Variable modifiers
 
+#### Stack variables
+
+> snake_case
+
+int variable
+
+int my_variable
+
 #### Pointers
 
 > PascalCase
 
 int* Variable
 
-MyClass* MyVariable
-
+MyClass* PointerVariable
 
 #### Public
 

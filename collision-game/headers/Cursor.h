@@ -7,7 +7,7 @@
 #define DEFAULT_CURSOR 0
 #define HIDDEN_CURSOR  1
 
-/// @brief a cursor entity that replaces the OS cursor.
+/// @brief a cursor entity that replaces the OS cursor
 class Cursor {
 public:
   // --- Functions --- //

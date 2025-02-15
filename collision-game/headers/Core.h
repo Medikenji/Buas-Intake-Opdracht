@@ -3,11 +3,11 @@
 
 #include "SceneManager.h"
 
-// Forward declaration to avoid circular dependency
+// forward declaration to avoid circular dependency
 class SceneManager;
 class Cursor;
 
-/// @brief runs the full game loop to keep main clear. Also creates the window.
+/// @brief runs the full game loop to keep main clear, also creates the window
 class Core {
 public:
   // --- Functions --- //

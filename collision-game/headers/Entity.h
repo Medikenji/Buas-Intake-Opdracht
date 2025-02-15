@@ -2,7 +2,8 @@
 #define ENTITY_H
 
 #include "Cursor.h"
-#include "GlobalVariables.h"
+#include "GAME_CONFIG.h"
+#include "PROGRAM_CONFIG.h"
 #include "raygui.h"
 #include "raylib.h"
 
@@ -11,7 +12,7 @@
 #include <stdint.h>
 #include <vector>
 
-// Forward declaration to avoid circular dependency
+// forward declaration to avoid circular dependency
 class Cursor;
 
 /// @brief a base class for all entities
@@ -85,6 +86,7 @@ public:
 
 private:
   // --- Variables --- //
+
   static int m_s_currentEID;
   int m_EID;
   Entity *m_Parent;

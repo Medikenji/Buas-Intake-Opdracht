@@ -12,16 +12,20 @@ Cursor::~Cursor() {
 void Cursor::drawCursor() {
   m_position = GetMousePosition();
   switch (m_s_cursorState) {
+    // styling of default cursor
   case DEFAULT_CURSOR:
     DrawCircleV({m_position}, m_scale + 1, DARKGRAY);
     DrawCircleLinesV({m_position}, m_scale, WHITE);
     DrawCircleV({m_position}, m_scale / 2, WHITE);
     break;
+
+    // styling of hidden cursor
   case HIDDEN_CURSOR:
     break;
 
+    // styling when N/A cursor happens, should not be possible
   default:
-    DrawCircleV({0, 0}, 10.0f, RED);
+    DrawCircleV({SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2}, 10.0f, RED);
     break;
   }
 }

@@ -4,7 +4,7 @@
 #include "Entity.h"
 #include "Timer.h"
 
-/// @brief handles the player entity.
+/// @brief handles the player entity
 class Player : public Entity {
 public:
   // --- Functions --- //
@@ -18,13 +18,14 @@ public:
 private:
   // --- Functions --- //
 
-  /// @brief handles the input for the player, to keep the Run function clean. (Supports max 2 players)
+  /// @brief handles the input for the player, to keep the Run function clean (Supports max 2 players)
   void handleInput(float deltaTime);
 
-  /// @brief handles the size of the player, has a max size of 100. Exists to keep the Run function clean.
+  /// @brief handles the dynamic size of the player, exists to keep the Run function clean
   void handleSize();
 
   // --- Variables --- //
+
   static int m_s_playerNum;
   Timer *m_InputTimer;
   bool m_allowInput;

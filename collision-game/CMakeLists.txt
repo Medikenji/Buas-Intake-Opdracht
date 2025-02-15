@@ -18,6 +18,7 @@ add_executable(GameToCollide ${GAME_SOURCES})
 
 # Include directories
 target_include_directories(GameToCollide PRIVATE ${CMAKE_SOURCE_DIR}/headers)
+target_include_directories(GameToCollide PRIVATE ${CMAKE_SOURCE_DIR}/configurations)
 
 # Link the raylib library
 target_link_libraries(GameToCollide PRIVATE raylib)

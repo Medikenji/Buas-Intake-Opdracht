@@ -7,7 +7,7 @@
 // Forward declaration to avoid circular dependency
 class SceneManager;
 
-/// @brief handles the start and pause scene.
+/// @brief handles the start and pause scene
 class StartScene : public Entity {
 public:
   // --- Functions --- //

@@ -43,12 +43,13 @@ void Player::Run(float deltaTime) {
 }
 
 void Player::handleInput(float deltaTime) {
-  std::cout << m_allowInput << std::endl;
+  // disables movement after colliding for a set amount of time
+  // NOTE TO SELF: probably gotta refactor this some time
   if (!m_allowInput) {
     if (m_InputTimer->Seconds() == 0) {
       m_InputTimer->Start();
     }
-    if (m_InputTimer->Seconds() > 0.5) {
+    if (m_InputTimer->Seconds() > PLAYERCOL_IFRAMES) {
       m_InputTimer->Stop();
       m_allowInput = true;
     }

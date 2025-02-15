@@ -1,5 +1,4 @@
 #include "GameManager.h"
-#include <iostream>
 
 GameManager::GameManager() {
   m_PlayerTimer = new Timer();
@@ -53,7 +52,7 @@ void GameManager::handlePlayerToPLayerCollision(std::vector<Entity *> players) {
   if (distance <= std::pow(a->scale.x + b->scale.x, 2)) {
     // prevent the players from infinitely colliding
     if (this->m_PlayerTimer->Seconds() != 0) {
-      if (this->m_PlayerTimer->Seconds() > 0.5) {
+      if (this->m_PlayerTimer->Seconds() > PLAYERCOL_IFRAMES) {
         this->m_PlayerTimer->Stop();
       }
       return;
@@ -74,10 +73,10 @@ void GameManager::handlePlayerToPLayerCollision(std::vector<Entity *> players) {
     }
 
     // bounce the players off each other
-    a->inverseVelocity(3);
-    a->inverseXVelocity(-3);
-    b->inverseVelocity(3);
-    b->inverseYVelocity(-3);
+    a->inverseVelocity(PLAYER_BOUNCE);
+    a->inverseXVelocity(-PLAYER_BOUNCE);
+    b->inverseVelocity(PLAYER_BOUNCE);
+    b->inverseYVelocity(-PLAYER_BOUNCE);
   }
 }
 
@@ -86,24 +85,25 @@ void GameManager::handleBoundaries(std::vector<Entity *> entities, uint8_t type)
 
     // if the entities are players
   case 1:
+    int bounce_strength = 0.5;
     for (int i = 0; i < entities.size(); i++) {
       Entity *entity = entities[i];
       if (entity->inBounds) {
         if (entity->position.x < 0 + entity->scale.x) {
           entity->position.x = 0 + entity->scale.x;
-          entity->inverseXVelocity(0.5);
+          entity->inverseXVelocity(bounce_strength);
         }
         if (entity->position.x > SCREEN_WIDTH - entity->scale.x) {
           entity->position.x = SCREEN_WIDTH - entity->scale.x;
-          entity->inverseXVelocity(0.5);
+          entity->inverseXVelocity(bounce_strength);
         }
         if (entity->position.y < 0 + entity->scale.x) {
           entity->position.y = 0 + entity->scale.x;
-          entity->inverseYVelocity(0.5);
+          entity->inverseYVelocity(bounce_strength);
         }
         if (entity->position.y > SCREEN_HEIGHT - entity->scale.x) {
           entity->position.y = SCREEN_HEIGHT - entity->scale.x;
-          entity->inverseYVelocity(0.5);
+          entity->inverseYVelocity(bounce_strength);
         }
       }
     }
