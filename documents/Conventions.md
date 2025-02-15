@@ -38,6 +38,56 @@ variable
 
 myVariable
 
+#### Variable modifiers
+
+##### Stack variables
+
+> snake_case
+
+int variable
+
+int my_variable
+
+##### Pointers
+
+> PascalCase
+
+int* Variable
+
+MyClass* MyVariable
+
+##### Public
+
+> ***Nothing***
+
+##### Protected
+
+> ***Nothing***
+
+##### Private
+
+> ***m_*** before variable
+
+m_variable
+
+m_myVariable
+
+##### Static
+
+> ***s_*** before variable
+
+s_variable
+
+s_myVariable
+
+##### *In case of variables being static and private*
+
+> ***m_s_*** before variable
+
+m_s_variable
+
+m_s_myVariable
+
 ---
 
 ### Comments
@@ -50,7 +100,7 @@ myVariable
 
 ```cpp
 // this is a comment without variables
-// this is a comment referencing the m_s_PrivateStaticClass class
+// this is a comment referencing the m_s_privateStaticVariable variable
 ```
 
 #### Variable comments
@@ -59,7 +109,7 @@ myVariable
 
 ```cpp
 /// @brief explanation of variable
-/// @param MyClass* classParam: explanation of param
+/// @param MyClass* variableParam: explanation of param
 /// @return m_myVariable: explanation of return 
 ```
 
@@ -72,54 +122,3 @@ myVariable
 VARIABLE
 
 MY_VARIABLE
-
----
-
-### Variable modifiers
-
-#### Stack variables
-
-> snake_case
-
-int variable
-
-int my_variable
-
-#### Pointers
-
-> PascalCase
-
-int* Variable
-
-MyClass* PointerVariable
-
-#### Public
-
-> ***Nothing***
-
-#### Protected
-
-> ***Nothing***
-
-#### Private
-
-> ***m_*** before variable
-
-m_privateVariable
-
-m_PrivateClass
-
-#### Static
-
-> ***s_*** before variable
-
-s_staticVariable
-
-s_staticFunction
-
-#### *In case of variables being static and private*
-> ***m_s_*** before variable
-
-m_s_privateStaticVariable
-
-m_s_privateStaticFunction

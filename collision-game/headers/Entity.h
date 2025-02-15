@@ -71,7 +71,7 @@ public:
   /// @param float strength: the strength of the inverse, defaults to 1
   void inverseYVelocity(float strength = 1.0f);
 
-  /// @brief gets the marked for deletion status
+  /// @brief sets the marked for deletion status
   void goDie() { m_markedForDeletion = true; }
 
   // --- Variables --- //
