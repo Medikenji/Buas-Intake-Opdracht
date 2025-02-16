@@ -2,8 +2,12 @@
 
 GameScene::GameScene() {
   this->addChild(m_GameManager = new GameManager());
-  // position.x = (NON_SCALER - SCALER) / 2;
+#ifdef PRIMARY_Y
+  position.x = (NON_SCALER - SCALER) / 2;
+#endif
+#ifdef PRIMARY_X
   position.y = (NON_SCALER - SCALER) / 2;
+#endif
   this->scale = {SCALER,
                  SCALER};
 }

@@ -3,8 +3,8 @@
 
 // a set of variables that change the behaviour of the program
 
-#define SCREEN_WIDTH  900
-#define SCREEN_HEIGHT 1080
+#define SCREEN_WIDTH  1280
+#define SCREEN_HEIGHT 720
 
 #define MAX_FPS 60
 
@@ -15,9 +15,11 @@
 #define PERFORMANCE_TEST 0
 
 #if SCREEN_WIDTH > SCREEN_HEIGHT
+#define PRIMARY_Y
 #define SCALER     SCREEN_HEIGHT
 #define NON_SCALER SCREEN_WIDTH
 #else
+#define PRIMARY_X
 #define SCALER     SCREEN_WIDTH
 #define NON_SCALER SCREEN_HEIGHT
 #endif
