@@ -11,7 +11,7 @@ add_subdirectory(libs/raylib-5.5)
 add_subdirectory(libs/raygui-4.0/CMake)
 
 # Add the sources
-file(GLOB GAME_SOURCES "main.cpp" "sources/*.cpp" "headers/*.h")
+file(GLOB GAME_SOURCES "main.cpp" "sources/*.cpp")
 
 # Add the main executable
 add_executable(GameToCollide ${GAME_SOURCES})
