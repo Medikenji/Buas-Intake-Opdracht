@@ -14,10 +14,8 @@ Player::Player() {
   // set the player color and startpos based on player number
   if (this->m_playerNum == 0) {
     this->position = {SCREEN_WIDTH - this->scale.x, SCREEN_HEIGHT - this->scale.x};
-    this->m_playerColor = MAGENTA;
   } else {
     this->position = {0 + this->scale.x, 0 + this->scale.x};
-    m_playerColor = SKYBLUE;
   }
 }
 
@@ -69,12 +67,14 @@ void Player::handleInput(float deltaTime) {
       m_InputTimer->Stop();
       m_allowInput = true;
     }
+    m_playerColor = WHITE;
     return;
   }
   // sets the speed correctly
   this->m_speed = SCALER * 2 * (1 + 1 / this->scale.x);
 
   if (m_playerNum == 0) {
+    this->m_playerColor = MAGENTA;
     if (IsKeyDown(KEY_UP) || GetMouseDelta().y < 0) {
       this->velocity.y -= this->m_speed * deltaTime;
     }
@@ -88,6 +88,7 @@ void Player::handleInput(float deltaTime) {
       this->velocity.x += this->m_speed * deltaTime;
     }
   } else {
+    m_playerColor = SKYBLUE;
     if (IsKeyDown(KEY_W)) {
       this->velocity.y -= this->m_speed * deltaTime;
     }
