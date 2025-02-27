@@ -10,7 +10,7 @@ Core::~Core() {
 
 void Core::Run() {
   // Initialize the window
-  InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Collide!");
+  InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Kolvor!");
 
   // Limit the framerate
   SetTargetFPS(MAX_FPS);

@@ -13,6 +13,19 @@ public:
   ~Player();
   virtual void Run(float deltaTime);
 
+  /// @brief inverses the full velocity of the player
+  /// @param float strength: the strength of the inverse, defaults to 1
+  void inverseVelocity(float strength = 1.0f);
+
+  /// @brief inverses the X velocity of the player with a given strength
+  /// @param float strength: the strength of the inverse, defaults to 1
+  void inverseXVelocity(float strength = 1.0f);
+
+  /// @brief inverses the Y velocity of the player with a given strength
+  /// @param float strength: the strength of the inverse, defaults to 1
+  void inverseYVelocity(float strength = 1.0f);
+
+  /// @brief temporarily disables the player controls
   void tempDisableInput();
 
 private:
@@ -23,6 +36,9 @@ private:
 
   /// @brief handles the dynamic size of the player, exists to keep the Run function clean
   void handleSize();
+
+  /// @brief dynamically decreases the players health
+  void handleHealth(float deltatime);
 
   // --- Variables --- //
 

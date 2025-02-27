@@ -11,7 +11,7 @@ StartScene::~StartScene() {
 
 void StartScene::Run(float deltaTime) {
   // Draw the title
-  DrawText("Collide!", SCREEN_WIDTH / 2 - MeasureText("Collide!", 50) / 2, SCREEN_HEIGHT / 2 - 150, 50, WHITE);
+  DrawText("Kolvor!", SCREEN_WIDTH / 2 - MeasureText("Kolvor!", 50) / 2, SCREEN_HEIGHT / 2 - 150, 50, WHITE);
 
   // Dynamic start button
   if (GuiButton({SCREEN_WIDTH / 2 - 75, SCREEN_HEIGHT / 2 - 90, 150, 50}, m_gameStarted ? "Resume Game" : "Start Game")) {

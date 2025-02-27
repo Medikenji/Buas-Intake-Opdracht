@@ -63,6 +63,17 @@ void GameManager::handlePlayerToPLayerCollision(std::vector<Entity *> players) {
     a->tempDisableInput();
     b->tempDisableInput();
 
+    // add health back
+    a->health += a->getTotalSpeedInt() * 0.05;
+    if (a->health > 100) {
+      a->health = 100;
+    }
+    b->health += b->getTotalSpeedInt() * 0.05;
+    if (b->health > 100) {
+      b->health = 100;
+    }
+
+    // tranfer velocity if player is standing still
     if (a->getTotalSpeedInt() < 50) {
       a->velocity.x -= b->velocity.x / 2;
       a->velocity.y -= b->velocity.y / 2;
@@ -74,9 +85,7 @@ void GameManager::handlePlayerToPLayerCollision(std::vector<Entity *> players) {
 
     // bounce the players off each other
     a->inverseVelocity(PLAYER_BOUNCE);
-    a->inverseXVelocity(-PLAYER_BOUNCE);
     b->inverseVelocity(PLAYER_BOUNCE);
-    b->inverseYVelocity(-PLAYER_BOUNCE);
   }
 }
 
@@ -85,25 +94,24 @@ void GameManager::handleBoundaries(std::vector<Entity *> entities, uint8_t type)
 
     // if the entities are players
   case 1:
-    int bounce_strength = 0.5;
     for (int i = 0; i < entities.size(); i++) {
-      Entity *entity = entities[i];
-      if (entity->inBounds) {
-        if (entity->position.x < 0 + entity->scale.x) {
-          entity->position.x = 0 + entity->scale.x;
-          entity->inverseXVelocity(bounce_strength);
+      Player *player = dynamic_cast<Player *>(entities[i]);
+      if (player->inBounds) {
+        if (player->position.x < this->position.x + player->scale.x) {
+          player->position.x = this->position.x + player->scale.x + 1;
+          player->inverseXVelocity(PLAYER_EDGE_BOUNCE);
         }
-        if (entity->position.x > SCREEN_WIDTH - entity->scale.x) {
-          entity->position.x = SCREEN_WIDTH - entity->scale.x;
-          entity->inverseXVelocity(bounce_strength);
+        if (player->position.x > this->position.x + this->scale.x - player->scale.x) {
+          player->position.x = this->position.x + this->scale.x - player->scale.x - 1;
+          player->inverseXVelocity(PLAYER_EDGE_BOUNCE);
         }
-        if (entity->position.y < 0 + entity->scale.x) {
-          entity->position.y = 0 + entity->scale.x;
-          entity->inverseYVelocity(bounce_strength);
+        if (player->position.y < this->position.y + player->scale.x) {
+          player->position.y = this->position.y + player->scale.x + 1;
+          player->inverseYVelocity(PLAYER_EDGE_BOUNCE);
         }
-        if (entity->position.y > SCREEN_HEIGHT - entity->scale.x) {
-          entity->position.y = SCREEN_HEIGHT - entity->scale.x;
-          entity->inverseYVelocity(bounce_strength);
+        if (player->position.y > this->position.y + this->scale.y - player->scale.x) {
+          player->position.y = this->position.y + this->scale.y - player->scale.x - 1;
+          player->inverseYVelocity(PLAYER_EDGE_BOUNCE);
         }
       }
     }

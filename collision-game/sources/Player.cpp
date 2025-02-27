@@ -5,11 +5,11 @@ int Player::m_s_playerNum = 0;
 Player::Player() {
   // set instantiate the variables
   this->m_playerNum = Player::m_s_playerNum++;
-  this->m_speed = 1000;
   this->m_allowInput = true;
-  this->m_scale = 25;
+  this->m_scale = SCALER * 0.03;
   this->inBounds = true;
   this->m_InputTimer = new Timer();
+  this->health = 100;
 
   // set the player color and startpos based on player number
   if (this->m_playerNum == 0) {
@@ -27,18 +27,34 @@ Player::~Player() {
 
 void Player::Run(float deltaTime) {
   this->handleInput(deltaTime);
+  this->handleSize();
+  this->handleHealth(deltaTime);
 
   // move the player
   this->position.x += this->velocity.x * deltaTime;
   this->position.y += this->velocity.y * deltaTime;
 
+  // clamp the velocity
+  if (this->velocity.x > PLAYER_MAX_SPEED) {
+    this->velocity.x = PLAYER_MAX_SPEED;
+  }
+  if (this->velocity.x < -PLAYER_MAX_SPEED) {
+    this->velocity.x = -PLAYER_MAX_SPEED;
+  }
+
+  if (this->velocity.y > PLAYER_MAX_SPEED) {
+    this->velocity.y = PLAYER_MAX_SPEED;
+  }
+  if (this->velocity.y < -PLAYER_MAX_SPEED) {
+    this->velocity.y = -PLAYER_MAX_SPEED;
+  }
+
   // slow down the player
   this->velocity.x *= std::pow(0.1f, deltaTime);
   this->velocity.y *= std::pow(0.1f, deltaTime);
 
-  this->handleSize();
-
   // draw the player
+  DrawCircle((int)this->position.x, (int)this->position.y, this->scale.x * health * 0.01, m_playerColor);
   DrawCircleLines((int)this->position.x, (int)this->position.y, this->scale.x, m_playerColor);
 }
 
@@ -55,17 +71,20 @@ void Player::handleInput(float deltaTime) {
     }
     return;
   }
+  // sets the speed correctly
+  this->m_speed = SCALER * 2 * (1 + 1 / this->scale.x);
+
   if (m_playerNum == 0) {
-    if (IsKeyDown(KEY_UP)) {
+    if (IsKeyDown(KEY_UP) || GetMouseDelta().y < 0) {
       this->velocity.y -= this->m_speed * deltaTime;
     }
-    if (IsKeyDown(KEY_DOWN)) {
+    if (IsKeyDown(KEY_DOWN) || GetMouseDelta().y > 0) {
       this->velocity.y += this->m_speed * deltaTime;
     }
-    if (IsKeyDown(KEY_LEFT)) {
+    if (IsKeyDown(KEY_LEFT) || GetMouseDelta().x < 0) {
       this->velocity.x -= this->m_speed * deltaTime;
     }
-    if (IsKeyDown(KEY_RIGHT)) {
+    if (IsKeyDown(KEY_RIGHT) || GetMouseDelta().x > 0) {
       this->velocity.x += this->m_speed * deltaTime;
     }
   } else {
@@ -86,11 +105,27 @@ void Player::handleInput(float deltaTime) {
 
 void Player::handleSize() {
   this->scale.x = -this->getTotalSpeedInt() * 0.02 + this->m_scale;
-  if (this->scale.x < 5) {
-    this->scale.x = 5;
+  if (this->scale.x < SCALER * 0.01) {
+    this->scale.x = SCALER * 0.01;
   }
+}
+
+void Player::handleHealth(float deltaTime) {
+  this->health -= 0.1 * this->health * deltaTime;
 }
 
 void Player::tempDisableInput() {
   m_allowInput = false;
+}
+
+void Player::inverseVelocity(float strength) {
+  this->velocity = {-this->velocity.x * strength, -this->velocity.y * strength};
+}
+
+void Player::inverseXVelocity(float strength) {
+  this->velocity.x = -this->velocity.x * strength;
+}
+
+void Player::inverseYVelocity(float strength) {
+  this->velocity.y = -this->velocity.y * strength;
 }

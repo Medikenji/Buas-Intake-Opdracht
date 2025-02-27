@@ -21,6 +21,7 @@ void Cursor::drawCursor() {
 
     // styling of hidden cursor
   case HIDDEN_CURSOR:
+    SetMousePosition(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
     break;
 
     // styling when N/A cursor happens, should not be possible

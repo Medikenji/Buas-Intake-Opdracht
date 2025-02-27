@@ -46,15 +46,3 @@ void Entity::removeChild(Entity *child) {
     }
   }
 }
-
-void Entity::inverseVelocity(float strength) {
-  this->velocity = {-this->velocity.x * strength, -this->velocity.y * strength};
-}
-
-void Entity::inverseXVelocity(float strength) {
-  this->velocity.x = -this->velocity.x * strength;
-}
-
-void Entity::inverseYVelocity(float strength) {
-  this->velocity.y = -this->velocity.y * strength;
-}

@@ -59,18 +59,6 @@ public:
   /// @return std::vector<Entity*>: the children entities
   std::vector<Entity *> &children() { return m_Children; }
 
-  /// @brief inverses the full velocity of the entity
-  /// @param float strength: the strength of the inverse, defaults to 1
-  void inverseVelocity(float strength = 1.0f);
-
-  /// @brief inverses the X velocity of the entity with a given strength
-  /// @param float strength: the strength of the inverse, defaults to 1
-  void inverseXVelocity(float strength = 1.0f);
-
-  /// @brief inverses the Y velocity of the entity with a given strength
-  /// @param float strength: the strength of the inverse, defaults to 1
-  void inverseYVelocity(float strength = 1.0f);
-
   /// @brief sets the marked for deletion status
   void goDie() { m_markedForDeletion = true; }
 

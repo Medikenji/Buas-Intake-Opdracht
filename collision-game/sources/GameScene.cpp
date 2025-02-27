@@ -10,6 +10,9 @@ GameScene::GameScene() {
 #endif
   this->scale = {SCALER,
                  SCALER};
+  this->m_GameManager->position = this->position;
+  this->m_GameManager->scale.x = this->scale.x;
+  this->m_GameManager->scale.y = this->scale.y;
 }
 
 GameScene::~GameScene() {
