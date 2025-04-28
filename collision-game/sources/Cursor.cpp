@@ -21,12 +21,12 @@ void Cursor::drawCursor() {
 
     // styling of hidden cursor
   case HIDDEN_CURSOR:
-    SetMousePosition(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+    SetMousePosition(ProgramConfig::getScreenWidth() / 2, ProgramConfig::getScreenWidth() / 2);
     break;
 
     // styling when N/A cursor happens, should not be possible
   default:
-    DrawCircleV({SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2}, 10.0f, RED);
+    DrawCircleV({(float)ProgramConfig::getScreenWidth() / 2, (float)ProgramConfig::getScreenHeight() / 2}, 10.0f, RED);
     break;
   }
 }

@@ -9,24 +9,24 @@ Core::~Core() {
 }
 
 void Core::Run() {
-  // Initialize the window
-  InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Kolvor!");
+  // initialize the window
+  InitWindow(ProgramConfig::getScreenWidth(), ProgramConfig::getScreenHeight(), "Kolvor!");
 
-  // Limit the framerate
-  SetTargetFPS(MAX_FPS);
-#if PERFORMANCE_TEST == 1
-  SetTargetFPS(1000);
-#endif
+  // enable vsync
+  SetTargetFPS(GetMonitorRefreshRate(GetCurrentMonitor()));
 
-  // Disable escape to close
+  if (ProgramConfig::s_performanceTest)
+    SetTargetFPS(1000);
+
+  // disable escape to close
   SetExitKey(0);
 
-  // Disable the cursor
+  // disable the cursor
   HideCursor();
 
-  // Run the game loop
+  // run the game loop
   while (!WindowShouldClose() && !SceneManager::s_exitProgram) {
-    // Check if the window is focused and slow the delta time if not.
+    // check if the window is focused and slow the delta time if not.
     if (IsWindowFocused()) {
       this->m_deltaTime = GetFrameTime();
     } else {
@@ -42,6 +42,6 @@ void Core::Run() {
 #endif
     EndDrawing();
   }
-  // Close the window
+  // close the window
   CloseWindow();
 }

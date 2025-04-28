@@ -6,14 +6,14 @@ Player::Player() {
   // set instantiate the variables
   this->m_playerNum = Player::m_s_playerNum++;
   this->m_allowInput = true;
-  this->m_scale = SCALER * 0.03;
+  this->m_scale = ProgramConfig::getScaler() * 0.03;
   this->inBounds = true;
   this->m_InputTimer = new Timer();
   this->health = 100;
 
   // set the player color and startpos based on player number
   if (this->m_playerNum == 0) {
-    this->position = {SCREEN_WIDTH - this->scale.x, SCREEN_HEIGHT - this->scale.x};
+    this->position = {ProgramConfig::getScreenWidth() - this->scale.x, ProgramConfig::getScreenHeight() - this->scale.x};
   } else {
     this->position = {0 + this->scale.x, 0 + this->scale.x};
   }
@@ -71,7 +71,7 @@ void Player::handleInput(float deltaTime) {
     return;
   }
   // sets the speed correctly
-  this->m_speed = SCALER * 2 * (1 + 1 / this->scale.x);
+  this->m_speed = ProgramConfig::getScaler() * 2 * (1 + 1 / this->scale.x);
 
   if (m_playerNum == 0) {
     this->m_playerColor = MAGENTA;
@@ -106,8 +106,8 @@ void Player::handleInput(float deltaTime) {
 
 void Player::handleSize() {
   this->scale.x = -this->getTotalSpeedInt() * 0.02 + this->m_scale;
-  if (this->scale.x < SCALER * 0.01) {
-    this->scale.x = SCALER * 0.01;
+  if (this->scale.x < ProgramConfig::getScaler() * 0.01) {
+    this->scale.x = ProgramConfig::getScaler() * 0.01;
   }
 }
 

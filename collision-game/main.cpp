@@ -2,6 +2,13 @@
 #include "Core.h"
 
 int main() {
+  int width, height;
+  std::cout << "Enter screen width: ";
+  std::cin >> width;
+  std::cout << "Enter screen height: ";
+  std::cin >> height;
+  ProgramConfig::setProgramConfig(width, height);
+
   // Create a new game instance
   Core *game = new Core();
 

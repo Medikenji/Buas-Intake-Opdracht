@@ -3,7 +3,7 @@
 
 #include "Cursor.h"
 #include "GAME_CONFIG.h"
-#include "PROGRAM_CONFIG.h"
+#include "ProgramConfig.h"
 #include "raygui.h"
 #include "raylib.h"
 

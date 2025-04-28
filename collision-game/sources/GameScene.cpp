@@ -8,8 +8,8 @@ GameScene::GameScene() {
 #ifdef PRIMARY_X
   position.y = (NON_SCALER - SCALER) / 2;
 #endif
-  this->scale = {SCALER,
-                 SCALER};
+  this->scale = {(float)ProgramConfig::getScaler(),
+                 (float)ProgramConfig::getScaler()};
   this->m_GameManager->position = this->position;
   this->m_GameManager->scale.x = this->scale.x;
   this->m_GameManager->scale.y = this->scale.y;

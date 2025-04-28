@@ -14,12 +14,17 @@ add_subdirectory(libs/raygui-4.0/CMake)
 file(GLOB GAME_SOURCES "main.cpp" "sources/*.cpp")
 
 # Add the main executable
-add_executable(Kolvor ${GAME_SOURCES})
+set(EXECUTABLE_NAME Kolvor)
+if(UNIX)
+    set(EXECUTABLE_NAME Kolvor_open_in_terminal)
+endif()
+
+add_executable(${EXECUTABLE_NAME} ${GAME_SOURCES})
 
 # Include directories
-target_include_directories(Kolvor PRIVATE ${CMAKE_SOURCE_DIR}/headers)
-target_include_directories(Kolvor PRIVATE ${CMAKE_SOURCE_DIR}/configurations)
+target_include_directories(${EXECUTABLE_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/headers)
+target_include_directories(${EXECUTABLE_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/configurations)
 
-# Link the raylib library
-target_link_libraries(Kolvor PRIVATE raylib)
-target_link_libraries(Kolvor PRIVATE raygui)
+# Link the raylib and raygui libraries
+target_link_libraries(${EXECUTABLE_NAME} PRIVATE raylib)
+target_link_libraries(${EXECUTABLE_NAME} PRIVATE raygui)
