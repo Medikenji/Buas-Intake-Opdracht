@@ -45,8 +45,8 @@ void GameManager::handlePlayerToPLayerCollision(std::vector<Entity *> players) {
   float y = a->position.y - b->position.y;
   float distance = x * x + y * y;
 
-  // handle slow motion
-  m_gameDeltaTime /= 1 + ((a->getTotalSpeedInt() + b->getTotalSpeedInt()) / (0.25 * distance));
+  // calculate and implement slow motion
+  m_gameDeltaTime /= 1 + (((a->getTotalSpeedInt() + b->getTotalSpeedInt()) * ProgramConfig::getScaler() * 0.01) / (0.75 * distance));
 
   // if the players are colliding
   if (distance <= std::pow(a->scale.x + b->scale.x, 2)) {

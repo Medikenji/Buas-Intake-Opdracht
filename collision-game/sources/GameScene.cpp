@@ -2,12 +2,11 @@
 
 GameScene::GameScene() {
   this->addChild(m_GameManager = new GameManager());
-#ifdef PRIMARY_Y
-  position.x = (NON_SCALER - SCALER) / 2;
-#endif
-#ifdef PRIMARY_X
-  position.y = (NON_SCALER - SCALER) / 2;
-#endif
+  if (ProgramConfig::isPrimaryY())
+    position.x = (ProgramConfig::getNScaler() - ProgramConfig::getScaler()) / 2;
+  else
+    position.y = (ProgramConfig::getNScaler() - ProgramConfig::getScaler()) / 2;
+
   this->scale = {(float)ProgramConfig::getScaler(),
                  (float)ProgramConfig::getScaler()};
   this->m_GameManager->position = this->position;
