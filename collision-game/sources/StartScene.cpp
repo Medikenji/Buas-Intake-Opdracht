@@ -29,7 +29,7 @@ void StartScene::Run(float deltaTime) {
     SceneManager::s_exitProgram = true;
   }
 
-  // if (GuiButton({0, ProgramConfig::getScreenHeight() - 50, 100, 50}, "Toggle Fullscreen")) {
-  //   ToggleFullscreen();
-  // }
+   if (GuiButton({0, ProgramConfig::getScreenHeight() - m_uiScale*0.3f, m_uiScale*1.3f, m_uiScale * 0.3f }, "Toggle Fullscreen")) {
+     ToggleFullscreen();
+   }
 }
