@@ -1,7 +1,10 @@
 #ifndef GAME_CONFIG_H
 #define GAME_CONFIG_H
 
-// a set of variables to tweak the game feel from one page
+// a set of variables to tweak the game from one page
+
+/// @brief sets the size of all in game gui's
+#define GUI_SIZE 0.2
 
 /// @brief parameter that controls how many second the players are unable to collide and move after colliding
 #define PLAYERCOL_IFRAMES 0.5

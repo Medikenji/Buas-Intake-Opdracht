@@ -3,7 +3,7 @@
 int Cursor::m_s_cursorState = DEFAULT_CURSOR;
 
 Cursor::Cursor() {
-  m_scale = 5.0f;
+  m_scale = ProgramConfig::getScaler() * 0.005f;
 }
 
 Cursor::~Cursor() {

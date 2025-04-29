@@ -21,6 +21,7 @@ private:
   // --- Variables --- //
 
   bool m_gameStarted;
+  float m_uiScale;
   SceneManager *m_SceneManager;
 };
 

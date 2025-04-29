@@ -16,7 +16,7 @@ void Core::Run() {
   SetTargetFPS(GetMonitorRefreshRate(GetCurrentMonitor()));
 
   if (ProgramConfig::s_performanceTest)
-    SetTargetFPS(1000);
+    SetTargetFPS(0);
 
   // disable escape to close
   SetExitKey(0);
@@ -24,6 +24,7 @@ void Core::Run() {
   // disable the cursor
   HideCursor();
 
+  GuiSetStyle(DEFAULT, TEXT_SIZE, ProgramConfig::getScaler() * GUI_SIZE * 0.15f);
   // run the game loop
   while (!WindowShouldClose() && !SceneManager::s_exitProgram) {
     // check if the window is focused and slow the delta time if not.
