@@ -3,9 +3,9 @@
 GameScene::GameScene() {
   this->addChild(m_GameManager = new GameManager());
   if (ProgramConfig::s_isPrimaryY())
-    position.x = (ProgramConfig::s_getNScaler() - ProgramConfig::s_getScaler()) / 2;
+    position.x = (ProgramConfig::s_getNScaler() - ProgramConfig::s_getScaler()) * 0.5f;
   else
-    position.y = (ProgramConfig::s_getNScaler() - ProgramConfig::s_getScaler()) / 2;
+    position.y = (ProgramConfig::s_getNScaler() - ProgramConfig::s_getScaler()) * 0.5f;
 
   this->scale = {(float)ProgramConfig::s_getScaler(),
                  (float)ProgramConfig::s_getScaler()};

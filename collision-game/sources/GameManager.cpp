@@ -59,23 +59,18 @@ void GameManager::handlePlayerToPLayerCollision(std::vector<Entity *> players) {
     }
     this->m_PlayerTimer->Start();
 
-    // temporarily disable input when colliding
-    a->tempDisableInput();
-    b->tempDisableInput();
-
-    // add health back
+    // tell players they have collided
     a->Collide();
-
     b->Collide();
 
     // tranfer velocity if player is standing still
     if (a->getTotalSpeedInt() < 50) {
-      a->velocity.x -= b->velocity.x / 2;
-      a->velocity.y -= b->velocity.y / 2;
+      a->velocity.x -= b->velocity.x * 0.5f;
+      a->velocity.y -= b->velocity.y * 0.5f;
     }
     if (b->getTotalSpeedFloat() < 50) {
-      b->velocity.x -= a->velocity.x / 2;
-      b->velocity.y -= a->velocity.y / 2;
+      b->velocity.x -= a->velocity.x * 0.5f;
+      b->velocity.y -= a->velocity.y * 0.5f;
     }
 
     // bounce the players off each other

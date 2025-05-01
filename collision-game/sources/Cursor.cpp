@@ -26,7 +26,7 @@ void Cursor::drawCursor() {
 
     // styling when N/A cursor happens, should not be possible
   default:
-    DrawCircleV({(float)ProgramConfig::s_getScreenWidth() / 2, (float)ProgramConfig::s_getScreenHeight() / 2}, 10.0f, RED);
+    DrawCircleV({(float)ProgramConfig::s_getScreenWidth() / 2, (float)ProgramConfig::s_getScreenHeight() / 2}, 10, RED);
     break;
   }
 }

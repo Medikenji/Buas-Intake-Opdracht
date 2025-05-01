@@ -27,10 +27,7 @@ public:
   /// @param float strength: the strength of the inverse, defaults to 1
   void inverseYVelocity(float strength = 1.0f);
 
-  /// @brief temporarily disables the player controls
-  void tempDisableInput();
-
-  /// @brief adds health and points to the player
+  /// @brief handles internal player logic when colliding
   void Collide();
 
 private:

@@ -115,11 +115,8 @@ void Player::passiveDamage(float deltaTime) {
   this->m_health -= 0.1 * this->m_health * deltaTime;
 }
 
-void Player::tempDisableInput() {
-  m_allowInput = false;
-}
-
 void Player::Collide() {
+  m_allowInput = false;
   this->m_health += this->getTotalSpeedInt() * 0.05f;
   if (this->m_health > 100) {
     this->m_health = 100;
