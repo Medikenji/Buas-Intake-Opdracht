@@ -1,6 +1,7 @@
 #include "Player.h"
 
 int Player::m_s_playerNum = 0;
+float Player::m_s_points = 0;
 
 Player::Player() {
   // set instantiate the variables
