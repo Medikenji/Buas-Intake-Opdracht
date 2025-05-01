@@ -64,9 +64,9 @@ void GameManager::handlePlayerToPLayerCollision(std::vector<Entity *> players) {
     b->tempDisableInput();
 
     // add health back
-    a->addHealth();
+    a->Collide();
 
-    b->addHealth();
+    b->Collide();
 
     // tranfer velocity if player is standing still
     if (a->getTotalSpeedInt() < 50) {

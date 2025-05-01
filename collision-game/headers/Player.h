@@ -13,6 +13,8 @@ public:
   ~Player();
   virtual void Run(float deltaTime);
 
+  static int s_getPlayerPoints() { return (int)m_s_points; }
+
   /// @brief inverses the full velocity of the player
   /// @param float strength: the strength of the inverse, defaults to 1
   void inverseVelocity(float strength = 1.0f);
@@ -28,8 +30,8 @@ public:
   /// @brief temporarily disables the player controls
   void tempDisableInput();
 
-  /// @brief add health to the player based on the velocity
-  void addHealth();
+  /// @brief adds health and points to the player
+  void Collide();
 
 private:
   // --- Functions --- //
@@ -41,11 +43,12 @@ private:
   void handleSize();
 
   /// @brief dynamically decreases the players health
-  void handleHealth(float deltatime);
+  void passiveDamage(float deltaTime);
 
   // --- Variables --- //
 
   static int m_s_playerNum;
+  static float m_s_points;
   Timer *m_InputTimer;
   bool m_allowInput;
   float m_health;

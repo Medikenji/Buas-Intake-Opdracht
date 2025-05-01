@@ -6,7 +6,7 @@ Player::Player() {
   // set instantiate the variables
   this->m_playerNum = Player::m_s_playerNum++;
   this->m_allowInput = true;
-  this->m_scale = ProgramConfig::s_getScaler() * 0.03;
+  this->m_scale = ProgramConfig::s_getScaler() * 0.03f;
   this->inBounds = true;
   this->m_InputTimer = new Timer();
   this->m_health = 100;
@@ -26,7 +26,7 @@ Player::~Player() {
 void Player::Run(float deltaTime) {
   this->handleInput(deltaTime);
   this->handleSize();
-  this->handleHealth(deltaTime);
+  this->passiveDamage(deltaTime);
 
   // move the player
   this->position.x += this->velocity.x * deltaTime;
@@ -52,7 +52,7 @@ void Player::Run(float deltaTime) {
   this->velocity.y *= std::pow(0.1f, deltaTime);
 
   // draw the player
-  DrawCircle((int)this->position.x, (int)this->position.y, this->scale.x * m_health * 0.01, m_playerColor);
+  DrawCircle((int)this->position.x, (int)this->position.y, this->scale.x * m_health * 0.01f, m_playerColor);
   DrawCircleLines((int)this->position.x, (int)this->position.y, this->scale.x, m_playerColor);
 }
 
@@ -105,13 +105,13 @@ void Player::handleInput(float deltaTime) {
 }
 
 void Player::handleSize() {
-  this->scale.x = -this->getTotalSpeedInt() * 0.02 + this->m_scale;
-  if (this->scale.x < ProgramConfig::s_getScaler() * 0.01) {
-    this->scale.x = ProgramConfig::s_getScaler() * 0.01;
+  this->scale.x = -this->getTotalSpeedInt() * 0.02f + this->m_scale;
+  if (this->scale.x < ProgramConfig::s_getScaler() * 0.01f) {
+    this->scale.x = ProgramConfig::s_getScaler() * 0.01f;
   }
 }
 
-void Player::handleHealth(float deltaTime) {
+void Player::passiveDamage(float deltaTime) {
   this->m_health -= 0.1 * this->m_health * deltaTime;
 }
 
@@ -119,11 +119,12 @@ void Player::tempDisableInput() {
   m_allowInput = false;
 }
 
-void Player::addHealth() {
-  this->m_health += this->getTotalSpeedInt() * 0.05;
+void Player::Collide() {
+  this->m_health += this->getTotalSpeedInt() * 0.05f;
   if (this->m_health > 100) {
     this->m_health = 100;
   }
+  m_s_points += getTotalSpeedFloat() * 0.5f;
 }
 
 void Player::inverseVelocity(float strength) {
