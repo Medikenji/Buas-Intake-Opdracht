@@ -7,6 +7,7 @@ int main() {
   std::cin >> width;
   std::cout << "Enter screen height: ";
   std::cin >> height;
+
   ProgramConfig::s_setProgramConfig(width, height);
 
   // Create a new game instance
