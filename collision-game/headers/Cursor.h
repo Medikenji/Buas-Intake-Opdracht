@@ -16,7 +16,7 @@ public:
   ~Cursor();
 
   void drawCursor();
-  static void SetCursorState(int state) { m_s_cursorState = state; }
+  static void s_setCursorState(int state) { m_s_cursorState = state; }
 
 private:
   // --- Variables --- //

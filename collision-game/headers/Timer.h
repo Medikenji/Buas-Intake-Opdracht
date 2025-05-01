@@ -27,7 +27,7 @@ public:
   void Unpause();
 
   /// @brief toggles the pause state of the timer
-  void TogglePause();
+  void togglePause();
 
   /// @brief gets the time in seconds returns 0 if the timer is stopped
   /// @return double: the time in seconds

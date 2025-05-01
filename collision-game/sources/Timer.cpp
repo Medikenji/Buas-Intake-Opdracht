@@ -46,7 +46,7 @@ void Timer::Unpause() {
   }
 }
 
-void Timer::TogglePause() {
+void Timer::togglePause() {
   if (m_paused) {
     Unpause();
   } else {

@@ -46,7 +46,7 @@ void GameManager::handlePlayerToPLayerCollision(std::vector<Entity *> players) {
   float distance = x * x + y * y;
 
   // calculate and implement slow motion
-  m_gameDeltaTime /= 1 + (((a->getTotalSpeedInt() + b->getTotalSpeedInt()) * ProgramConfig::getScaler() * 0.01) / (0.75 * distance));
+  m_gameDeltaTime /= 1 + (((a->getTotalSpeedInt() + b->getTotalSpeedInt()) * ProgramConfig::s_getScaler() * 0.01) / (0.75 * distance));
 
   // if the players are colliding
   if (distance <= std::pow(a->scale.x + b->scale.x, 2)) {
@@ -64,14 +64,9 @@ void GameManager::handlePlayerToPLayerCollision(std::vector<Entity *> players) {
     b->tempDisableInput();
 
     // add health back
-    a->health += a->getTotalSpeedInt() * 0.05;
-    if (a->health > 100) {
-      a->health = 100;
-    }
-    b->health += b->getTotalSpeedInt() * 0.05;
-    if (b->health > 100) {
-      b->health = 100;
-    }
+    a->addHealth();
+
+    b->addHealth();
 
     // tranfer velocity if player is standing still
     if (a->getTotalSpeedInt() < 50) {
@@ -96,7 +91,7 @@ void GameManager::handleBoundaries(std::vector<Entity *> entities, uint8_t type)
   case 1:
     for (int i = 0; i < entities.size(); i++) {
       Player *player = dynamic_cast<Player *>(entities[i]);
-      if (player->inBounds) {
+      if (player->boundryCheck()) {
         if (player->position.x < this->position.x + player->scale.x) {
           player->position.x = this->position.x + player->scale.x + 1;
           player->inverseXVelocity(PLAYER_EDGE_BOUNCE);

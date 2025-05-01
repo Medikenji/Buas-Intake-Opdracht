@@ -3,7 +3,7 @@
 int Cursor::m_s_cursorState = DEFAULT_CURSOR;
 
 Cursor::Cursor() {
-  m_scale = ProgramConfig::getScaler() * 0.005f;
+  m_scale = ProgramConfig::s_getScaler() * 0.005f;
 }
 
 Cursor::~Cursor() {
@@ -21,12 +21,12 @@ void Cursor::drawCursor() {
 
     // styling of hidden cursor
   case HIDDEN_CURSOR:
-    SetMousePosition(ProgramConfig::getScreenWidth() / 2, ProgramConfig::getScreenWidth() / 2);
+    SetMousePosition(ProgramConfig::s_getScreenWidth() / 2, ProgramConfig::s_getScreenWidth() / 2);
     break;
 
     // styling when N/A cursor happens, should not be possible
   default:
-    DrawCircleV({(float)ProgramConfig::getScreenWidth() / 2, (float)ProgramConfig::getScreenHeight() / 2}, 10.0f, RED);
+    DrawCircleV({(float)ProgramConfig::s_getScreenWidth() / 2, (float)ProgramConfig::s_getScreenHeight() / 2}, 10.0f, RED);
     break;
   }
 }

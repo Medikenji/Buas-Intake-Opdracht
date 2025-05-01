@@ -1,6 +1,6 @@
 #include "SceneManager.h"
 
-bool SceneManager::s_exitProgram = false;
+bool SceneManager::m_s_exitProgram = false;
 
 SceneManager::SceneManager() {
   // Add the scenes to the scene manager
@@ -21,7 +21,7 @@ SceneManager::~SceneManager() {
 
 void SceneManager::Run(float deltaTime) {
   if (IsKeyDown(KEY_ESCAPE)) {
-    Cursor::SetCursorState(DEFAULT_CURSOR);
+    Cursor::s_setCursorState(DEFAULT_CURSOR);
     m_currentScene = 0;
   }
 

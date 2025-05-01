@@ -10,7 +10,7 @@ Core::~Core() {
 
 void Core::Run() {
   // initialize the window
-  InitWindow(ProgramConfig::getScreenWidth(), ProgramConfig::getScreenHeight(), "Kolvor!");
+  InitWindow(ProgramConfig::s_getScreenWidth(), ProgramConfig::s_getScreenHeight(), "Kolvor!");
 
   // enable vsync
   SetTargetFPS(GetMonitorRefreshRate(GetCurrentMonitor()));
@@ -24,9 +24,9 @@ void Core::Run() {
   // disable the cursor
   HideCursor();
 
-  GuiSetStyle(DEFAULT, TEXT_SIZE, ProgramConfig::getScaler() * GUI_SIZE * 0.15f);
+  GuiSetStyle(DEFAULT, TEXT_SIZE, ProgramConfig::s_getScaler() * GUI_SIZE * 0.15f);
   // run the game loop
-  while (!WindowShouldClose() && !SceneManager::s_exitProgram) {
+  while (!WindowShouldClose() && !SceneManager::s_shouldExitProgram()) {
     // check if the window is focused and slow the delta time if not.
     if (IsWindowFocused()) {
       this->m_deltaTime = GetFrameTime();
@@ -35,7 +35,7 @@ void Core::Run() {
     }
 
     BeginDrawing();
-    ClearBackground(BLACK);
+    ClearBackground((Color){32, 32, 32, 255});
     this->m_SceneManager->Run(m_deltaTime);
     this->m_Cursor.drawCursor();
 #if PERFORMANCE_TEST == 1

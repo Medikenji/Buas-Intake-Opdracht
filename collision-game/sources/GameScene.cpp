@@ -2,13 +2,13 @@
 
 GameScene::GameScene() {
   this->addChild(m_GameManager = new GameManager());
-  if (ProgramConfig::isPrimaryY())
-    position.x = (ProgramConfig::getNScaler() - ProgramConfig::getScaler()) / 2;
+  if (ProgramConfig::s_isPrimaryY())
+    position.x = (ProgramConfig::s_getNScaler() - ProgramConfig::s_getScaler()) / 2;
   else
-    position.y = (ProgramConfig::getNScaler() - ProgramConfig::getScaler()) / 2;
+    position.y = (ProgramConfig::s_getNScaler() - ProgramConfig::s_getScaler()) / 2;
 
-  this->scale = {(float)ProgramConfig::getScaler(),
-                 (float)ProgramConfig::getScaler()};
+  this->scale = {(float)ProgramConfig::s_getScaler(),
+                 (float)ProgramConfig::s_getScaler()};
   this->m_GameManager->position = this->position;
   this->m_GameManager->scale.x = this->scale.x;
   this->m_GameManager->scale.y = this->scale.y;
@@ -19,6 +19,7 @@ GameScene::~GameScene() {
 }
 
 void GameScene::Run(float deltaTime) {
-  DrawRectangleLines(position.x, position.y, scale.x + 1, scale.y + 1, WHITE);
+  DrawRectangleLines(position.x - 1, position.y - 1, scale.x + 2, scale.y + 2, WHITE);
+  DrawRectangle(position.x, position.y, scale.x, scale.y, BLACK);
   this->runChildren(deltaTime);
 }

@@ -28,6 +28,9 @@ public:
   /// @brief temporarily disables the player controls
   void tempDisableInput();
 
+  /// @brief add health to the player based on the velocity
+  void addHealth();
+
 private:
   // --- Functions --- //
 

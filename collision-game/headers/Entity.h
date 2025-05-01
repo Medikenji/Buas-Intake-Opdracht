@@ -59,6 +59,9 @@ public:
   /// @return std::vector<Entity*>: the children entities
   std::vector<Entity *> &children() { return m_Children; }
 
+  /// @return bool: wether the entity should be in bounds
+  bool boundryCheck() { return inBounds; };
+
   /// @brief sets the marked for deletion status
   void goDie() { m_markedForDeletion = true; }
 
@@ -69,7 +72,11 @@ public:
   Vector2 velocity;
   Vector2 scale;
   Vector3 rotation;
-  float health;
+
+protected:
+  /// --- Variables --- //
+
+  /// @brief states wether the boundry check should occur on this entity
   bool inBounds;
 
 private:

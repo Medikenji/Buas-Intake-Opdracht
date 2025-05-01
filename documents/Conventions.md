@@ -100,7 +100,7 @@ m_s_myVariable
 
 ```cpp
 // this is a comment without variables
-// this is a comment referencing the m_s_privateStaticVariable variable
+// this is a comment referencing the m_s_private    icVariable variable
 ```
 
 #### Variable comments

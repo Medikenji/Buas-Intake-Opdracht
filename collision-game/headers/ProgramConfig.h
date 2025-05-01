@@ -13,25 +13,25 @@ public:
 
   // --- Functions --- //
 
-  static void setProgramConfig(int width, int height);
+  static void s_setProgramConfig(int width, int height);
 
-  static bool isPrimaryY() {
+  static bool s_isPrimaryY() {
     return m_s_screenWidth > m_s_screenHeight;
   }
 
-  static int getScaler() {
+  static int s_getScaler() {
     return m_s_scaler;
   }
 
-  static int getNScaler() {
+  static int s_getNScaler() {
     return m_s_nonScaler;
   }
 
-  static int getScreenWidth() {
+  static int s_getScreenWidth() {
     return m_s_screenWidth;
   }
 
-  static int getScreenHeight() {
+  static int s_getScreenHeight() {
     return m_s_screenHeight;
   }
 

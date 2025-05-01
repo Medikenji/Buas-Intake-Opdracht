@@ -21,14 +21,20 @@ public:
   virtual void Run(float deltaTime);
 
   /// @brief a setter that switches the scene
-  void SwitchScene(int scene) { this->m_currentScene = scene; };
+  void switchScene(int scene) { this->m_currentScene = scene; };
 
-  /// @brief allows for a custom and clean call to exit the program
-  static bool s_exitProgram;
+  /// @brief checks if the program should be closed by this custom call
+  /// @return bool: if the program should close
+  static bool s_shouldExitProgram() { return m_s_exitProgram; };
+
+  /// @brief exits the program in a custom and clean way
+  static void s_exitProgram() { m_s_exitProgram = true; };
 
 private:
   // --- Variables --- //
 
+  /// @brief allows for a custom and clean call to exit the program
+  static bool m_s_exitProgram;
   /// @brief the current scene
   int m_currentScene;
   /// @brief the start and pause scene

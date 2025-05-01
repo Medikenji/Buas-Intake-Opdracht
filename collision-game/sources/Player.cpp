@@ -6,14 +6,14 @@ Player::Player() {
   // set instantiate the variables
   this->m_playerNum = Player::m_s_playerNum++;
   this->m_allowInput = true;
-  this->m_scale = ProgramConfig::getScaler() * 0.03;
+  this->m_scale = ProgramConfig::s_getScaler() * 0.03;
   this->inBounds = true;
   this->m_InputTimer = new Timer();
-  this->health = 100;
+  this->m_health = 100;
 
   // set the player color and startpos based on player number
   if (this->m_playerNum == 0) {
-    this->position = {ProgramConfig::getScreenWidth() - this->scale.x, ProgramConfig::getScreenHeight() - this->scale.x};
+    this->position = {ProgramConfig::s_getScreenWidth() - this->scale.x, ProgramConfig::s_getScreenHeight() - this->scale.x};
   } else {
     this->position = {0 + this->scale.x, 0 + this->scale.x};
   }
@@ -52,7 +52,7 @@ void Player::Run(float deltaTime) {
   this->velocity.y *= std::pow(0.1f, deltaTime);
 
   // draw the player
-  DrawCircle((int)this->position.x, (int)this->position.y, this->scale.x * health * 0.01, m_playerColor);
+  DrawCircle((int)this->position.x, (int)this->position.y, this->scale.x * m_health * 0.01, m_playerColor);
   DrawCircleLines((int)this->position.x, (int)this->position.y, this->scale.x, m_playerColor);
 }
 
@@ -71,7 +71,7 @@ void Player::handleInput(float deltaTime) {
     return;
   }
   // sets the speed correctly
-  this->m_speed = ProgramConfig::getScaler() * 2 * (1 + 1 / this->scale.x);
+  this->m_speed = ProgramConfig::s_getScaler() * 2 * (1 + 1 / this->scale.x);
 
   if (m_playerNum == 0) {
     this->m_playerColor = MAGENTA;
@@ -106,17 +106,24 @@ void Player::handleInput(float deltaTime) {
 
 void Player::handleSize() {
   this->scale.x = -this->getTotalSpeedInt() * 0.02 + this->m_scale;
-  if (this->scale.x < ProgramConfig::getScaler() * 0.01) {
-    this->scale.x = ProgramConfig::getScaler() * 0.01;
+  if (this->scale.x < ProgramConfig::s_getScaler() * 0.01) {
+    this->scale.x = ProgramConfig::s_getScaler() * 0.01;
   }
 }
 
 void Player::handleHealth(float deltaTime) {
-  this->health -= 0.1 * this->health * deltaTime;
+  this->m_health -= 0.1 * this->m_health * deltaTime;
 }
 
 void Player::tempDisableInput() {
   m_allowInput = false;
+}
+
+void Player::addHealth() {
+  this->m_health += this->getTotalSpeedInt() * 0.05;
+  if (this->m_health > 100) {
+    this->m_health = 100;
+  }
 }
 
 void Player::inverseVelocity(float strength) {
