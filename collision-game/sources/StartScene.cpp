@@ -28,8 +28,4 @@ void StartScene::Run(float deltaTime) {
   if (GuiButton({ProgramConfig::s_getScreenWidth() * 0.5f - m_uiScale * 0.5f, ProgramConfig::s_getScreenHeight() * 0.5f - m_uiScale * -0.4f, m_uiScale, m_uiScale * 0.3f}, "Quit Game") || IsKeyPressedRepeat(KEY_ESCAPE)) {
     SceneManager::s_exitProgram();
   }
-
-  if (GuiButton({0, ProgramConfig::s_getScreenHeight() - m_uiScale * 0.3f, m_uiScale * 1.3f, m_uiScale * 0.3f}, "Toggle Fullscreen")) {
-    ToggleFullscreen();
-  }
 }
