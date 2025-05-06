@@ -22,5 +22,4 @@ void GameScene::Run(float deltaTime) {
   DrawRectangleLines(position.x - 1, position.y - 1, scale.x + 2, scale.y + 2, WHITE);
   DrawRectangle(position.x, position.y, scale.x, scale.y, BLACK);
   this->runChildren(deltaTime);
-  DrawText(std::to_string(Player::s_getPlayerPoints()).c_str(), 0, 0, 0, WHITE);
 }
