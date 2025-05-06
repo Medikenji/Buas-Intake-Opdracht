@@ -7,6 +7,7 @@
 #include "raygui.h"
 #include "raylib.h"
 
+#include <sstream>
 #include <cmath>
 #include <iostream>
 #include <stdint.h>

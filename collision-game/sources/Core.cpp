@@ -35,7 +35,7 @@ void Core::Run() {
     }
 
     BeginDrawing();
-    ClearBackground((Color){32, 32, 32, 255});
+    ClearBackground({32, 32, 32, 255});
     this->m_SceneManager->Run(m_deltaTime);
     this->m_Cursor.drawCursor();
 #if PERFORMANCE_TEST == 1
