@@ -20,11 +20,15 @@ Entity::~Entity() {
 }
 
 void Entity::runChildren(float deltaTime) {
+  if (!m_initialised) {
+    this->Initialise();
+  }
+  m_initialised = true;
   for (int i = 0; i < this->children().size();) {
     if (this->children()[i]->m_markedForDeletion) {
-      this->removeChild(this->children()[i]);
-      this->children()[i]->~Entity();
-      i = 0;
+      Entity *childToDelete = this->children()[i];
+      this->removeChild(childToDelete);
+      delete childToDelete;
     } else {
       this->children()[i]->Run(deltaTime);
       i++;

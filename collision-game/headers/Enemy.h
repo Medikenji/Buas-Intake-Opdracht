@@ -18,7 +18,7 @@ public:
 
   /// @brief returns the nearest player from this Enemy
   /// @return Player*: the nearest player
-  Player *getTarget() const { return m_target; };
+  Vector2 getTargetPosition() { return m_target->position; };
 
 protected:
   /// @brief sets the nearest player as the target

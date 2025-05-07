@@ -75,6 +75,10 @@ public:
   Vector3 rotation;
 
 protected:
+  /// -- Functions -- ///
+  /// @brief gets called after the decronstructor but before the first frames are drawn, also gets called once per object
+  virtual void Initialise() {}
+
   /// --- Variables --- //
 
   /// @brief states wether the boundry check should occur on this entity
@@ -88,6 +92,7 @@ private:
   Entity *m_Parent;
   std::vector<Entity *> m_Children;
   bool m_markedForDeletion;
+  bool m_initialised;
 };
 
 #endif

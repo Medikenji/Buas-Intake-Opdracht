@@ -20,6 +20,12 @@ GameManager::~GameManager() {
 }
 
 void GameManager::Run(float deltaTime) {
+  if (IsKeyPressed(KEY_SPACE)) {
+    Player *playersArray[] = {dynamic_cast<Player *>(m_Players[0]), dynamic_cast<Player *>(m_Players[1])};
+    this->m_Enemies.push_back(new BeamEnemy(playersArray));
+    this->addChild(m_Enemies.back());
+  }
+
   this->m_gameDeltaTime = deltaTime;
   handleBoundaries(m_Players, 1);
   handlePlayerToPLayerCollision(m_Players);
@@ -31,9 +37,6 @@ void GameManager::initialiseLevel() {
   this->addChild(m_Players[0]);
   this->m_Players.push_back(new Player());
   this->addChild(m_Players[1]);
-  Player *playersArray[] = {dynamic_cast<Player *>(m_Players[0]), dynamic_cast<Player *>(m_Players[1])};
-  this->m_Enemies.push_back(new BeamEnemy(playersArray));
-  this->addChild(m_Enemies.back());
 }
 
 void GameManager::handlePlayerToPLayerCollision(std::vector<Entity *> players) {

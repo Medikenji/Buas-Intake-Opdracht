@@ -9,7 +9,7 @@ public:
   // --- Variables --- //
 
   /// @brief Changes the maximum framerate of the program to 1000 instead of vsync for performance testing.
-  static const bool s_performanceTest = true;
+  static const bool s_performanceTest = false;
 
   // --- Functions --- //
 

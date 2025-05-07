@@ -12,6 +12,8 @@ void Core::Run() {
   // initialize the window
   InitWindow(ProgramConfig::s_getScreenWidth(), ProgramConfig::s_getScreenHeight(), "Kolvor!");
 
+  SetRandomSeed(time(nullptr));
+
   // enable vsync
   SetTargetFPS(GetMonitorRefreshRate(GetCurrentMonitor()));
 
