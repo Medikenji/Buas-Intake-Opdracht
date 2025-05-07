@@ -1,17 +1,17 @@
 #ifndef BEAMENEMY_H
 #define BEAMENEMY_H
 
-#include "Entity.h"
+#include "Enemy.h"
 
-/// @brief runs the full game loop to keep main clear, also creates the window
-class BeamEnemy : public Entity {
+/// @brief an enemy that shoots a laser through the game
+class BeamEnemy : public Enemy {
 public:
-	// --- Functions --- //
+  // --- Functions --- //
 
-	BeamEnemy();
-	~BeamEnemy();
+  BeamEnemy(Player *players[2]);
+  ~BeamEnemy();
 
-	void Run();
+  virtual void Run(float deltaTime);
 
 private:
 };

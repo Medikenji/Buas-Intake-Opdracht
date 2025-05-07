@@ -16,7 +16,7 @@ public:
   InfoScene(SceneManager &scenemanager);
   ~InfoScene();
 
-  void Run(float deltaTime) override;
+  void Run(float deltaTime);
 
 private:
   // --- Variables --- //

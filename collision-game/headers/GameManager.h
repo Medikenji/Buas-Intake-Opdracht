@@ -1,6 +1,7 @@
 #ifndef GAMEMANAGER_H
 #define GAMEMANAGER_H
 
+#include "BeamEnemy.h"
 #include "Entity.h"
 #include "Player.h"
 #include "Timer.h"
