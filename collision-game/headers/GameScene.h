@@ -21,6 +21,12 @@ public:
 
   virtual void Run(float deltaTime);
 
+  /// @brief function that returns the bounds of the GameScene
+  /// @return Rectangle: returns a Rectangle with the x, y, width and height of the GameScene
+  Rectangle getMapBoundry() {
+    return {this->position.x, this->position.y, this->scale.x, this->scale.y};
+  }
+
 private:
   // --- Variables --- //
 

@@ -9,7 +9,11 @@ Enemy::Enemy(Player *players[2]) {
 Enemy::~Enemy() {
 }
 
-void Enemy::setTarget() {
+void Enemy::setTarget(bool randomTarget) {
+  if (randomTarget) {
+    m_target = m_players[GetRandomValue(0, 1)];
+    return;
+  }
   float distances[2];
   for (int i = 0; i < 2; ++i) {
     float x = this->position.x - m_players[i]->position.x;

@@ -22,7 +22,8 @@ public:
 
 protected:
   /// @brief sets the nearest player as the target
-  void setTarget();
+  /// @param bool randomTarget: when set to true the enemy will grab a random player as target, is off by default
+  void setTarget(bool randomTarget = false);
   Color enemyColor() { return RED; };
 
 private:
