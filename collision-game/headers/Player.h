@@ -28,7 +28,7 @@ public:
   void inverseYVelocity(float strength = 1.0f);
 
   /// @brief handles internal player logic when colliding
-  void Collide();
+  void Collide(Player *otherPlayer);
 
 private:
   // --- Functions --- //
@@ -47,6 +47,7 @@ private:
   static int m_s_playerNum;
   static float m_s_points;
   Timer *m_InputTimer;
+  Timer *m_PlayerTimer;
   bool m_allowInput;
   float m_health;
   float m_speed;

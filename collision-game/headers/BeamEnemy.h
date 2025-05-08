@@ -37,7 +37,6 @@ private:
   float m_flickerSpeed;
   float m_explosionThickness;
   bool m_detonated;
-  bool m_onYAxis;
   bool m_initialized;
   bool m_flicker;
 

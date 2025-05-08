@@ -1,8 +1,6 @@
 #include "BeamEnemy.h"
 
 BeamEnemy::BeamEnemy(Player *players[2]) : Enemy(players) {
-  this->m_onYAxis = GetRandomValue(0, 1);
-  this->m_initialized = false;
   this->m_flicker = false;
   this->m_timeUntilDetonation = 5.0f;
   this->m_flickerSpeed = this->m_timeUntilDetonation * 0.1f;
@@ -20,29 +18,30 @@ void BeamEnemy::Run(float deltaTime) {
 
 void BeamEnemy::Initialise() {
   Rectangle gamescene_boundry = static_cast<GameScene *>(this->getParent()->getParent())->getMapBoundry();
-  if (m_onYAxis) {
+  if (GetRandomValue(0, 1)) {
     if (GetRandomValue(0, 1)) {
       this->position.x = gamescene_boundry.x;
     } else {
       this->position.x = gamescene_boundry.width + gamescene_boundry.x;
     }
-    this->position.y = GetRandomValue(gamescene_boundry.y, gamescene_boundry.height);
+    this->position.y = GetRandomValue(gamescene_boundry.y, gamescene_boundry.height + gamescene_boundry.y);
   } else {
     if (GetRandomValue(0, 1)) {
       this->position.y = gamescene_boundry.y;
     } else {
-      this->position.y = gamescene_boundry.width + gamescene_boundry.y;
+      this->position.y = gamescene_boundry.height + gamescene_boundry.y;
     }
-    this->position.x = GetRandomValue(gamescene_boundry.x, gamescene_boundry.height);
+    this->position.x = GetRandomValue(gamescene_boundry.x, gamescene_boundry.width + gamescene_boundry.x);
   }
 
-  this->setTarget();
+  this->setTarget(true);
   setAimVector();
 }
 
 void BeamEnemy::setAimVector() {
   Vector2 temp_vector;
   float magnitude;
+
   // get the vector from the beam to the target
   temp_vector.x = this->getTargetPosition().x - this->position.x;
   temp_vector.y = this->getTargetPosition().y - this->position.y;

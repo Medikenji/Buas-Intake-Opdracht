@@ -10,6 +10,7 @@ Player::Player() {
   this->m_scale = ProgramConfig::s_getScaler() * 0.03f;
   this->inBounds = true;
   this->m_InputTimer = new Timer();
+  this->m_PlayerTimer = new Timer();
   this->m_health = 100;
 
   // set the player color and startpos based on player number
@@ -61,11 +62,7 @@ void Player::handleInput(float deltaTime) {
   // disables movement after colliding for a set amount of time
   // NOTE TO SELF: probably gotta refactor this some time
   if (!m_allowInput) {
-    if (m_InputTimer->Seconds() == 0) {
-      m_InputTimer->Start();
-    }
-    if (m_InputTimer->Seconds() > PLAYERCOL_IFRAMES) {
-      m_InputTimer->Stop();
+    if (m_PlayerTimer->Seconds() > PLAYERCOL_IFRAMES) {
       m_allowInput = true;
     }
     m_playerColor = WHITE;
@@ -116,12 +113,35 @@ void Player::passiveDamage(float deltaTime) {
   this->m_health -= 0.1 * this->m_health * deltaTime;
 }
 
-void Player::Collide() {
+void Player::Collide(Player *otherPlayer) {
+  // prevent the players from infinitely colliding
+  if (this->m_PlayerTimer->Seconds() != 0) {
+    if (this->m_PlayerTimer->Seconds() > PLAYERCOL_IFRAMES) {
+      this->m_PlayerTimer->Stop();
+    }
+    return;
+  }
+
+  // tranfer velocity if player is standing still
+  if (this->getTotalSpeedInt() < 50) {
+    this->velocity.x -= otherPlayer->velocity.x * 0.5f;
+    this->velocity.y -= otherPlayer->velocity.y * 0.5f;
+  }
+
+  // start the timer that allows Iframes while disabling the input
+  this->m_PlayerTimer->Start();
   m_allowInput = false;
+
+  // add back health to player
   this->m_health += this->getTotalSpeedInt() * 0.05f;
   if (this->m_health > 100) {
     this->m_health = 100;
   }
+
+  // bounce the players off each other
+  this->inverseVelocity(PLAYER_BOUNCE);
+
+  // add points
   m_s_points += getTotalSpeedFloat() * 0.5f;
 }
 

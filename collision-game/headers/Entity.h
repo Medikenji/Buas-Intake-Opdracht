@@ -91,8 +91,8 @@ private:
   int m_EID;
   Entity *m_Parent;
   std::vector<Entity *> m_Children;
-  bool m_markedForDeletion;
   bool m_initialised;
+  bool m_markedForDeletion;
 };
 
 #endif

@@ -28,20 +28,19 @@ private:
 
   /// @brief handles the collision between players
   /// @param std::vector<Entity*> players: the player entities to check
-  void handlePlayerToPLayerCollision(std::vector<Entity *> players);
+  void handlePlayerToPLayerCollision(std::vector<Player *> players);
 
   /// @brief handles the boundaries of the entities
   /// @param std::vector<Entity*> entities: the entities to check
   /// @param uint8_t type: the type of boundary to check
-  void handleBoundaries(std::vector<Entity *> entities, uint8_t type);
+  void handleBoundaries();
 
   // --- Variables --- //
 
   // Creating seperate lists and timers for all the entities in the game
 
   /// @brief the players in the game
-  std::vector<Entity *> m_Players;
-  Timer *m_PlayerTimer;
+  std::vector<Player *> m_Players;
 
   /// @brief the enemies in the game
   std::vector<Entity *> m_Enemies;

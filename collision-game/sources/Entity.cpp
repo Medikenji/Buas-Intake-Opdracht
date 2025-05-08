@@ -11,6 +11,7 @@ Entity::Entity() {
   this->scale = {1, 1};
   this->rotation = {0, 0, 0};
   this->inBounds = false;
+  this->m_initialised = false;
   this->m_markedForDeletion = false;
 }
 
@@ -20,10 +21,10 @@ Entity::~Entity() {
 }
 
 void Entity::runChildren(float deltaTime) {
-  if (!m_initialised) {
+  if (!this->m_initialised) {
     this->Initialise();
+    this->m_initialised = true;
   }
-  m_initialised = true;
   for (int i = 0; i < this->children().size();) {
     if (this->children()[i]->m_markedForDeletion) {
       Entity *childToDelete = this->children()[i];
