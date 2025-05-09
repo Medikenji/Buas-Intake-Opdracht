@@ -7,6 +7,7 @@
 #include "raygui.h"
 #include "raylib.h"
 
+#include <algorithm>
 #include <cmath>
 #include <iostream>
 #include <sstream>
@@ -32,10 +33,6 @@ public:
   /// @param float deltaTime: the time between frames
   void runChildren(float deltaTime);
 
-  /// @brief gets the entity ID
-  /// @return int: the entity ID
-  int getEID() { return m_EID; }
-
   /// @brief adds an entity to own children
   /// @param Entity* child: the entity to add
   void addChild(Entity *child);
@@ -43,18 +40,6 @@ public:
   /// @brief removes an entity from own children
   /// @param Entity* child: the entity to remove
   void removeChild(Entity *child);
-
-  /// @brief gets the parent entity
-  /// @return Entity*: the parent entity
-  Entity *getParent() { return m_Parent; }
-
-  /// @brief gets the total speed of the entity
-  /// @return float: the total speed of the entity
-  float getTotalSpeedFloat() { return std::sqrt(this->velocity.x * this->velocity.x + this->velocity.y * this->velocity.y); }
-
-  /// @brief gets the total speed of the entity as an integer
-  /// @return int: the total speed of the entity as an integer
-  int getTotalSpeedInt() { return (int)getTotalSpeedFloat(); }
 
   /// @brief gets the children entities
   /// @return std::vector<Entity*>: the children entities
@@ -66,20 +51,49 @@ public:
   /// @brief sets the marked for deletion status
   void goDie() { m_markedForDeletion = true; }
 
+  // Getters
+
+  /// @brief gets the entity ID
+  /// @return int: the entity ID
+  int getEID() { return m_EID; }
+
+  /// @brief gets the parent entity
+  /// @return Entity*: the parent entity
+  Entity *getParent() { return m_Parent; }
+
+  /// @brief gets the velocity of the entity
+  /// @return Vector2: the velocity of the entity
+  Vector2 getVelocity() const { return velocity; }
+
+  /// @brief gets the scale of the entity
+  /// @return Vector2: the scale of the entity
+  Vector2 getScale() const { return scale; }
+
+  /// @brief gets the rotation of the entity
+  /// @return Vector3: the rotation of the entity
+  Vector3 getRotation() const { return rotation; }
+
+  /// @brief gets the total speed of the entity
+  /// @return float: the total speed of the entity
+  float getTotalSpeed() { return std::sqrt(this->velocity.x * this->velocity.x + this->velocity.y * this->velocity.y); }
+
+  // --- Variables --- //
+
+  // Entity property
+  Vector2 position;
+
+protected:
+  // --- Functions --- //
+
+  /// @brief gets called after the decronstructor but before the first frames are drawn, can only be called once per object.
+  virtual void Initialise() {}
+
   // --- Variables --- //
 
   // Entity properties
-  Vector2 position;
   Vector2 velocity;
   Vector2 scale;
   Vector3 rotation;
-
-protected:
-  /// -- Functions -- ///
-  /// @brief gets called after the decronstructor but before the first frames are drawn, also gets called once per object
-  virtual void Initialise() {}
-
-  /// --- Variables --- //
 
   /// @brief states wether the boundry check should occur on this entity
   bool inBounds;

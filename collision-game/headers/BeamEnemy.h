@@ -16,10 +16,10 @@ public:
   ~BeamEnemy();
 
   virtual void Run(float deltaTime);
+  virtual void Initialise();
 
 private:
   // --- Functions --- //
-  virtual void Initialise();
 
   /// @brief sets the aim vector so the beam knows where to be shot
   void setAimVector();

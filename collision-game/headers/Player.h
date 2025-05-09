@@ -11,7 +11,9 @@ public:
 
   Player();
   ~Player();
+
   virtual void Run(float deltaTime);
+  virtual void Initialise();
 
   static int s_getPlayerPoints() { return (int)m_s_points; }
 
@@ -29,6 +31,10 @@ public:
 
   /// @brief handles internal player logic when colliding
   void Collide(Player *otherPlayer);
+
+  /// @brief returns wether the player is stunned
+  /// @return bool: true if the player is stunned
+  bool isStunned() { return !m_allowInput; };
 
 private:
   // --- Functions --- //
@@ -48,12 +54,13 @@ private:
   static float m_s_points;
   Timer *m_InputTimer;
   Timer *m_PlayerTimer;
+  Color m_playerColor;
+  Vector2 m_mouseVector;
   bool m_allowInput;
   float m_health;
   float m_speed;
-  int m_scale;
+  int m_maxScale;
   int m_playerNum;
-  Color m_playerColor;
 };
 
 #endif

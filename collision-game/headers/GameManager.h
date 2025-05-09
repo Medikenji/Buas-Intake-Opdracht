@@ -19,6 +19,7 @@ public:
   ~GameManager();
 
   virtual void Run(float deltaTime);
+  virtual void Initialise();
 
 private:
   // --- Functions --- //

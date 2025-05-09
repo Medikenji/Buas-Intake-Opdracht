@@ -40,6 +40,7 @@ void Entity::runChildren(float deltaTime) {
 void Entity::addChild(Entity *child) {
   child->m_Parent = this;
   this->m_Children.push_back(child);
+  child->Initialise();
 }
 
 void Entity::removeChild(Entity *child) {
