@@ -20,15 +20,15 @@ GameManager::~GameManager() {
 }
 
 void GameManager::Run(float deltaTime) {
-  if (IsKeyPressed(KEY_SPACE)) {
+  if (IsKeyDown(KEY_SPACE)) {
     Player *playersArray[] = {dynamic_cast<Player *>(m_Players[0]), dynamic_cast<Player *>(m_Players[1])};
     this->m_Enemies.push_back(new BeamEnemy(playersArray));
     this->addChild(m_Enemies.back());
   }
-
   this->m_gameDeltaTime = deltaTime;
   handleBoundaries();
   handlePlayerToPLayerCollision(m_Players);
+  Enemy::s_increaseEnemyDifficulty(m_gameDeltaTime);
   this->runChildren(m_gameDeltaTime);
 }
 
@@ -54,10 +54,6 @@ void GameManager::handlePlayerToPLayerCollision(std::vector<Player *> players) {
   // cast the entities to their class to allow Player functions
   Player *a = players[0];
   Player *b = players[1];
-
-  // players cant collide when stunned
-  if (a->isStunned() || b->isStunned())
-    return;
 
   // calculate the distance between the players
   float x = a->position.x - b->position.x;

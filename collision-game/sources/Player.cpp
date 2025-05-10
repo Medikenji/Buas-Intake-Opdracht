@@ -1,7 +1,8 @@
 #include "Player.h"
 
 int Player::m_s_playerNum = 0;
-float Player::m_s_points = 0;
+double Player::m_s_points = 0;
+float Player::m_s_pointsMultiplier = 1;
 
 Player::Player() {
   // set instantiate the variables
@@ -11,7 +12,8 @@ Player::Player() {
   this->inBounds = true;
   this->m_InputTimer = new Timer();
   this->m_PlayerTimer = new Timer();
-  this->m_health = 100;
+  this->m_maxHealth = 100;
+  this->m_health = m_maxHealth;
   this->m_mouseVector = {0, 0};
 }
 
@@ -23,24 +25,26 @@ void Player::Run(float deltaTime) {
   this->handleInput(deltaTime);
   this->handleSize();
   this->passiveDamage(deltaTime);
+  this->handleMultiplier(deltaTime);
 
   // move the player
   this->position.x += this->velocity.x * deltaTime;
   this->position.y += this->velocity.y * deltaTime;
 
+  float max_speed = PLAYER_MAX_SPEED * ProgramConfig::s_getScaler();
   // clamp the velocity
-  if (this->velocity.x > PLAYER_MAX_SPEED) {
-    this->velocity.x = PLAYER_MAX_SPEED;
+  if (this->velocity.x > max_speed) {
+    this->velocity.x = max_speed;
   }
-  if (this->velocity.x < -PLAYER_MAX_SPEED) {
-    this->velocity.x = -PLAYER_MAX_SPEED;
+  if (this->velocity.x < -max_speed) {
+    this->velocity.x = -max_speed;
   }
 
-  if (this->velocity.y > PLAYER_MAX_SPEED) {
-    this->velocity.y = PLAYER_MAX_SPEED;
+  if (this->velocity.y > max_speed) {
+    this->velocity.y = max_speed;
   }
-  if (this->velocity.y < -PLAYER_MAX_SPEED) {
-    this->velocity.y = -PLAYER_MAX_SPEED;
+  if (this->velocity.y < -max_speed) {
+    this->velocity.y = -max_speed;
   }
 
   // slow down the player
@@ -67,7 +71,6 @@ void Player::Initialise() {
 void Player::handleInput(float deltaTime) {
   // sets the speed correctly
   this->m_speed = (ProgramConfig::s_getScaler() / (this->scale.x / m_maxScale)) * 0.25f * PLAYER_SPEED;
-  std::cout << m_speed << std::endl;
 
   // sets the mouse vector
   if (GetMouseDelta().y > 0)
@@ -123,8 +126,8 @@ void Player::handleInput(float deltaTime) {
   }
 
   // return mouse vector to 0,0
-  m_mouseVector.y = m_mouseVector.y + (0.0f - m_mouseVector.y) * (deltaTime);
-  m_mouseVector.x = m_mouseVector.x + (0.0f - m_mouseVector.x) * (deltaTime);
+  m_mouseVector.y = m_mouseVector.y + (0.0f - m_mouseVector.y * 5) * (deltaTime);
+  m_mouseVector.x = m_mouseVector.x + (0.0f - m_mouseVector.x * 5) * (deltaTime);
 }
 
 void Player::handleSize() {
@@ -138,6 +141,14 @@ void Player::passiveDamage(float deltaTime) {
   this->m_health -= 0.01 * this->m_health * deltaTime;
 }
 
+void Player::handleMultiplier(float deltaTime) {
+  if (m_s_pointsMultiplier <= 1) {
+    m_s_pointsMultiplier = 1;
+    return;
+  }
+  m_s_pointsMultiplier -= m_s_pointsMultiplier * 0.1f * deltaTime;
+}
+
 void Player::Collide(Player *otherPlayer) {
   // prevent the players from infinitely colliding
   if (this->m_PlayerTimer->Seconds() != 0) {
@@ -149,11 +160,11 @@ void Player::Collide(Player *otherPlayer) {
 
   // tranfer velocity if player is standing still
   if (this->getTotalSpeed() < 50.0f) {
-    this->velocity.x -= otherPlayer->velocity.x * 0.5f;
-    this->velocity.y -= otherPlayer->velocity.y * 0.5f;
+    this->velocity.x += otherPlayer->velocity.x * 0.5f;
+    this->velocity.y += otherPlayer->velocity.y * 0.5f;
   }
 
-  // start the timer that allows Iframes while disabling the input
+  // start the timer that allows Iframes and disable input
   this->m_PlayerTimer->Start();
   m_allowInput = false;
 
@@ -166,8 +177,21 @@ void Player::Collide(Player *otherPlayer) {
   // bounce the players off each other
   this->inverseVelocity(PLAYER_BOUNCE);
 
-  // add points
-  m_s_points += getTotalSpeed() * 0.5f;
+  // add points and multiplier
+  m_s_pointsMultiplier += 0.01f * getTotalSpeed() + Enemy::s_getMultiplier();
+  m_s_points += getTotalSpeed() * 0.1f * m_s_pointsMultiplier;
+}
+
+void Player::damagePlayer(float damageAmount) {
+  // start the timer that allows Iframes and disable input
+  this->m_PlayerTimer->Start();
+  m_allowInput = false;
+
+  if (damageAmount > this->m_maxHealth && this->m_health > this->m_maxHealth * 0.1f) {
+    this->m_health = this->m_maxHealth * 0.1f;
+    return;
+  }
+  this->m_health -= damageAmount;
 }
 
 void Player::inverseVelocity(float strength) {

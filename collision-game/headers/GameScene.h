@@ -28,6 +28,11 @@ public:
   }
 
 private:
+  // --- Functions --- //
+
+  /// @brief draws all the UI stuff after the gamescene has rendered
+  void drawUI();
+
   // --- Variables --- //
 
   GameManager *m_GameManager;

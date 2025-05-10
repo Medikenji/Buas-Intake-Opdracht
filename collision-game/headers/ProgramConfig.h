@@ -15,7 +15,9 @@ public:
 
   static void s_setProgramConfig(int width, int height);
 
-  static bool s_isPrimaryY() {
+  /// @brief returns wether the program's width is higher then the height
+  /// @return bool: true if the width is higher then the height
+  static bool s_isPrimaryX() {
     return m_s_screenWidth > m_s_screenHeight;
   }
 

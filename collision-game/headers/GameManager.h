@@ -51,7 +51,7 @@ private:
   std::vector<Entity *> m_CollisionObjects;
   Timer *m_ObjectTimer;
 
-  /// @brief a seperate deltaTime for the game physics
+  /// @brief a seperate deltaTime for the game physics and slo motion suppoert
   float m_gameDeltaTime;
 };
 
