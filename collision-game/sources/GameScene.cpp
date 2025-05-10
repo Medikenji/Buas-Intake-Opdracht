@@ -25,6 +25,10 @@ void GameScene::Run(float deltaTime) {
 }
 
 void GameScene::drawUI() {
+  // create an ostringstream object for styling floats with one decimal, copilot helped with this
+  std::ostringstream oss;
+  oss.precision(1);
+
   // constants to make this functions more managable
   float guiFontSize = ProgramConfig::s_getScaler() * GUI_SIZE * 0.2f;
   float guiOffsetY = ProgramConfig::s_getScaler() * 0.035f;
@@ -46,7 +50,11 @@ void GameScene::drawUI() {
   DrawText(std::to_string(Player::s_getPlayerPoints()).c_str(), 0, 0, guiFontSize, WHITE);
 
   // player points multiplier
-  std::string playerMultiplier = "x" + std::to_string(Player::s_getPlayerPointsMultiplier());
+  oss << std::fixed << Player::s_getPlayerPointsMultiplier();
+  std::string playerMultiplier = "x" + oss.str();
+
+  // clear the oss string
+  oss.str("");
   DrawText(playerMultiplier.c_str(), 0, guiOffsetY, guiFontSize, WHITE);
 
   // enemy flair text
@@ -55,7 +63,8 @@ void GameScene::drawUI() {
   DrawText(enemyText, screenWidth - enemyTextWidth, 0, guiFontSize, RED);
 
   // enemy difficulty multiplier
-  std::string enemyMultiplier = "x" + std::to_string(Enemy::s_getMultiplier());
+  oss << std::fixed << Enemy::s_getMultiplier();
+  std::string enemyMultiplier = "x" + oss.str();
   float enemyMultiplierWidth = MeasureText(enemyMultiplier.c_str(), guiFontSize);
   DrawText(enemyMultiplier.c_str(), screenWidth - enemyMultiplierWidth, guiOffsetY, guiFontSize, RED);
 }
