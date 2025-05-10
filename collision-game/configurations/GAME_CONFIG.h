@@ -22,7 +22,7 @@
 #define PLAYER_EDGE_BOUNCE 0.9
 
 /// @brief parameter that controls how large the beam is in width, including collision size
-#define BEAM_SIZE 0.01
+#define BEAM_SIZE 0.03
 
 /// @brief parameter that controls how long the beam takes to explode when the enemy multiplier is 1
 #define BEAM_BASE_SPEED 5
