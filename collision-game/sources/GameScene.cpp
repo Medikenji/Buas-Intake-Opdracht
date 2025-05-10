@@ -29,9 +29,9 @@ void GameScene::drawUI() {
   std::ostringstream oss;
   oss.precision(1);
 
-  // constants to make this functions more managable
+  // constants to make this functions more managable and readable
   float guiFontSize = ProgramConfig::s_getScaler() * GUI_SIZE * 0.2f;
-  float guiOffsetY = ProgramConfig::s_getScaler() * 0.035f;
+  float guiOffsetY = ProgramConfig::s_getScaler() * 0.04f;
   float screenWidth = ProgramConfig::s_getScreenWidth();
   float nonScaler = ProgramConfig::s_getNScaler();
   float scaler = ProgramConfig::s_getScaler();

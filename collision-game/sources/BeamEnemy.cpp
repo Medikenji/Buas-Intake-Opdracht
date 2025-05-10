@@ -2,10 +2,10 @@
 
 BeamEnemy::BeamEnemy(Player *players[2]) : Enemy(players) {
   this->m_flicker = false;
-  this->m_timeUntilDetonation = 5.0f / ((Enemy::s_getMultiplier() < 2) ? Enemy::s_getMultiplier() : 2);
+  this->m_timeUntilDetonation = BEAM_BASE_SPEED / ((Enemy::s_getMultiplier() < 2) ? Enemy::s_getMultiplier() : 2);
   this->m_flickerSpeed = this->m_timeUntilDetonation * 0.1f;
   this->m_detonated = false;
-  this->m_explosionThickness = ProgramConfig::s_getScaler() * 0.01f;
+  this->m_explosionThickness = ProgramConfig::s_getScaler() * BEAM_SIZE;
 }
 
 BeamEnemy::~BeamEnemy() {
@@ -79,7 +79,7 @@ void BeamEnemy::explodeSelf(float deltaTime) {
       if (player->isStunned()) {
         continue;
       }
-      if (CheckCollisionPointLine(player->position, {this->position.x, this->position.y}, {this->m_aimVector.x, this->m_aimVector.y}, player->getScale().x + (ProgramConfig::s_getScaler() * 0.01f) * 1.5f)) {
+      if (CheckCollisionPointLine(player->position, {this->position.x, this->position.y}, {this->m_aimVector.x, this->m_aimVector.y}, player->getScale().x + (ProgramConfig::s_getScaler() * BEAM_SIZE) * 1.5f)) {
         player->damagePlayer(this->damage(109.0f));
       }
     }
@@ -87,8 +87,8 @@ void BeamEnemy::explodeSelf(float deltaTime) {
   m_detonated = true;
   DrawLineEx({this->position.x, this->position.y}, {this->m_aimVector.x, this->m_aimVector.y}, m_explosionThickness, this->enemyColor());
   if (stateI) {
-    if (m_explosionThickness < ProgramConfig::s_getScaler() * 0.01f) {
-      m_explosionThickness += deltaTime * ProgramConfig::s_getScaler() * 0.25f;
+    if (m_explosionThickness < ProgramConfig::s_getScaler() * BEAM_SIZE) {
+      m_explosionThickness += deltaTime * ProgramConfig::s_getScaler() * BEAM_SIZE * 25;
       return;
     }
     stateI = false;
@@ -96,7 +96,7 @@ void BeamEnemy::explodeSelf(float deltaTime) {
   }
   if (stateII) {
     if (m_explosionThickness > 0) {
-      m_explosionThickness -= deltaTime * ProgramConfig::s_getScaler() * 0.09f;
+      m_explosionThickness -= deltaTime * ProgramConfig::s_getScaler() * BEAM_SIZE * 9;
       return;
     }
     stateII = false;
