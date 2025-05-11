@@ -24,17 +24,17 @@ public:
 private:
   // --- Functions --- //
 
-  /// @brief initialises the level (A wrapper within the constructor)
+  /// @brief initialises the level (a wrapper within the constructor)
   void initialiseLevel();
 
   /// @brief handles the collision between players
-  /// @param std::vector<Entity*> players: the player entities to check
   void handlePlayerToPLayerCollision(std::vector<Player *> players);
 
   /// @brief handles the boundaries of the entities
-  /// @param std::vector<Entity*> entities: the entities to check
-  /// @param uint8_t type: the type of boundary to check
   void handleBoundaries();
+
+  /// @brief spawns enemies based on a point system
+  void handleEnemySpawns(float deltaTime);
 
   // --- Variables --- //
 
@@ -47,12 +47,11 @@ private:
   std::vector<Entity *> m_Enemies;
   Timer *m_EnemyTimer;
 
-  /// @brief the stoic collision objects in the game
-  std::vector<Entity *> m_CollisionObjects;
-  Timer *m_ObjectTimer;
-
   /// @brief a seperate deltaTime for the game physics and slo motion suppoert
   float m_gameDeltaTime;
+
+  /// @brief how many points the game manager has
+  float m_enemySpawnPoints;
 };
 
 #endif

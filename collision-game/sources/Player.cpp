@@ -138,7 +138,7 @@ void Player::handleSize() {
 }
 
 void Player::passiveDamage(float deltaTime) {
-  this->m_health -= 0.01 * this->m_health * deltaTime;
+  this->m_health -= 0.05f * this->m_health * Enemy::s_getMultiplier() * deltaTime;
 }
 
 void Player::handleMultiplier(float deltaTime) {
@@ -176,6 +176,11 @@ void Player::Collide(Player *otherPlayer) {
 
   // bounce the players off each other
   this->inverseVelocity(PLAYER_BOUNCE);
+  if (m_playerNum == 0) {
+    this->inverseXVelocity(-PLAYER_BOUNCE);
+  } else {
+    this->inverseYVelocity(-PLAYER_BOUNCE);
+  }
 
   // add points and multiplier
   m_s_pointsMultiplier += 0.01f * getTotalSpeed() + Enemy::s_getMultiplier();
@@ -187,7 +192,7 @@ void Player::damagePlayer(float damageAmount) {
   this->m_PlayerTimer->Start();
   m_allowInput = false;
 
-  if (damageAmount > this->m_maxHealth && this->m_health > this->m_maxHealth * 0.1f) {
+  if (damageAmount > this->m_maxHealth && this->m_health > this->m_maxHealth * 0.3f) {
     this->m_health = this->m_maxHealth * 0.1f;
     return;
   }

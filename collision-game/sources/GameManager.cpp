@@ -2,32 +2,24 @@
 
 GameManager::GameManager() {
   m_EnemyTimer = new Timer();
-  m_ObjectTimer = new Timer();
+  m_enemySpawnPoints = 3.0f;
 }
 
 GameManager::~GameManager() {
   delete m_EnemyTimer;
-  delete m_ObjectTimer;
   for (Entity *player : m_Players) {
     player->goDie();
   }
   for (Entity *enemy : m_Enemies) {
     enemy->goDie();
   }
-  for (Entity *collisionObject : m_CollisionObjects) {
-    collisionObject->goDie();
-  }
 }
 
 void GameManager::Run(float deltaTime) {
-  if (IsKeyPressed(KEY_SPACE)) {
-    Player *playersArray[] = {dynamic_cast<Player *>(m_Players[0]), dynamic_cast<Player *>(m_Players[1])};
-    this->m_Enemies.push_back(new BeamEnemy(playersArray));
-    this->addChild(m_Enemies.back());
-  }
   this->m_gameDeltaTime = deltaTime;
   handleBoundaries();
   handlePlayerToPLayerCollision(m_Players);
+  handleEnemySpawns(m_gameDeltaTime);
   Enemy::s_increaseEnemyDifficulty(m_gameDeltaTime);
   this->runChildren(m_gameDeltaTime);
 }
@@ -94,5 +86,17 @@ void GameManager::handleBoundaries() {
       }
     }
     // end of player case
+  }
+}
+
+void GameManager::handleEnemySpawns(float deltaTime) {
+  m_enemySpawnPoints += deltaTime * Enemy::s_getMultiplier() * 1.2f;
+  if (m_enemySpawnPoints > 5.0f) {
+    m_enemySpawnPoints -= 5.0f;
+    Player *playersArray[] = {dynamic_cast<Player *>(m_Players[0]), dynamic_cast<Player *>(m_Players[1])};
+    for (int i = 0; i < GetRandomValue(1, 2 * Enemy::s_getMultiplier()); i++) {
+      this->m_Enemies.push_back(new BeamEnemy(playersArray));
+      this->addChild(m_Enemies.back());
+    }
   }
 }

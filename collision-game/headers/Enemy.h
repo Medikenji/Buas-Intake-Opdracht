@@ -25,7 +25,7 @@ public:
   /// @return Player*: the nearest player
   Vector2 getTargetPosition();
 
-  /// @brief returns the enemy multiplier, this dictates their speed and damage
+  /// @brief returns the enemy multiplier, this primarily dictates their speed and damage, and some other variables
   /// @return float: the multiplier
   static float s_getMultiplier() { return m_s_multiplier; };
 
