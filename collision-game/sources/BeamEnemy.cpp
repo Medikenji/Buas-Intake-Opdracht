@@ -80,7 +80,7 @@ void BeamEnemy::explodeSelf(float deltaTime) {
         continue;
       }
       if (CheckCollisionPointLine(player->position, {this->position.x, this->position.y}, {this->m_aimVector.x, this->m_aimVector.y}, player->getScale().x + (ProgramConfig::s_getScaler() * BEAM_SIZE) * 1.5f)) {
-        player->damagePlayer(this->damage(109.0f));
+        player->damagePlayer(this->damage(20.0f));
       }
     }
   }

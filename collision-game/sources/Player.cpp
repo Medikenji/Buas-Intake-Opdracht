@@ -74,13 +74,13 @@ void Player::handleInput(float deltaTime) {
 
   // sets the mouse vector
   if (GetMouseDelta().y > 0)
-    m_mouseVector.y += deltaTime;
+    m_mouseVector.y = 1;
   if (GetMouseDelta().y < 0)
-    m_mouseVector.y -= deltaTime;
+    m_mouseVector.y = -1;
   if (GetMouseDelta().x > 0)
-    m_mouseVector.x += deltaTime;
+    m_mouseVector.x = 1;
   if (GetMouseDelta().x < 0)
-    m_mouseVector.x -= deltaTime;
+    m_mouseVector.x = -1;
 
   // clamp the mouse vector
   m_mouseVector.y = std::clamp(m_mouseVector.y, -0.2f, 0.2f);
