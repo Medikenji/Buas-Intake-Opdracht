@@ -1,12 +1,10 @@
 #include "GameManager.h"
 
 GameManager::GameManager() {
-  this->m_EnemyTimer = new Timer();
   this->m_enemySpawnPoints = 3.0f;
 }
 
 GameManager::~GameManager() {
-  delete this->m_EnemyTimer;
   for (Entity *player : this->m_Players) {
     player->goDie();
   }

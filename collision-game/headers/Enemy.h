@@ -19,7 +19,7 @@ public:
 
   /// @brief return all players within the game
   /// @return Player**: a list of all current players
-  Player **getPlayers() { return m_players; }
+  Player **getPlayers() { return m_Players; }
 
   /// @brief returns the nearest player from this Enemy
   /// @return Player*: the nearest player
@@ -49,8 +49,8 @@ private:
   // --- Variables --- //
 
   static float m_s_multiplier;
-  Player *m_players[2];
-  Player *m_target;
+  Player *m_Players[2];
+  Player *m_Target;
 };
 
 #endif

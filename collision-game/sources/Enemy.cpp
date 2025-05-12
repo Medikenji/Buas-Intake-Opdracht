@@ -4,7 +4,7 @@ float Enemy::m_s_multiplier = 1.0f;
 
 Enemy::Enemy(Player *players[2]) {
   for (int i = 0; i < 2; ++i) {
-    this->m_players[i] = players[i];
+    this->m_Players[i] = players[i];
   }
 }
 
@@ -12,7 +12,7 @@ Enemy::~Enemy() {
 }
 
 Vector2 Enemy::getTargetPosition() {
-  return this->m_target->position;
+  return this->m_Target->position;
 };
 
 void Enemy::s_increaseEnemyDifficulty(float deltaTime) {
@@ -25,16 +25,16 @@ void Enemy::s_increaseEnemyDifficulty(float deltaTime) {
 
 void Enemy::setTarget(bool randomTarget) {
   if (randomTarget) {
-    this->m_target = this->m_players[GetRandomValue(0, 1)];
+    this->m_Target = this->m_Players[GetRandomValue(0, 1)];
     return;
   }
   float distances[2];
   for (int i = 0; i < 2; ++i) {
-    float x = this->position.x - this->m_players[i]->position.x;
-    float y = this->position.y - this->m_players[i]->position.y;
+    float x = this->position.x - this->m_Players[i]->position.x;
+    float y = this->position.y - this->m_Players[i]->position.y;
     distances[i] = x * x + y * y;
   }
-  this->m_target = (distances[0] < distances[1]) ? this->m_players[0] : this->m_players[1];
+  this->m_Target = (distances[0] < distances[1]) ? this->m_Players[0] : this->m_Players[1];
 }
 
 float Enemy::damage(float damageAmount) {

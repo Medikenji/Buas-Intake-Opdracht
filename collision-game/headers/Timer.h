@@ -33,6 +33,10 @@ public:
   /// @return double: the time in seconds
   double Seconds();
 
+  /// @brief gets the timer's state
+  /// @return bool: returns true if the timer is paused
+  bool isPaused() { return m_paused; };
+
 private:
   // --- Variables --- //
 

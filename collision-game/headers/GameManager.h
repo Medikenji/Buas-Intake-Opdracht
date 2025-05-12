@@ -45,7 +45,6 @@ private:
 
   /// @brief the enemies in the game
   std::vector<Entity *> m_Enemies;
-  Timer *m_EnemyTimer;
 
   /// @brief a seperate deltaTime for the game physics and slo motion suppoert
   float m_gameDeltaTime;

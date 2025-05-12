@@ -19,8 +19,17 @@ public:
   virtual void Run(float deltaTime);
   virtual void Initialise();
 
+  /// @brief gets the player points
+  /// @return int: the amount of points the players have
   static int s_getPlayerPoints() { return (int)m_s_points; }
+
+  /// @brief gets the multipleir of the player point
+  /// @return float: the current multiplier of all players their points
   static float s_getPlayerPointsMultiplier() { return m_s_pointsMultiplier; };
+
+  /// @brief returns the players their game over state
+  /// @return bool: returns true if one of the players died
+  static bool s_isGameOver() { return m_s_gameOver; };
 
   /// @brief handles internal player logic when colliding
   void Collide(Player *otherPlayer);

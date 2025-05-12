@@ -1,6 +1,7 @@
 #include "GameScene.h"
 
-GameScene::GameScene() {
+GameScene::GameScene(SceneManager &scenemanager) {
+  this->m_SceneManager = &scenemanager;
   if (ProgramConfig::s_isPrimaryX())
     this->position.x = (ProgramConfig::s_getNScaler() - ProgramConfig::s_getScaler()) * 0.5f;
   else
@@ -17,6 +18,10 @@ GameScene::~GameScene() {
 
 void GameScene::Run(float deltaTime) {
   Cursor::s_setCursorState(HIDDEN_CURSOR);
+  if (Player::s_isGameOver()) {
+    this->m_SceneManager->switchScene(3);
+  }
+  this->m_SceneManager->switchSceneKeybind(KEY_ESCAPE, 0);
   DrawRectangleLines(position.x - 1.0f, position.y - 1.0f, scale.x + 2.0f, scale.y + 2.0f, WHITE);
   DrawRectangle(position.x, position.y, scale.x, scale.y, BLACK);
   this->runChildren(deltaTime);
@@ -30,7 +35,7 @@ void GameScene::drawUI() {
   std::ostringstream oss;
   oss.precision(1);
 
-  // constants to make this functions more managable and readable
+  // constants to make this functions more managable and readable, made by copilot
   float non_scaler = ProgramConfig::s_getNScaler();
   float scaler = ProgramConfig::s_getScaler();
   float gui_font_size = scaler * GUI_SIZE * 0.2f;

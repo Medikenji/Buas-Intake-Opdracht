@@ -16,7 +16,7 @@ class GameScene : public Entity {
 public:
   // --- Functions --- //
 
-  GameScene();
+  GameScene(SceneManager &scenemanager);
   ~GameScene();
 
   virtual void Run(float deltaTime);
@@ -36,6 +36,7 @@ private:
   // --- Variables --- //
 
   GameManager *m_GameManager;
+  SceneManager *m_SceneManager;
 };
 
 #endif
