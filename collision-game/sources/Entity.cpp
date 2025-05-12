@@ -6,10 +6,10 @@ Entity::Entity() {
   // Initialize the entity
   this->m_EID = m_s_currentEID++;
   this->m_Parent = nullptr;
-  this->position = {0, 0};
-  this->velocity = {0, 0};
-  this->scale = {1, 1};
-  this->rotation = {0, 0, 0};
+  this->position = {0.0f, 0.0f};
+  this->velocity = {0.0f, 0.0f};
+  this->scale = {1.0f, 1.0f};
+  this->rotation = {0.0f, 0.0f, 0.0f};
   this->inBounds = false;
   this->m_initialised = false;
   this->m_markedForDeletion = false;
@@ -21,10 +21,6 @@ Entity::~Entity() {
 }
 
 void Entity::runChildren(float deltaTime) {
-  if (!this->m_initialised) {
-    this->Initialise();
-    this->m_initialised = true;
-  }
   for (int i = 0; i < this->children().size();) {
     if (this->children()[i]->m_markedForDeletion) {
       Entity *childToDelete = this->children()[i];
@@ -41,6 +37,7 @@ void Entity::addChild(Entity *child) {
   child->m_Parent = this;
   this->m_Children.push_back(child);
   child->Initialise();
+  this->m_initialised = true;
 }
 
 void Entity::removeChild(Entity *child) {

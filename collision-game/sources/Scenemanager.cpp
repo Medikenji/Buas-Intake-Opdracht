@@ -21,10 +21,9 @@ SceneManager::~SceneManager() {
 
 void SceneManager::Run(float deltaTime) {
   if (IsKeyDown(KEY_ESCAPE)) {
-    Cursor::s_setCursorState(DEFAULT_CURSOR);
-    m_currentScene = 0;
+    this->m_currentScene = 0;
   }
 
   // Run the current scene
-  this->children()[m_currentScene]->Run(deltaTime);
+  this->children()[this->m_currentScene]->Run(deltaTime);
 }

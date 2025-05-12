@@ -61,6 +61,7 @@ private:
 
   // --- Variables --- //
 
+  static bool m_s_gameOver;
   static int m_s_playerNum;
   static double m_s_points;
   static float m_s_pointsMultiplier;

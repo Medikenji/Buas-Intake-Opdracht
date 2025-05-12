@@ -1,16 +1,16 @@
 #include "GameManager.h"
 
 GameManager::GameManager() {
-  m_EnemyTimer = new Timer();
-  m_enemySpawnPoints = 3.0f;
+  this->m_EnemyTimer = new Timer();
+  this->m_enemySpawnPoints = 3.0f;
 }
 
 GameManager::~GameManager() {
-  delete m_EnemyTimer;
-  for (Entity *player : m_Players) {
+  delete this->m_EnemyTimer;
+  for (Entity *player : this->m_Players) {
     player->goDie();
   }
-  for (Entity *enemy : m_Enemies) {
+  for (Entity *enemy : this->m_Enemies) {
     enemy->goDie();
   }
 }
@@ -18,10 +18,10 @@ GameManager::~GameManager() {
 void GameManager::Run(float deltaTime) {
   this->m_gameDeltaTime = deltaTime;
   handleBoundaries();
-  handlePlayerToPLayerCollision(m_Players);
-  handleEnemySpawns(m_gameDeltaTime);
-  Enemy::s_increaseEnemyDifficulty(m_gameDeltaTime);
-  this->runChildren(m_gameDeltaTime);
+  handlePlayerToPLayerCollision(this->m_Players);
+  handleEnemySpawns(this->m_gameDeltaTime);
+  Enemy::s_increaseEnemyDifficulty(this->m_gameDeltaTime);
+  this->runChildren(this->m_gameDeltaTime);
 }
 
 void GameManager::Initialise() {
@@ -34,9 +34,9 @@ void GameManager::Initialise() {
 void GameManager::initialiseLevel() {
 
   this->m_Players.push_back(new Player());
-  this->addChild(m_Players[0]);
+  this->addChild(this->m_Players[0]);
   this->m_Players.push_back(new Player());
-  this->addChild(m_Players[1]);
+  this->addChild(this->m_Players[1]);
 }
 
 void GameManager::handlePlayerToPLayerCollision(std::vector<Player *> players) {
@@ -53,10 +53,10 @@ void GameManager::handlePlayerToPLayerCollision(std::vector<Player *> players) {
   float distance = x * x + y * y;
 
   // calculate and implement slow motion
-  m_gameDeltaTime /= 1 + (((a->getTotalSpeed() + b->getTotalSpeed()) * ProgramConfig::s_getScaler() * 0.01) / (0.75 * distance));
+  this->m_gameDeltaTime /= 1 + (((a->getTotalSpeed() + b->getTotalSpeed()) * ProgramConfig::s_getScaler() * 0.01f) / (0.8f * distance));
 
   // if the players are colliding
-  if (distance <= std::pow(a->getScale().x + b->getScale().x, 2)) {
+  if (distance <= std::pow(a->getScale().x + b->getScale().x, 2.0f)) {
 
     // tell players they have collided
     a->Collide(b);
@@ -69,19 +69,19 @@ void GameManager::handleBoundaries() {
   for (Player *player : m_Players) {
     if (player->boundryCheck()) {
       if (player->position.x < this->position.x + player->getScale().x) {
-        player->position.x = this->position.x + player->getScale().x + 1;
+        player->position.x = this->position.x + player->getScale().x + 1.0f;
         player->inverseXVelocity(PLAYER_EDGE_BOUNCE);
       }
       if (player->position.x > this->position.x + this->getScale().x - player->getScale().x) {
-        player->position.x = this->position.x + this->getScale().x - player->getScale().x - 1;
+        player->position.x = this->position.x + this->getScale().x - player->getScale().x - 1.0f;
         player->inverseXVelocity(PLAYER_EDGE_BOUNCE);
       }
       if (player->position.y < this->position.y + player->getScale().x) {
-        player->position.y = this->position.y + player->getScale().x + 1;
+        player->position.y = this->position.y + player->getScale().x + 1.0f;
         player->inverseYVelocity(PLAYER_EDGE_BOUNCE);
       }
       if (player->position.y > this->position.y + this->getScale().y - player->getScale().x) {
-        player->position.y = this->position.y + this->getScale().y - player->getScale().x - 1;
+        player->position.y = this->position.y + this->getScale().y - player->getScale().x - 1.0f;
         player->inverseYVelocity(PLAYER_EDGE_BOUNCE);
       }
     }
@@ -90,11 +90,11 @@ void GameManager::handleBoundaries() {
 }
 
 void GameManager::handleEnemySpawns(float deltaTime) {
-  m_enemySpawnPoints += deltaTime * Enemy::s_getMultiplier() * 1.2f;
-  if (m_enemySpawnPoints > 5.0f) {
-    m_enemySpawnPoints -= 5.0f;
+  this->m_enemySpawnPoints += deltaTime * Enemy::s_getMultiplier() * 1.2f;
+  if (this->m_enemySpawnPoints > 5.0f) {
+    this->m_enemySpawnPoints -= 5.0f;
     Player *playersArray[] = {dynamic_cast<Player *>(m_Players[0]), dynamic_cast<Player *>(m_Players[1])};
-    for (int i = 0; i < GetRandomValue(1, 2 * Enemy::s_getMultiplier()); i++) {
+    for (int i = 0; i < GetRandomValue(1, (int)(2.0f * Enemy::s_getMultiplier())); i++) {
       this->m_Enemies.push_back(new BeamEnemy(playersArray));
       this->addChild(m_Enemies.back());
     }

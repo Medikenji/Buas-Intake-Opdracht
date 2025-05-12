@@ -10,10 +10,10 @@
 #define PLAYERCOL_IFRAMES 0.3
 
 /// @brief parameter that controls how fast the player moves
-#define PLAYER_SPEED 2.5
+#define PLAYER_SPEED 4.5
 
 /// @brief parameter that controls the max speed the player can go
-#define PLAYER_MAX_SPEED 2.0
+#define PLAYER_MAX_SPEED 3.0
 
 /// @brief parameter that controls how hard the players launch away when colliding
 #define PLAYER_BOUNCE 1.5

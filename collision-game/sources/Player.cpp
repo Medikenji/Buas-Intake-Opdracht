@@ -1,5 +1,6 @@
 #include "Player.h"
 
+bool Player::m_s_gameOver = false;
 int Player::m_s_playerNum = 0;
 double Player::m_s_points = 0;
 float Player::m_s_pointsMultiplier = 1;
@@ -13,8 +14,8 @@ Player::Player() {
   this->m_InputTimer = new Timer();
   this->m_PlayerTimer = new Timer();
   this->m_maxHealth = 100;
-  this->m_health = m_maxHealth;
-  this->m_mouseVector = {0, 0};
+  this->m_health = this->m_maxHealth;
+  this->m_mouseVector = {0.0f, 0.0f};
 }
 
 Player::~Player() {
@@ -52,8 +53,8 @@ void Player::Run(float deltaTime) {
   this->velocity.y *= std::pow(0.25f, deltaTime);
 
   // draw the player
-  DrawCircle((int)this->position.x, (int)this->position.y, this->scale.x * m_health * 0.01f, m_playerColor);
-  DrawCircleLines((int)this->position.x, (int)this->position.y, this->scale.x, m_playerColor);
+  DrawCircle((int)this->position.x, (int)this->position.y, this->scale.x * this->m_health * 0.01f, this->m_playerColor);
+  DrawCircleLines((int)this->position.x, (int)this->position.y, this->scale.x, this->m_playerColor);
 }
 
 void Player::Initialise() {
@@ -73,37 +74,37 @@ void Player::handleInput(float deltaTime) {
   this->m_speed = (ProgramConfig::s_getScaler() / (this->scale.x / m_maxScale)) * 0.25f * PLAYER_SPEED;
 
   // sets the mouse vector
-  if (GetMouseDelta().y > 0)
-    m_mouseVector.y = 1;
-  if (GetMouseDelta().y < 0)
-    m_mouseVector.y = -1;
-  if (GetMouseDelta().x > 0)
-    m_mouseVector.x = 1;
-  if (GetMouseDelta().x < 0)
-    m_mouseVector.x = -1;
+  if (GetMouseDelta().y > 0.0f)
+    this->m_mouseVector.y = 1.0f;
+  if (GetMouseDelta().y < 0.0f)
+    this->m_mouseVector.y = -1.0f;
+  if (GetMouseDelta().x > 0.0f)
+    this->m_mouseVector.x = 1.0f;
+  if (GetMouseDelta().x < 0.0f)
+    this->m_mouseVector.x = -1.0f;
 
   // clamp the mouse vector
-  m_mouseVector.y = std::clamp(m_mouseVector.y, -0.2f, 0.2f);
-  m_mouseVector.x = std::clamp(m_mouseVector.x, -0.2f, 0.2f);
+  this->m_mouseVector.y = std::clamp(this->m_mouseVector.y, -0.2f, 0.2f);
+  this->m_mouseVector.x = std::clamp(this->m_mouseVector.x, -0.2f, 0.2f);
 
   // only allow input when Iframes havent been called yet
-  if (m_allowInput) {
-    if (m_playerNum == 0) {
+  if (this->m_allowInput) {
+    if (this->m_playerNum == 0) {
       this->m_playerColor = MAGENTA;
-      if (IsKeyDown(KEY_UP) || m_mouseVector.y < -0.1f) {
+      if (IsKeyDown(KEY_UP) || this->m_mouseVector.y < -0.1f) {
         this->velocity.y -= this->m_speed * deltaTime;
       }
-      if (IsKeyDown(KEY_DOWN) || m_mouseVector.y > 0.1f) {
+      if (IsKeyDown(KEY_DOWN) || this->m_mouseVector.y > 0.1f) {
         this->velocity.y += this->m_speed * deltaTime;
       }
-      if (IsKeyDown(KEY_LEFT) || m_mouseVector.x < -0.1f) {
+      if (IsKeyDown(KEY_LEFT) || this->m_mouseVector.x < -0.1f) {
         this->velocity.x -= this->m_speed * deltaTime;
       }
-      if (IsKeyDown(KEY_RIGHT) || m_mouseVector.x > 0.1f) {
+      if (IsKeyDown(KEY_RIGHT) || this->m_mouseVector.x > 0.1f) {
         this->velocity.x += this->m_speed * deltaTime;
       }
     } else {
-      m_playerColor = SKYBLUE;
+      this->m_playerColor = SKYBLUE;
       if (IsKeyDown(KEY_W)) {
         this->velocity.y -= this->m_speed * deltaTime;
       }
@@ -119,15 +120,15 @@ void Player::handleInput(float deltaTime) {
     }
 
   } else {
-    if (m_PlayerTimer->Seconds() > PLAYERCOL_IFRAMES) {
-      m_allowInput = true;
+    if (this->m_PlayerTimer->Seconds() > PLAYERCOL_IFRAMES) {
+      this->m_allowInput = true;
     }
-    m_playerColor = WHITE;
+    this->m_playerColor = WHITE;
   }
 
   // return mouse vector to 0,0
-  m_mouseVector.y = m_mouseVector.y + (0.0f - m_mouseVector.y * 5) * (deltaTime);
-  m_mouseVector.x = m_mouseVector.x + (0.0f - m_mouseVector.x * 5) * (deltaTime);
+  this->m_mouseVector.y = this->m_mouseVector.y + (-this->m_mouseVector.y * 5.0f) * (deltaTime);
+  this->m_mouseVector.x = this->m_mouseVector.x + (-this->m_mouseVector.x * 5.0f) * (deltaTime);
 }
 
 void Player::handleSize() {
@@ -142,8 +143,8 @@ void Player::passiveDamage(float deltaTime) {
 }
 
 void Player::handleMultiplier(float deltaTime) {
-  if (m_s_pointsMultiplier <= 1) {
-    m_s_pointsMultiplier = 1;
+  if (m_s_pointsMultiplier <= 1.0f) {
+    m_s_pointsMultiplier = 1.0f;
     return;
   }
   m_s_pointsMultiplier -= m_s_pointsMultiplier * 0.1f * deltaTime;
@@ -151,7 +152,7 @@ void Player::handleMultiplier(float deltaTime) {
 
 void Player::Collide(Player *otherPlayer) {
   // prevent the players from infinitely colliding
-  if (this->m_PlayerTimer->Seconds() != 0) {
+  if (this->m_PlayerTimer->Seconds() != 0.0f) {
     if (this->m_PlayerTimer->Seconds() > PLAYERCOL_IFRAMES) {
       this->m_PlayerTimer->Stop();
     }
@@ -166,20 +167,26 @@ void Player::Collide(Player *otherPlayer) {
 
   // start the timer that allows Iframes and disable input
   this->m_PlayerTimer->Start();
-  m_allowInput = false;
+  this->m_allowInput = false;
 
   // add back health to player
   this->m_health += this->getTotalSpeed() * 0.05f;
-  if (this->m_health > 100) {
-    this->m_health = 100;
+  if (this->m_health > 100.0f) {
+    this->m_health = 100.0f;
   }
 
-  // bounce the players off each other
-  this->inverseVelocity(PLAYER_BOUNCE);
+  // bounce the players off each other, also prevents easy infinite colliding
+  this->inverseVelocity(PLAYER_BOUNCE * 0.75f);
+  if (std::abs(this->velocity.x) < 1.0f) {
+    this->velocity.x += GetRandomValue(-this->m_speed, this->m_speed);
+  }
   if (m_playerNum == 0) {
-    this->inverseXVelocity(-PLAYER_BOUNCE);
+    this->inverseXVelocity(-PLAYER_BOUNCE * 1.25f);
   } else {
-    this->inverseYVelocity(-PLAYER_BOUNCE);
+    if (std::abs(this->velocity.y) < 1) {
+      this->velocity.y += GetRandomValue(-this->m_speed, this->m_speed);
+    }
+    this->inverseYVelocity(-PLAYER_BOUNCE * 1.25f);
   }
 
   // add points and multiplier
@@ -197,6 +204,10 @@ void Player::damagePlayer(float damageAmount) {
     return;
   }
   this->m_health -= damageAmount;
+
+  if (this->m_health < 0.0f) {
+    m_s_gameOver = true;
+  }
 }
 
 void Player::inverseVelocity(float strength) {

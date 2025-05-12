@@ -2,7 +2,7 @@
 
 BeamEnemy::BeamEnemy(Player *players[2]) : Enemy(players) {
   this->m_flicker = false;
-  this->m_timeUntilDetonation = BEAM_BASE_SPEED / ((Enemy::s_getMultiplier() < 2) ? Enemy::s_getMultiplier() : 2);
+  this->m_timeUntilDetonation = BEAM_BASE_SPEED / ((Enemy::s_getMultiplier() < 2.0f) ? Enemy::s_getMultiplier() : 2.0f);
   this->m_flickerSpeed = this->m_timeUntilDetonation * 0.1f;
   this->m_detonated = false;
   this->m_explosionThickness = ProgramConfig::s_getScaler() * BEAM_SIZE;
@@ -49,20 +49,20 @@ void BeamEnemy::setAimVector() {
   // normalise and move the vector to the BeamEnemy location before enlarging it again
   // made with help from: https://www.khanacademy.org/computing/computer-programming/programming-natural-simulations/programming-vectors/a/vector-magnitude-normalization
   magnitude = sqrt((temp_vector.x * temp_vector.x) + (temp_vector.y * temp_vector.y));
-  this->m_aimVector.x = ((temp_vector.x / magnitude * ProgramConfig::s_getNScaler() * 10)) + this->position.x;
-  this->m_aimVector.y = ((temp_vector.y / magnitude * ProgramConfig::s_getNScaler() * 10)) + this->position.y;
+  this->m_aimVector.x = ((temp_vector.x / magnitude * ProgramConfig::s_getNScaler() * 10.0f)) + this->position.x;
+  this->m_aimVector.y = ((temp_vector.y / magnitude * ProgramConfig::s_getNScaler() * 10.0f)) + this->position.y;
 }
 
 void BeamEnemy::flicker(float deltaTime) {
   this->m_timeUntilDetonation -= deltaTime;
-  if (this->m_timeUntilDetonation <= 0) {
+  if (this->m_timeUntilDetonation <= 0.0f) {
     explodeSelf(deltaTime);
     return;
   }
   this->m_flickerSpeed -= deltaTime;
-  if (this->m_flickerSpeed <= 0) {
-    this->m_flickerSpeed = m_timeUntilDetonation * 0.1f;
-    this->m_flicker = !m_flicker;
+  if (this->m_flickerSpeed <= 0.0f) {
+    this->m_flickerSpeed = this->m_timeUntilDetonation * 0.1f;
+    this->m_flicker = !this->m_flicker;
   }
 
   if (this->m_flicker && !this->m_detonated) {
@@ -85,18 +85,18 @@ void BeamEnemy::explodeSelf(float deltaTime) {
     }
   }
   m_detonated = true;
-  DrawLineEx({this->position.x, this->position.y}, {this->m_aimVector.x, this->m_aimVector.y}, m_explosionThickness, this->enemyColor());
+  DrawLineEx({this->position.x, this->position.y}, {this->m_aimVector.x, this->m_aimVector.y}, this->m_explosionThickness, this->enemyColor());
   if (stateI) {
-    if (m_explosionThickness < ProgramConfig::s_getScaler() * BEAM_SIZE) {
-      m_explosionThickness += deltaTime * ProgramConfig::s_getScaler() * BEAM_SIZE * 25;
+    if (this->m_explosionThickness < ProgramConfig::s_getScaler() * BEAM_SIZE) {
+      this->m_explosionThickness += deltaTime * ProgramConfig::s_getScaler() * BEAM_SIZE * 25.0f;
       return;
     }
     stateI = false;
     stateII = true;
   }
   if (stateII) {
-    if (m_explosionThickness > 0) {
-      m_explosionThickness -= deltaTime * ProgramConfig::s_getScaler() * BEAM_SIZE * 9;
+    if (this->m_explosionThickness > 0.0f) {
+      this->m_explosionThickness -= deltaTime * ProgramConfig::s_getScaler() * BEAM_SIZE * 9.0f;
       return;
     }
     stateII = false;

@@ -40,9 +40,8 @@ void Core::Run() {
     ClearBackground({32, 32, 32, 255});
     this->m_SceneManager->Run(m_deltaTime);
     this->m_Cursor.drawCursor();
-#if PERFORMANCE_TEST == 1
-    DrawFPS(0, 0);
-#endif
+    if (ProgramConfig::s_performanceTest)
+      DrawFPS(0, 0);
     EndDrawing();
   }
   // close the window
