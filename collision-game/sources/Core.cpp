@@ -28,17 +28,18 @@ void Core::Run() {
 
   GuiSetStyle(DEFAULT, TEXT_SIZE, ProgramConfig::s_getScaler() * GUI_SIZE * 0.15f);
   // run the game loop
+  float delta_time;
   while (!WindowShouldClose() && !SceneManager::s_shouldExitProgram()) {
     // check if the window is focused and slow the delta time if not.
     if (IsWindowFocused()) {
-      this->m_deltaTime = GetFrameTime();
+        delta_time = GetFrameTime();
     } else {
-      this->m_deltaTime = GetFrameTime() * 0.1f;
+        delta_time = GetFrameTime() * 0.1f;
     }
 
     BeginDrawing();
     ClearBackground({32, 32, 32, 255});
-    this->m_SceneManager->Run(m_deltaTime);
+    this->m_SceneManager->Run(delta_time);
     this->m_Cursor.drawCursor();
     if (ProgramConfig::s_performanceTest)
       DrawFPS(0, 0);

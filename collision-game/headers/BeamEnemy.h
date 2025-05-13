@@ -12,7 +12,7 @@ class BeamEnemy : public Enemy {
 public:
   // --- Functions --- //
 
-  BeamEnemy(Player *players[2]);
+  BeamEnemy(std::vector<Player*>& players);
   ~BeamEnemy();
 
   virtual void Run(float deltaTime);

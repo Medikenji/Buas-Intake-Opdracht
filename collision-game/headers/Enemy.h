@@ -12,14 +12,14 @@ class Enemy : public Entity {
 public:
   // --- Functions --- //
 
-  Enemy(Player *players[2]);
+  Enemy(std::vector<Player*>& players);
   ~Enemy();
 
   virtual void Run(float deltaTime) = 0;
 
   /// @brief return all players within the game
   /// @return Player**: a list of all current players
-  Player **getPlayers() { return m_Players; }
+  std::vector<Player*>  getPlayers() { return m_Players; }
 
   /// @brief returns the nearest player from this Enemy
   /// @return Player*: the nearest player
@@ -49,7 +49,7 @@ private:
   // --- Variables --- //
 
   static float m_s_multiplier;
-  Player *m_Players[2];
+  std::vector<Player*> m_Players;
   Player *m_Target;
 };
 
