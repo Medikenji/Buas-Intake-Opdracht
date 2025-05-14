@@ -40,8 +40,9 @@ void SceneManager::Run(float deltaTime) {
   }
 }
 
-void SceneManager::switchSceneKeybind(KeyboardKey key, int scene) {
+void SceneManager::switchSceneKeybind(KeyboardKey key, int scene, int cursorState) {
   if (IsKeyDown(key)) {
     this->m_currentScene = scene;
+    Cursor::s_setCursorState(cursorState);
   }
 }

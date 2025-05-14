@@ -25,9 +25,12 @@ public:
   virtual void Run(float deltaTime);
 
   /// @brief a setter that switches the scene
-  void switchScene(int scene) { this->m_currentScene = scene; };
+  void switchScene(int scene, int cursorState) {
+    Cursor::s_setCursorState(cursorState);
+    this->m_currentScene = scene;
+  };
 
-  void switchSceneKeybind(KeyboardKey key, int scene);
+  void switchSceneKeybind(KeyboardKey key, int scene, int cursorState);
 
   /// @brief checks if the program should be closed by this custom call
   /// @return bool: if the program should close

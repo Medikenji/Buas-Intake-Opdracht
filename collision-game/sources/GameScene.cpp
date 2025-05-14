@@ -17,11 +17,10 @@ GameScene::~GameScene() {
 }
 
 void GameScene::Run(float deltaTime) {
-  Cursor::s_setCursorState(HIDDEN_CURSOR);
   if (Player::s_isGameOver()) {
-    this->m_SceneManager->switchScene(3);
+    this->m_SceneManager->switchScene(3, DEFAULT_CURSOR);
   }
-  this->m_SceneManager->switchSceneKeybind(KEY_ESCAPE, 0);
+  this->m_SceneManager->switchSceneKeybind(KEY_ESCAPE, 0, DEFAULT_CURSOR);
   DrawRectangleLines(position.x - 1.0f, position.y - 1.0f, scale.x + 2.0f, scale.y + 2.0f, WHITE);
   DrawRectangle(position.x, position.y, scale.x, scale.y, BLACK);
   this->runChildren(deltaTime);

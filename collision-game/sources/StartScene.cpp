@@ -10,8 +10,6 @@ StartScene::~StartScene() {
 }
 
 void StartScene::Run(float deltaTime) {
-  Cursor::s_setCursorState(DEFAULT_CURSOR);
-
   // constants to make this functions more managable and readable, made by copilot
   const float screen_width = ProgramConfig::s_getScreenWidth();
   const float screen_height = ProgramConfig::s_getScreenHeight();
@@ -30,13 +28,13 @@ void StartScene::Run(float deltaTime) {
   Rectangle startButton = {halfs_screen_width - gui_size * 0.5f, half_screen_height - gui_size * 0.4f, gui_size, gui_size * 0.3f};
   if (GuiButton(startButton, m_gameStarted ? "Resume Game" : "Start Game")) {
     m_gameStarted = true;
-    m_SceneManager->switchScene(2);
+    m_SceneManager->switchScene(2, HIDDEN_CURSOR);
   }
 
   // Help button
   Rectangle helpButton = {halfs_screen_width - gui_size * 0.5f, half_screen_height, gui_size, gui_size * 0.3f};
   if (GuiButton(helpButton, "Help")) {
-    m_SceneManager->switchScene(1);
+    m_SceneManager->switchScene(1, DEFAULT_CURSOR);
   }
 
   // Quit button

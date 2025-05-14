@@ -2,10 +2,8 @@
 
 float Enemy::m_s_multiplier = 1.0f;
 
-Enemy::Enemy(std::vector<Player*>& players) {
-  for (int i = 0; i < 2; ++i) {
-    this->m_Players[i] = players[i];
-  }
+Enemy::Enemy(std::vector<Player *> &players) {
+  this->m_Players = players;
 }
 
 Enemy::~Enemy() {

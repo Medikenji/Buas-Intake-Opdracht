@@ -8,8 +8,6 @@ GameOverScene::~GameOverScene() {
 }
 
 void GameOverScene::Run(float deltaTime) {
-  Cursor::s_setCursorState(DEFAULT_CURSOR);
-
   // constants to make this functions more managable and readable, made by copilot
   const float scaler = ProgramConfig::s_getScaler();
   const float gui_font_size = scaler * GUI_SIZE * 0.2f;

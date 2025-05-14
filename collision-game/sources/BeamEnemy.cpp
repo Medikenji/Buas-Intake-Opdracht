@@ -1,6 +1,6 @@
 #include "BeamEnemy.h"
 
-BeamEnemy::BeamEnemy(std::vector<Player*>& players) : Enemy(players) {
+BeamEnemy::BeamEnemy(std::vector<Player *> &players) : Enemy(players) {
   this->m_flicker = false;
   this->m_timeUntilDetonation = BEAM_BASE_SPEED / ((Enemy::s_getMultiplier() < 2.0f) ? Enemy::s_getMultiplier() : 2.0f);
   this->m_flickerSpeed = this->m_timeUntilDetonation * 0.1f;
@@ -73,9 +73,7 @@ void BeamEnemy::flicker(float deltaTime) {
 void BeamEnemy::explodeSelf(float deltaTime) {
   if (!m_detonated) {
     // check and handle player to beam collision only once
-    Player **players = this->getPlayers();
-    for (int i = 0; i < 2; ++i) {
-      Player *player = players[i];
+    for (Player *player : this->getPlayers()) {
       if (player->isStunned()) {
         continue;
       }
