@@ -11,26 +11,43 @@ StartScene::~StartScene() {
 
 void StartScene::Run(float deltaTime) {
   Cursor::s_setCursorState(DEFAULT_CURSOR);
-  float ui_scale = ProgramConfig::s_getScaler() * GUI_SIZE;
+
+  // constants to make this functions more managable and readable, made by copilot
+  const float screen_width = ProgramConfig::s_getScreenWidth();
+  const float screen_height = ProgramConfig::s_getScreenHeight();
+  const float scaler = ProgramConfig::s_getScaler();
+  const float gui_size = GUI_SIZE * scaler;
+  const float halfs_screen_width = screen_width * 0.5f;
+  const float half_screen_height = screen_height * 0.5f;
 
   // Draw the title
-  DrawText("Kolvor!", ProgramConfig::s_getScreenWidth() * 0.5f - MeasureText("Kolvor!", ui_scale * GUI_SIZE * 1.5f) * 0.5f, ProgramConfig::s_getScreenHeight() * 0.5f - ui_scale * 0.75f, ui_scale * 0.3f, WHITE);
+  const char *title = "Kolvor!";
+  float titleFontSize = gui_size * GUI_SIZE * 1.5f;
+  float titleWidth = MeasureText(title, titleFontSize);
+  DrawText(title, halfs_screen_width - titleWidth * 0.5f, half_screen_height - gui_size * 0.75f, titleFontSize, WHITE);
 
   // Dynamic start button
-  if (GuiButton({ProgramConfig::s_getScreenWidth() * 0.5f - ui_scale * 0.5f, ProgramConfig::s_getScreenHeight() * 0.5f - ui_scale * 0.4f, ui_scale, ui_scale * 0.3f}, m_gameStarted ? "Resume Game" : "Start Game")) {
+  Rectangle startButton = {halfs_screen_width - gui_size * 0.5f, half_screen_height - gui_size * 0.4f, gui_size, gui_size * 0.3f};
+  if (GuiButton(startButton, m_gameStarted ? "Resume Game" : "Start Game")) {
     m_gameStarted = true;
     m_SceneManager->switchScene(2);
   }
 
-  // Draw the other buttons
-  if (GuiButton({ProgramConfig::s_getScreenWidth() * 0.5f - ui_scale * 0.5f, ProgramConfig::s_getScreenHeight() * 0.5f, ui_scale, ui_scale * 0.3f}, "Help")) {
+  // Help button
+  Rectangle helpButton = {halfs_screen_width - gui_size * 0.5f, half_screen_height, gui_size, gui_size * 0.3f};
+  if (GuiButton(helpButton, "Help")) {
     m_SceneManager->switchScene(1);
   }
-  if (GuiButton({ProgramConfig::s_getScreenWidth() * 0.5f - ui_scale * 0.5f, ProgramConfig::s_getScreenHeight() * 0.5f - ui_scale * -0.4f, ui_scale, ui_scale * 0.3f}, "Quit Game") || IsKeyPressedRepeat(KEY_ESCAPE)) {
+
+  // Quit button
+  Rectangle quitButton = {halfs_screen_width - gui_size * 0.5f, half_screen_height + gui_size * 0.4f, gui_size, gui_size * 0.3f};
+  if (GuiButton(quitButton, "Quit Game") || IsKeyPressedRepeat(KEY_ESCAPE)) {
     SceneManager::s_exitProgram();
   }
 
-  if (GuiButton({0, ProgramConfig::s_getScreenHeight() - ui_scale * 0.3f, ui_scale * 1.3f, ui_scale * 0.3f}, "Toggle Fullscreen")) {
+  // Toggle fullscreen button
+  Rectangle fullscreenButton = {0, screen_height - gui_size * 0.3f, gui_size * 1.3f, gui_size * 0.3f};
+  if (GuiButton(fullscreenButton, "Toggle Fullscreen")) {
     ToggleFullscreen();
   }
 }
