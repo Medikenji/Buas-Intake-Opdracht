@@ -22,7 +22,6 @@ private:
 
   SceneManager *m_SceneManager;
   Cursor m_Cursor;
-  float m_deltaTime;
 };
 
 #endif

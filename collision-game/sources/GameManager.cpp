@@ -24,13 +24,12 @@ void GameManager::Run(float deltaTime) {
 
 void GameManager::Initialise() {
   this->position = this->getParent()->position;
-  this->scale.x = this->getParent()->getScale().x;
-  this->scale.y = this->getParent()->getScale().y;
+  this->scale = this->getParent()->getScale();
   initialiseLevel();
 }
 
 void GameManager::initialiseLevel() {
-
+  this->m_Players.clear();
   this->m_Players.push_back(new Player());
   this->addChild(this->m_Players[0]);
   this->m_Players.push_back(new Player());
@@ -91,10 +90,6 @@ void GameManager::handleEnemySpawns(float deltaTime) {
   this->m_enemySpawnPoints += deltaTime * Enemy::s_getMultiplier() * 1.2f;
   if (this->m_enemySpawnPoints > 5.0f) {
     this->m_enemySpawnPoints -= 5.0f;
-    Player *playersArray[] = {dynamic_cast<Player *>(m_Players[0]), dynamic_cast<Player *>(m_Players[1])};
-    for (int i = 0; i < GetRandomValue(1, (int)(2.0f * Enemy::s_getMultiplier())); i++) {
-      this->m_Enemies.push_back(new BeamEnemy(playersArray));
-      this->addChild(m_Enemies.back());
-    }
+      this->m_Enemies.push_back(new BeamEnemy(m_Players));
   }
 }
