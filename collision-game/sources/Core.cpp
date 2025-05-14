@@ -11,6 +11,10 @@ Core::~Core() {
 void Core::Run() {
   // initialize the window
   InitWindow(ProgramConfig::s_getScreenWidth(), ProgramConfig::s_getScreenHeight(), "Kolvor!");
+  ProgramConfig::s_setProgramConfig(GetScreenWidth(), GetScreenHeight());
+  if (!IsWindowFullscreen()) {
+    ToggleFullscreen();
+  }
 
   SetRandomSeed(time(nullptr));
 
@@ -29,18 +33,19 @@ void Core::Run() {
   GuiSetStyle(DEFAULT, TEXT_SIZE, ProgramConfig::s_getScaler() * GUI_SIZE * 0.15f);
   // run the game loop
   float delta_time;
+  Cursor Cursor;
   while (!WindowShouldClose() && !SceneManager::s_shouldExitProgram()) {
     // check if the window is focused and slow the delta time if not.
     if (IsWindowFocused()) {
-        delta_time = GetFrameTime();
+      delta_time = GetFrameTime();
     } else {
-        delta_time = GetFrameTime() * 0.1f;
+      delta_time = GetFrameTime() * 0.1f;
     }
 
     BeginDrawing();
     ClearBackground({32, 32, 32, 255});
     this->m_SceneManager->Run(delta_time);
-    this->m_Cursor.drawCursor();
+    Cursor.drawCursor();
     if (ProgramConfig::s_performanceTest)
       DrawFPS(0, 0);
     EndDrawing();

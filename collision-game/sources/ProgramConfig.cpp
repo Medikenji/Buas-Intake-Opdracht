@@ -8,15 +8,6 @@ int ProgramConfig::m_s_nonScaler = 0;
 void ProgramConfig::s_setProgramConfig(int width, int height) {
   m_s_screenWidth = width;
   m_s_screenHeight = height;
-  if (width < 400) {
-    std::cout << "Width was less then 400, has been set to 400 \n";
-    m_s_screenWidth = 400;
-  }
-  if (height < 400) {
-    std::cout << "Height was less then 400, has been set to 400 \n";
-    m_s_screenHeight = 400;
-  }
-
   if (m_s_screenWidth < m_s_screenHeight) {
     m_s_scaler = m_s_screenWidth;
     m_s_nonScaler = m_s_screenHeight;

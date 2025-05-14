@@ -21,7 +21,6 @@ private:
   // --- Variables --- //
 
   SceneManager *m_SceneManager;
-  Cursor m_Cursor;
 };
 
 #endif

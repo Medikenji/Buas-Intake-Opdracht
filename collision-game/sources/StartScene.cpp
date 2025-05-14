@@ -45,7 +45,11 @@ void StartScene::Run(float deltaTime) {
 
   // Toggle fullscreen button
   Rectangle fullscreenButton = {0, screen_height - gui_size * 0.3f, gui_size * 1.3f, gui_size * 0.3f};
-  if (GuiButton(fullscreenButton, "Toggle Fullscreen")) {
-    ToggleFullscreen();
+  if (GuiButton(fullscreenButton, IsWindowFullscreen() ? "Enable Borderless" : "Enable Fulscreen")) {
+    if (IsWindowFullscreen()) {
+      ToggleBorderlessWindowed();
+    } else {
+      ToggleFullscreen();
+    }
   }
 }
