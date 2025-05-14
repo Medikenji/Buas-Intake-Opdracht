@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.12)
 
 # Set the C++ standard
 set(CMAKE_CXX_STANDARD 17)
@@ -15,9 +15,6 @@ file(GLOB GAME_SOURCES "main.cpp" "sources/*.cpp")
 
 # Add the main executable
 set(EXECUTABLE_NAME Kolvor)
-if(UNIX)
-    set(EXECUTABLE_NAME Kolvor_open_in_terminal)
-endif()
 
 add_executable(${EXECUTABLE_NAME} ${GAME_SOURCES})
 
