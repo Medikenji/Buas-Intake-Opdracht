@@ -31,16 +31,18 @@ private:
   void explodeSelf(float deltaTime);
 
   // --- Variables --- //
+
   Vector2 m_targetPosition;
+  /// @brief the vector where the beam aims
   Vector2 m_aimVector;
   float m_timeUntilDetonation;
+  /// @brief how quickly the beam should pulse
   float m_pulseSpeed;
   float m_beamWidth;
   bool m_detonated;
-  bool m_initialized;
   bool m_shouldPulse;
 
-  // animation states
+  // animation states for when the beam explodes
   bool stateI = true;
   bool stateII = false;
 };

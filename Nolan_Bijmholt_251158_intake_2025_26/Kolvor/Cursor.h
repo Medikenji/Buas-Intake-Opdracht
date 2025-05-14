@@ -16,6 +16,8 @@ public:
   ~Cursor();
 
   void drawCursor();
+
+  /// @brief function to change the state of the cursor
   static void s_setCursorState(int state) { m_s_cursorState = state; }
 
 private:

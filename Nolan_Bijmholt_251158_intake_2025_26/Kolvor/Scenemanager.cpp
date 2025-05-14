@@ -3,7 +3,7 @@
 bool SceneManager::m_s_exitProgram = false;
 
 SceneManager::SceneManager() {
-  // Add the scenes to the scene manager
+  // add the scenes to the scene manager
   addChild(this->m_StartScene = new StartScene(*this));
   addChild(this->m_InfoScene = new InfoScene(*this));
   addChild(this->m_GameScene = new GameScene(*this));
@@ -12,12 +12,11 @@ SceneManager::SceneManager() {
   m_GameTimer->Start();
   m_GameTimer->Pause();
 
-  // Set the current scene to the start scene
+  // set the current scene to the start scene
   this->m_currentScene = 0;
 }
 
 SceneManager::~SceneManager() {
-  // Delete the scenes
   delete this->m_StartScene;
   delete this->m_InfoScene;
   delete this->m_GameScene;
@@ -25,10 +24,10 @@ SceneManager::~SceneManager() {
 }
 
 void SceneManager::Run(float deltaTime) {
-  // Run the current scene
+  // run the current scene
   this->children()[this->m_currentScene]->Run(deltaTime);
 
-  // Run the timer when in game
+  // run the timer when in game
   if (this->m_currentScene == 2) {
     if (m_GameTimer->isPaused()) {
       m_GameTimer->Unpause();

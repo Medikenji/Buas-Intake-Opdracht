@@ -13,11 +13,13 @@ void Core::Run() {
   ProgramConfig::s_setProgramConfig(GetScreenWidth(), GetScreenHeight());
   this->m_SceneManager = new SceneManager();
 
+  // randomise the seed for the GetRandomValue() function
   SetRandomSeed(time(nullptr));
 
   // enable vsync
   SetTargetFPS(GetMonitorRefreshRate(GetCurrentMonitor()));
 
+  // enable unlimited fps if required
   if (ProgramConfig::s_performanceTest)
     SetTargetFPS(0);
 

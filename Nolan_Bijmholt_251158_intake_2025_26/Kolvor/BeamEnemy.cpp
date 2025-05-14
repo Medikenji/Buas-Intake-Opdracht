@@ -17,6 +17,7 @@ void BeamEnemy::Run(float deltaTime) {
 }
 
 void BeamEnemy::Initialise() {
+  // spawns the beam on a random point in the game boundry
   Rectangle gamescene_boundry = static_cast<GameScene *>(this->getParent()->getParent())->getMapBoundry();
   if (GetRandomValue(0, 1)) {
     if (GetRandomValue(0, 1)) {
@@ -34,6 +35,7 @@ void BeamEnemy::Initialise() {
     this->position.x = GetRandomValue(gamescene_boundry.x, gamescene_boundry.width + gamescene_boundry.x);
   }
 
+  // select a random target and set your aim
   this->setTarget(true);
   setAimVector();
 }
@@ -84,6 +86,8 @@ void BeamEnemy::explodeSelf(float deltaTime) {
   }
   m_detonated = true;
   DrawLineEx({this->position.x, this->position.y}, {this->m_aimVector.x, this->m_aimVector.y}, this->m_beamWidth, this->enemyColor());
+
+  // animation for the BeamEnemy
   if (stateI) {
     if (this->m_beamWidth < ProgramConfig::s_getScaler() * BEAM_SIZE) {
       this->m_beamWidth += deltaTime * ProgramConfig::s_getScaler() * BEAM_SIZE * 25.0f;

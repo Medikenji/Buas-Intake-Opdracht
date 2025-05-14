@@ -49,7 +49,7 @@ private:
   /// @brief a seperate deltaTime for the game physics and slo motion suppoert
   float m_gameDeltaTime;
 
-  /// @brief how many points the game manager has
+  /// @brief how many points the game manager has to spawn enemies
   float m_enemySpawnBudget;
 };
 
