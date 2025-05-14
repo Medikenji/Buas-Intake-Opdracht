@@ -82,8 +82,8 @@ private:
   bool m_allowInput;
   float m_health;
   float m_speed;
-  int m_maxHealth;
-  int m_maxScale;
+  float m_maxHealth;
+  float m_maxScale;
   int m_playerNum;
 };
 
