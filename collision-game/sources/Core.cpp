@@ -1,7 +1,6 @@
 #include "Core.h"
 
 Core::Core() {
-  this->m_SceneManager = new SceneManager();
 }
 
 Core::~Core() {
@@ -12,6 +11,7 @@ void Core::Run() {
   // initialize the window
   InitWindow(ProgramConfig::s_getScreenWidth(), ProgramConfig::s_getScreenHeight(), "Kolvor!");
   ProgramConfig::s_setProgramConfig(GetScreenWidth(), GetScreenHeight());
+  this->m_SceneManager = new SceneManager();
   if (!IsWindowFullscreen()) {
     ToggleFullscreen();
   }
