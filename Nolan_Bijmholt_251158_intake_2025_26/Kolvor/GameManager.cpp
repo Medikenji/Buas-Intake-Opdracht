@@ -1,7 +1,7 @@
 #include "GameManager.h"
 
 GameManager::GameManager() {
-  this->m_enemySpawnPoints = 3.0f;
+  this->m_enemySpawnBudget = 3.0f;
 }
 
 GameManager::~GameManager() {
@@ -87,9 +87,9 @@ void GameManager::handleBoundaries() {
 }
 
 void GameManager::handleEnemySpawns(float deltaTime) {
-  this->m_enemySpawnPoints += deltaTime * Enemy::s_getMultiplier() * 1.2f;
-  if (this->m_enemySpawnPoints > 5.0f) {
-    this->m_enemySpawnPoints -= 5.0f;
+  this->m_enemySpawnBudget += deltaTime * Enemy::s_getMultiplier() * 1.2f;
+  if (this->m_enemySpawnBudget > 5.0f) {
+    this->m_enemySpawnBudget -= 5.0f;
     BeamEnemy *beam_enemy = new BeamEnemy(m_Players);
     this->m_Enemies.push_back(beam_enemy);
     addChild(beam_enemy);

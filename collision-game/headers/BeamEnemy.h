@@ -12,7 +12,7 @@ class BeamEnemy : public Enemy {
 public:
   // --- Functions --- //
 
-  BeamEnemy(std::vector<Player*>& players);
+  BeamEnemy(std::vector<Player *> &players);
   ~BeamEnemy();
 
   virtual void Run(float deltaTime);
@@ -25,22 +25,24 @@ private:
   void setAimVector();
 
   /// @brief makes the beam flicker when not exploding
-  void flicker(float deltaTime);
+  void pulseBeam(float deltaTime);
 
   /// @brief shoot the beam with an animation before destroying itself
   void explodeSelf(float deltaTime);
 
   // --- Variables --- //
+
   Vector2 m_targetPosition;
+  /// @brief the vector where the beam aims
   Vector2 m_aimVector;
   float m_timeUntilDetonation;
-  float m_flickerSpeed;
-  float m_explosionThickness;
+  /// @brief how quickly the beam should pulse
+  float m_pulseSpeed;
+  float m_beamWidth;
   bool m_detonated;
-  bool m_initialized;
-  bool m_flicker;
+  bool m_shouldPulse;
 
-  // animation states
+  // animation states for when the beam explodes
   bool stateI = true;
   bool stateII = false;
 };

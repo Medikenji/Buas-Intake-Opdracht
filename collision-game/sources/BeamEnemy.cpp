@@ -1,11 +1,11 @@
 #include "BeamEnemy.h"
 
 BeamEnemy::BeamEnemy(std::vector<Player *> &players) : Enemy(players) {
-  this->m_flicker = false;
+  this->m_shouldPulse = false;
   this->m_timeUntilDetonation = BEAM_BASE_SPEED / ((Enemy::s_getMultiplier() < 2.0f) ? Enemy::s_getMultiplier() : 2.0f);
-  this->m_flickerSpeed = this->m_timeUntilDetonation * 0.1f;
+  this->m_pulseSpeed = this->m_timeUntilDetonation * 0.1f;
   this->m_detonated = false;
-  this->m_explosionThickness = ProgramConfig::s_getScaler() * BEAM_SIZE;
+  this->m_beamWidth = ProgramConfig::s_getScaler() * BEAM_SIZE;
 }
 
 BeamEnemy::~BeamEnemy() {
@@ -13,10 +13,11 @@ BeamEnemy::~BeamEnemy() {
 
 void BeamEnemy::Run(float deltaTime) {
   this->runChildren(deltaTime);
-  flicker(deltaTime);
+  pulseBeam(deltaTime);
 }
 
 void BeamEnemy::Initialise() {
+  // spawns the beam on a random point in the game boundry
   Rectangle gamescene_boundry = static_cast<GameScene *>(this->getParent()->getParent())->getMapBoundry();
   if (GetRandomValue(0, 1)) {
     if (GetRandomValue(0, 1)) {
@@ -34,6 +35,7 @@ void BeamEnemy::Initialise() {
     this->position.x = GetRandomValue(gamescene_boundry.x, gamescene_boundry.width + gamescene_boundry.x);
   }
 
+  // select a random target and set your aim
   this->setTarget(true);
   setAimVector();
 }
@@ -53,19 +55,19 @@ void BeamEnemy::setAimVector() {
   this->m_aimVector.y = ((temp_vector.y / magnitude * ProgramConfig::s_getNScaler() * 10.0f)) + this->position.y;
 }
 
-void BeamEnemy::flicker(float deltaTime) {
+void BeamEnemy::pulseBeam(float deltaTime) {
   this->m_timeUntilDetonation -= deltaTime;
   if (this->m_timeUntilDetonation <= 0.0f) {
     explodeSelf(deltaTime);
     return;
   }
-  this->m_flickerSpeed -= deltaTime;
-  if (this->m_flickerSpeed <= 0.0f) {
-    this->m_flickerSpeed = this->m_timeUntilDetonation * 0.1f;
-    this->m_flicker = !this->m_flicker;
+  this->m_pulseSpeed -= deltaTime;
+  if (this->m_pulseSpeed <= 0.0f) {
+    this->m_pulseSpeed = this->m_timeUntilDetonation * 0.1f;
+    this->m_shouldPulse = !this->m_shouldPulse;
   }
 
-  if (this->m_flicker && !this->m_detonated) {
+  if (this->m_shouldPulse && !this->m_detonated) {
     DrawLine(this->position.x, this->position.y, this->m_aimVector.x, this->m_aimVector.y, this->enemyColor());
   }
 }
@@ -83,18 +85,20 @@ void BeamEnemy::explodeSelf(float deltaTime) {
     }
   }
   m_detonated = true;
-  DrawLineEx({this->position.x, this->position.y}, {this->m_aimVector.x, this->m_aimVector.y}, this->m_explosionThickness, this->enemyColor());
+  DrawLineEx({this->position.x, this->position.y}, {this->m_aimVector.x, this->m_aimVector.y}, this->m_beamWidth, this->enemyColor());
+
+  // animation for the BeamEnemy
   if (stateI) {
-    if (this->m_explosionThickness < ProgramConfig::s_getScaler() * BEAM_SIZE) {
-      this->m_explosionThickness += deltaTime * ProgramConfig::s_getScaler() * BEAM_SIZE * 25.0f;
+    if (this->m_beamWidth < ProgramConfig::s_getScaler() * BEAM_SIZE) {
+      this->m_beamWidth += deltaTime * ProgramConfig::s_getScaler() * BEAM_SIZE * 25.0f;
       return;
     }
     stateI = false;
     stateII = true;
   }
   if (stateII) {
-    if (this->m_explosionThickness > 0.0f) {
-      this->m_explosionThickness -= deltaTime * ProgramConfig::s_getScaler() * BEAM_SIZE * 9.0f;
+    if (this->m_beamWidth > 0.0f) {
+      this->m_beamWidth -= deltaTime * ProgramConfig::s_getScaler() * BEAM_SIZE * 9.0f;
       return;
     }
     stateII = false;

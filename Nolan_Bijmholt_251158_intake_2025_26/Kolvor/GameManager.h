@@ -50,7 +50,7 @@ private:
   float m_gameDeltaTime;
 
   /// @brief how many points the game manager has
-  float m_enemySpawnPoints;
+  float m_enemySpawnBudget;
 };
 
 #endif

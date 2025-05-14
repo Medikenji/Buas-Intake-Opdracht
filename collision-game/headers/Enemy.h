@@ -12,14 +12,14 @@ class Enemy : public Entity {
 public:
   // --- Functions --- //
 
-  Enemy(std::vector<Player*>& players);
+  Enemy(std::vector<Player *> &players);
   ~Enemy();
 
   virtual void Run(float deltaTime) = 0;
 
   /// @brief return all players within the game
   /// @return Player**: a list of all current players
-  std::vector<Player*>  getPlayers() { return m_Players; }
+  std::vector<Player *> getPlayers() { return m_Players; }
 
   /// @brief returns the nearest player from this Enemy
   /// @return Player*: the nearest player
@@ -43,13 +43,15 @@ protected:
   /// @param bool randomTarget: when set to true the enemy will grab a random player as target, is off by default
   void setTarget(bool randomTarget = false);
 
+  /// @brief the global color of all enemies in the game
+  /// @return Color: the default enemy color
   Color enemyColor() { return RED; };
 
 private:
   // --- Variables --- //
 
   static float m_s_multiplier;
-  std::vector<Player*> m_Players;
+  std::vector<Player *> m_Players;
   Player *m_Target;
 };
 

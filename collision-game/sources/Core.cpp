@@ -9,18 +9,17 @@ Core::~Core() {
 
 void Core::Run() {
   // initialize the window
-  InitWindow(ProgramConfig::s_getScreenWidth(), ProgramConfig::s_getScreenHeight(), "Kolvor!");
+  InitWindow(GetMonitorWidth(GetCurrentMonitor()), GetMonitorHeight(GetCurrentMonitor()), "Kolvor!");
   ProgramConfig::s_setProgramConfig(GetScreenWidth(), GetScreenHeight());
   this->m_SceneManager = new SceneManager();
-  if (!IsWindowFullscreen()) {
-    ToggleFullscreen();
-  }
 
+  // randomise the seed for the GetRandomValue() function
   SetRandomSeed(time(nullptr));
 
   // enable vsync
   SetTargetFPS(GetMonitorRefreshRate(GetCurrentMonitor()));
 
+  // enable unlimited fps if required
   if (ProgramConfig::s_performanceTest)
     SetTargetFPS(0);
 

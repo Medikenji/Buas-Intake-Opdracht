@@ -11,7 +11,6 @@ Player::Player() {
   this->m_allowInput = true;
   this->m_maxScale = ProgramConfig::s_getScaler() * 0.03f;
   this->inBounds = true;
-  this->m_InputTimer = new Timer();
   this->m_PlayerTimer = new Timer();
   this->m_maxHealth = 100;
   this->m_health = this->m_maxHealth;
@@ -19,7 +18,7 @@ Player::Player() {
 }
 
 Player::~Player() {
-  delete m_InputTimer;
+  delete m_PlayerTimer;
 }
 
 void Player::Run(float deltaTime) {

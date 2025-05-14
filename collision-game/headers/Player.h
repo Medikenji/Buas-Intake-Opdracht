@@ -74,7 +74,7 @@ private:
   static int m_s_playerNum;
   static double m_s_points;
   static float m_s_pointsMultiplier;
-  Timer *m_InputTimer;
+  /// @brief the timer that temporarily disables input when required
   Timer *m_PlayerTimer;
   Color m_playerColor;
   /// @brief allows for smooth mouse controls on all framerates
@@ -84,6 +84,7 @@ private:
   float m_speed;
   float m_maxHealth;
   float m_maxScale;
+  /// @brief the current player ID
   int m_playerNum;
 };
 

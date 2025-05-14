@@ -26,6 +26,7 @@ void Enemy::setTarget(bool randomTarget) {
     this->m_Target = this->m_Players[GetRandomValue(0, 1)];
     return;
   }
+  // compare the distances and set the target to the nearest one
   float distances[2];
   for (int i = 0; i < 2; ++i) {
     float x = this->position.x - this->m_Players[i]->position.x;

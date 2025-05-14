@@ -41,7 +41,7 @@ void Entity::addChild(Entity *child) {
 }
 
 void Entity::removeChild(Entity *child) {
-  // Loops through all children and removes the child if found
+  // loops through all children and removes the child if found
   for (int i = 0; i < this->m_Children.size(); i++) {
     if (this->m_Children[i] == child) {
       this->m_Children.erase(this->m_Children.begin() + i);
