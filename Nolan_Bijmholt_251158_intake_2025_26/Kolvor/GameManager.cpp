@@ -89,8 +89,8 @@ void GameManager::handleBoundaries() {
 void GameManager::handleEnemySpawns(float deltaTime) {
   this->m_enemySpawnBudget += deltaTime * Enemy::s_getMultiplier() * 1.2f;
   if (this->m_enemySpawnBudget > 5.0f) {
+      this->m_enemySpawnBudget -= 5.0f;
       for (int i = 0; i < GetRandomValue(1, (int)(2.0f * Enemy::s_getMultiplier())); i++) {
-          this->m_enemySpawnBudget -= 5.0f;
           BeamEnemy* beam_enemy = new BeamEnemy(m_Players);
           this->m_Enemies.push_back(beam_enemy);
           addChild(beam_enemy);
