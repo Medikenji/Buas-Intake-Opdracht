@@ -14,7 +14,7 @@ Vector2 Enemy::getTargetPosition() {
 };
 
 void Enemy::s_increaseEnemyDifficulty(float deltaTime) {
-  if (m_s_multiplier > 2.0f) {
+  if (m_s_multiplier > 5.0f) {
     m_s_multiplier += 0.005f * deltaTime;
     return;
   }
